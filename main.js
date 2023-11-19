@@ -67,6 +67,12 @@ function abilityWeaknessModifier(entry) {
                 entry[1].weakness_array[i] = typeWeakness;
             }
         }
+    } else if (entry[1].ability_weakness_modifier == "dry skin") {
+        //if pokemon has flash fire ability, negates water damage and slightly increases fire damage (1.25x)
+        let fireWeakness = (entry[1].weakness_array[1]) * 1.25;
+        let waterWeakness = (entry[1].weakness_array[2]) * 0;
+        entry[1].weakness_array[1] = fireWeakness;
+        entry[1].weakness_array[2] = waterWeakness;
     } else if (entry[1].ability_weakness_modifier == "flash fire") {
         //if pokemon has flash fire ability, negates fire damage
         let fireWeakness = (entry[1].weakness_array[1]) * 0;
@@ -87,7 +93,7 @@ function abilityWeaknessModifier(entry) {
         entry[1].weakness_array[5] = iceWeakness;
     } else if (entry[1].ability_weakness_modifier == "water absorb") {
         //if pokemon has levitate ability, negates water weakness
-        let groundWeakness = (entry[1].weakness_array[2]) * 0;
-        entry[1].weakness_array[2] = groundWeakness;
+        let waterWeakness = (entry[1].weakness_array[2]) * 0;
+        entry[1].weakness_array[2] = waterWeakness;
     };
 }
