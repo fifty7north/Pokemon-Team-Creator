@@ -79,5 +79,11 @@ function abilityWeaknessModifier(entry) {
         //if pokemon has levitate ability, negates ground weakness
         let groundWeakness = (entry[1].weakness_array[8]) * 0;
         entry[1].weakness_array[8] = groundWeakness;
+    } else if (entry[1].ability_weakness_modifier == "thick fat") {
+        //if pokemon has levitate ability, halves fire and ice weakness
+        let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
+        let iceWeakness = (entry[1].weakness_array[1]) * 0.5;
+        entry[1].weakness_array[1] = fireWeakness;
+        entry[1].weakness_array[5] = iceWeakness;
     };
 }
