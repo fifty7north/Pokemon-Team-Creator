@@ -7,7 +7,7 @@ const pokemonCombinedWeakness = [];
 
 /**
  * 
- * Populate pokemon data object with pokemon type weaknesses
+ * Populate pokemonData object with pokemon type weaknesses
  * 
  */
 
@@ -22,13 +22,22 @@ Object.entries(pokemonData).forEach(entry => {
             }
         }
     });
-    //slices the data from both weakness arrays in the main pokemon weakness array and assigns the values to their own arrays that are refered to later
-    let weakness1 = pokemonWeakness[0].slice();
-    let weakness2 = pokemonWeakness[1].slice();
-    //calculates combined type weakness for pokemon from the pokemon weakness array
-    for (let i = 0; i < typeData.length; i++) {
-        let weakness = weakness1[i] * weakness2[i];
-        pokemonCombinedWeakness.push(weakness);
+    if (pokemonWeakness.length > 1) {
+        //if pokemon has 2 types, slices the data from both weakness arrays in the main pokemon weakness array, calculates the combines type weakness and pushes it to pokemonData
+        //slices the data from both weakness arrays in the main pokemon weakness array and assigns them their own variable for calculation
+        let weakness1 = pokemonWeakness[0].slice();
+        let weakness2 = pokemonWeakness[1].slice();
+        //calculates combined type weakness for pokemon
+        for (let i = 0; i < typeData.length; i++) {
+            let weakness = weakness1[i] * weakness2[i];
+            pokemonCombinedWeakness.push(weakness);
+        }
+    } else if (pokemonWeakness.length == 1) {
+        //if pokemon has 1 type, slices the data from main pokemon weakness array and pushes it to pokemonData
+        let weakness = pokemonWeakness[0].slice();
+        for (let i = 0; i < typeData.length; i++) {
+            pokemonCombinedWeakness.push(weakness[i]);
+        }
     }
     //adds weakness array to corresponding pokemon in pokemonData
     Object.assign(pokemonDataEntries, {weakness_array: pokemonCombinedWeakness.slice()});
@@ -38,6 +47,8 @@ Object.entries(pokemonData).forEach(entry => {
     pokemonWeakness.length = 0;
     pokemonCombinedWeakness.length = 0;
 });
+
+console.log(pokemonData)
 
 /**
  * 
