@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+}
+#pokemonList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 64px));
+    gap: 4px;
+    justify-content: center;
+    grid-auto-flow: row;
+    padding: 0;
+    margin: 64px;
+}
+.pokedex-entry {
+    list-style-type: none;
+    width: 64px;
+    height: 64px;
+    padding: 0px;
+    background-color: lightgray;
+    border-radius: 8px;
+}
+
+@media screen and (min-width: 769px){
+#pokemonList {
+    grid-template-columns: repeat(auto-fit, minmax(96px, 96px));
+}
+.pokedex-entry {
+    width: 96px;
+    height: 96px;
+    border-radius: 12px;
+}
+}

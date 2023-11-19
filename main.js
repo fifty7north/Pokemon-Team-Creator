@@ -47,8 +47,27 @@ Object.entries(pokemonData).forEach(entry => {
     pokemonWeakness.length = 0;
     pokemonCombinedWeakness.length = 0;
 });
+console.log(pokemonData);
 
-console.log(pokemonData)
+/**
+ * 
+ * Populate page with grid of all pokemon
+ * 
+ */
+
+Object.entries(pokemonData).forEach(entry => {
+    //creates new list entry and populates it with data
+    const newPokemonLi = document.createElement("li");
+    newPokemonLi.setAttribute("class", "pokedex-entry");
+    newPokemonLi.setAttribute("title", entry[0]);
+    newPokemonLi.setAttribute("data-region-pokedex-id", entry[1].region_pokedex_id);
+    newPokemonLi.setAttribute("data-national-pokedex-id", entry[1].national_pokedex_id);
+    newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
+    const newPokemonName = document.createTextNode("");
+    newPokemonLi.appendChild(newPokemonName);
+    const element = document.getElementById("pokemonList");
+    element.appendChild(newPokemonLi);
+})
 
 /**
  * 
