@@ -59,6 +59,18 @@ console.log(pokemonData)
 function abilityWeaknessModifier(entry) {
     if (entry[1].ability_weakness_modifier == "none") {
         //if pokemon does not have an ability that modifies weakness, do nothing
+    } else if (entry[1].ability_weakness_modifier == "filter") {
+        //if pokemon has filter ability, slightly reduces all super effective damage (0.75x)
+        for (let i = 0; i < entry[1].weakness_array.length; i++) {
+            if (entry[1].weakness_array[i] > 1) {
+                let typeWeakness = (entry[1].weakness_array[i]) * 0.75;
+                entry[1].weakness_array[i] = typeWeakness;
+            }
+        }
+    } else if (entry[1].ability_weakness_modifier == "flash fire") {
+        //if pokemon has flash fire ability, negates fire damage
+        let fireWeakness = (entry[1].weakness_array[1]) * 0;
+        entry[1].weakness_array[1] = fireWeakness;
     } else if (entry[1].ability_weakness_modifier == "heatproof") {
         //if pokemon has heatproof ability, halves fire weakness
         let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
