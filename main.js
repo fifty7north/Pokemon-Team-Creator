@@ -5,10 +5,11 @@ const typeData = Object.entries(typeDataObject);
 const pokemonWeakness = [];
 const pokemonCombinedWeakness = [];
 
-let pokemon = pokemonData.empoleon;
-
-
-
+/**
+ * 
+ * Populate pokemon data object with pokemon type weaknesses
+ * 
+ */
 
 Object.entries(pokemonData).forEach(entry => {
     const [pokemon, pokemonDataEntries] = entry;
@@ -31,9 +32,29 @@ Object.entries(pokemonData).forEach(entry => {
     }
     //adds weakness array to corresponding pokemon in pokemonData
     Object.assign(pokemonDataEntries, {weakness_array: pokemonCombinedWeakness.slice()});
+    //calls ability weakness modifier function to adjust pokemon weakness values where necessary
+    abilityWeaknessModifier(entry)
     //resets weakness and combined weakness arrays
     pokemonWeakness.length = 0;
     pokemonCombinedWeakness.length = 0;
 });
-console.log(pokemonData);
 
+/**
+ * 
+ * Functions
+ * 
+ */
+
+function abilityWeaknessModifier(entry) {
+    if (entry[1].ability_weakness_modifier == "none") {
+        //if pokemon does not have an ability that modifies weakness, do nothing
+    } else if (entry[1].ability_weakness_modifier == "heatproof") {
+        //if pokemon has heatproof ability, halves fire weakness
+        let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
+        entry[1].weakness_array[1] = fireWeakness;
+    } else if (entry[1].ability_weakness_modifier == "levitate") {
+        //if pokemon has levitate ability, negates ground weakness
+        let groundWeakness = (entry[1].weakness_array[8]) * 0;
+        entry[1].weakness_array[8] = groundWeakness;
+    };
+}
