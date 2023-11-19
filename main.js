@@ -85,5 +85,9 @@ function abilityWeaknessModifier(entry) {
         let iceWeakness = (entry[1].weakness_array[1]) * 0.5;
         entry[1].weakness_array[1] = fireWeakness;
         entry[1].weakness_array[5] = iceWeakness;
+    } else if (entry[1].ability_weakness_modifier == "water absorb") {
+        //if pokemon has levitate ability, negates water weakness
+        let groundWeakness = (entry[1].weakness_array[2]) * 0;
+        entry[1].weakness_array[2] = groundWeakness;
     };
 }
