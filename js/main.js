@@ -137,7 +137,7 @@ Object.entries(pokemonData).forEach(entry => {
         newPokemonLi.style.backgroundColor = typeColours[colourIndex][1];
     }
     //adds new element to pokemonList in HTML
-    let element = document.getElementById("pokemonList");
+    let element = document.getElementById("pokemon-list");
     element.appendChild(newPokemonLi);
 })
 
