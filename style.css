@@ -23,23 +23,23 @@ body {
 }
 #pokemonList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(64px, 4px));
-    gap: 4px;
+    grid-template-columns: repeat(auto-fit, minmax(96px, 96px));
+    gap: 3px;
     justify-content: center;
     grid-auto-flow: row;
     padding: 0;
-    margin: 32px;
+    margin: 48px;
 }
 .pokedex-entry {
     position: relative;
     list-style-type: none;
-    width: 64px;
+    width: 96px;
     height: auto;
     padding: 0px;
-    border-radius: 8px;
+    border-radius: 9px;
     & .pokemon-image-container {
-        width: 64px;
-        height: 64px;
+        width: 96px;
+        height: 96px;
         padding: 0;
         margin: 0;
         & button {
@@ -53,18 +53,19 @@ body {
             border: none;
         }
         & img {
-            width: 64px;
-            height: 64px;
+            width: 96px;
+            height: 96px;
         }
     }
     & .pokemon-info-container {
         display: flex;
         flex-wrap: wrap;
-        width: 64px;
-        height: 32px;
+        width: 96px;
+        height: 48px;
         padding: 0;
         background-color: #111111;
-        border-radius: 0px 0px 8px 8px;
+        border-radius: 0px 0px 9px 9px;
+        font-size: 0.75rem;
         & .pokemon-info-title {
             display: flex;
             justify-content: center;
@@ -72,7 +73,7 @@ body {
             width: 100%;
             height: 50%;
             text-align: center;
-            font:  1rem system-ui;
+            font:  1em system-ui;
             font-weight: 700;
             color: white;
         }
@@ -83,7 +84,7 @@ body {
             border: solid #111111 4px;
             box-sizing: border-box;
             text-align: center;
-            font:  0.75rem system-ui;
+            font:  0.75em system-ui;
             font-weight: 700;
 
             font-style: italic;
@@ -92,21 +93,18 @@ body {
         & .single-type {
             width: 100%;
             height: 50%;
-            background-color: red;
-            border-radius: 8px;
+            border-radius: 6px;
         }
         & .duo-type-1 {
             width: 50%;
             height: 50%;
-            background-color: blue;
-            border-radius: 8px 0px 0px 8px;
+            border-radius: 6px 0px 0px 6px;
             border-right-width: 2px;
         }
         & .duo-type-2 {
             width: 50%;
             height: 50%;
-            background-color: green;
-            border-radius: 0px 8px 8px 0px;
+            border-radius: 0px 6px 6px 0px;
             border-left-width: 2px;
 
         }
@@ -116,6 +114,7 @@ body {
 @media screen and (min-width: 769px){
 #pokemonList {
     grid-template-columns: repeat(auto-fit, minmax(128px, 128px));
+    gap: 4px;
     margin: 64px;
 }
 .pokedex-entry {
@@ -138,6 +137,8 @@ body {
         height: 64px;
         background-color: #111111;
         border-radius: 0px 0px 8px 8px;
+        font-size: 1rem;
+
     }
 }
 }
