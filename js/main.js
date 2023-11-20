@@ -55,7 +55,6 @@ console.log(pokemonData);
  * 
  */
 
-//custom colours
 const typeColours = [
     ["normal", "#A8A77A"],
     ["fire", "#EE8130"],
@@ -76,7 +75,6 @@ const typeColours = [
     ["steel", "#B7B7CE"],
     ["fairy", "#D685AD"]
 ];
-
 Object.entries(pokemonData).forEach(entry => {
     //creates new list entry and populates it with attributes
     const newPokemonLi = document.createElement("li");
