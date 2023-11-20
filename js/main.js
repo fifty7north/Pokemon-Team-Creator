@@ -85,11 +85,14 @@ Object.entries(pokemonData).forEach(entry => {
     newPokemonLi.setAttribute("data-national-pokedex-id", entry[1].national_pokedex_id);
     newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
     //creates new image of pokemon
+    const newPokemonImageContainer = document.createElement("div");
+    newPokemonImageContainer.classList.add("pokemon-image-container");
     const newPokemonImage = document.createElement("img");
     newPokemonImage.setAttribute("src", "./images/pokemon/"+entry[0]+".png");
     newPokemonImage.setAttribute("alt", entry[0]);
     newPokemonImage.setAttribute("onerror", "if (this.src != '/images/pokeball.png') this.src = './images/pokeball.png';");
-    newPokemonLi.appendChild(newPokemonImage);
+    newPokemonLi.appendChild(newPokemonImageContainer);
+    newPokemonImageContainer.appendChild(newPokemonImage);
     //creates new container for pokemon info
     const newPokemonInfoContainer = document.createElement("div");
     newPokemonInfoContainer.classList.add("pokemon-info-container");
