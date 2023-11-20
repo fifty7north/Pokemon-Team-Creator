@@ -55,16 +55,54 @@ console.log(pokemonData);
  * 
  */
 
+//custom colours
+const typeColours = [
+    ["normal", "#A8A77A"],
+    ["fire", "#EE8130"],
+    ["water", "#6390F0"],
+    ["electric", "#F7D02C"],
+    ["grass", "#7AC74C"],
+    ["ice", "#96D9D6"],
+    ["fighting", "#C22E28"],
+    ["poison", "#A33EA1"],
+    ["ground", "#E2BF65"],
+    ["flying", "#A98FF3"],
+    ["psychic", "#F95587"],
+    ["bug", "#A6B91A"],
+    ["rock", "#B6A136"],
+    ["ghost", "#735797"],
+    ["dragon", "#6F35FC"],
+    ["dark", "#705746"],
+    ["steel", "#B7B7CE"],
+    ["fairy", "#D685AD"]
+];
+
 Object.entries(pokemonData).forEach(entry => {
     //creates new list entry and populates it with data
     const newPokemonLi = document.createElement("li");
+    newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
+    newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
     newPokemonLi.setAttribute("class", "pokedex-entry");
     newPokemonLi.setAttribute("title", entry[0]);
     newPokemonLi.setAttribute("data-region-pokedex-id", entry[1].region_pokedex_id);
     newPokemonLi.setAttribute("data-national-pokedex-id", entry[1].national_pokedex_id);
     newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
-    const newPokemonName = document.createTextNode("");
-    newPokemonLi.appendChild(newPokemonName);
+    //assigns custom colours according to type
+    if (entry[1].pokemon_type.length > 1) {
+        //flattens typeColours array and finds the matching indexes in the flattened array for the pokemon's types
+        //halves those values so that they will correspond with the corresponding indexes in the non-flattened typeColours arrays
+        //assigns the background gradient to the colour codes of the colourIndex variables
+        let colourIndex1 = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0]))/2);
+        let colourIndex2 = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[1]))/2);
+        newPokemonLi.style.backgroundImage = "linear-gradient("+typeColours[colourIndex1][1]+", "+typeColours[colourIndex2][1]+")";
+    } else {
+        //flattens typeColours array and finds the matching index in the flattened array for the pokemon's type
+        //halves that value so that it will correspond with the same index in the non-flattened typeColours array
+        //assigns the background colour to the colour code of the colourIndex
+        let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0]))/2);
+        newPokemonLi.style.backgroundColor = typeColours[colourIndex][1];
+    }
+    //adds new element to pokemonList in HTML
     const element = document.getElementById("pokemonList");
     element.appendChild(newPokemonLi);
 })
