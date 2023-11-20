@@ -94,6 +94,7 @@ Object.entries(pokemonData).forEach(entry => {
     //creates new button and populates it with attributes
     const newPokemonButton = document.createElement("button");
     newPokemonButton.setAttribute("onclick", "");
+    newPokemonButton.setAttribute("aria-label", entry[0]);
     newPokemonImageContainer.appendChild(newPokemonButton);
     //creates new image of pokemon
     const newPokemonImage = document.createElement("img");
