@@ -71,10 +71,21 @@ main {
     padding: 5%;
 }
 .pokedex-entry {
+    position: relative;
     list-style-type: none;
     width: 96px;
     height: auto;
     border-radius: 8px;
+    & button {
+        position: absolute;
+        width: 96px;
+        height: 144px;
+        background-color: transparent;
+        border: none;
+    }
+    & button:hover {
+        cursor: pointer;
+    }
     & .pokemon-image-container {
         height: 96px;
         & img {
@@ -137,12 +148,6 @@ main {
         }
     }
 }
-.pokedex-entry:hover {
-    cursor: pointer;
-    & button {
-        cursor: pointer;
-    }
-}
 
 @media screen and (min-width: 769px){
 main {
@@ -165,6 +170,10 @@ main {
 .pokedex-entry {
     width: 128px;
     border-radius: 12px;
+    & button {
+        width: 128px;
+        height: 192px;
+    }
     & .pokemon-image-container {
         height: 128px;
         & img {

@@ -12,7 +12,7 @@ const pokemonCombinedWeakness = [];
  */
 
 Object.entries(pokemonData).forEach(entry => {
-    const [pokemon, pokemonDataEntries] = entry;
+    const [, pokemonDataEntries] = entry;
     //for each type the pokemon has, checks through list of all types to find matching types and adds their data to weakness array
     pokemonDataEntries.pokemon_type.forEach(type => {
         for (let i = 0; i < typeData.length; i++) {
@@ -47,6 +47,42 @@ Object.entries(pokemonData).forEach(entry => {
     pokemonWeakness.length = 0;
     pokemonCombinedWeakness.length = 0;
 });
+
+//adjust pokemon weakness values where necessary according to ability
+function abilityWeaknessModifier(entry) {
+    if (entry[1].ability_weakness_modifier == "none") {
+        //if pokemon does not have an ability that modifies weakness, do nothing
+    } else if (entry[1].ability_weakness_modifier == "dry skin") {
+        //if pokemon has flash fire ability, negates water damage and slightly increases fire damage (1.25x)
+        let fireWeakness = (entry[1].weakness_array[1]) * 1.25;
+        let waterWeakness = (entry[1].weakness_array[2]) * 0;
+        entry[1].weakness_array[1] = fireWeakness;
+        entry[1].weakness_array[2] = waterWeakness;
+    } else if (entry[1].ability_weakness_modifier == "flash fire") {
+        //if pokemon has flash fire ability, negates fire damage
+        let fireWeakness = (entry[1].weakness_array[1]) * 0;
+        entry[1].weakness_array[1] = fireWeakness;
+    } else if (entry[1].ability_weakness_modifier == "heatproof") {
+        //if pokemon has heatproof ability, halves fire weakness
+        let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
+        entry[1].weakness_array[1] = fireWeakness;
+    } else if (entry[1].ability_weakness_modifier == "levitate") {
+        //if pokemon has levitate ability, negates ground weakness
+        let groundWeakness = (entry[1].weakness_array[8]) * 0;
+        entry[1].weakness_array[8] = groundWeakness;
+    } else if (entry[1].ability_weakness_modifier == "thick fat") {
+        //if pokemon has levitate ability, halves fire and ice weakness
+        let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
+        let iceWeakness = (entry[1].weakness_array[1]) * 0.5;
+        entry[1].weakness_array[1] = fireWeakness;
+        entry[1].weakness_array[5] = iceWeakness;
+    } else if (entry[1].ability_weakness_modifier == "water absorb") {
+        //if pokemon has levitate ability, negates water weakness
+        let waterWeakness = (entry[1].weakness_array[2]) * 0;
+        entry[1].weakness_array[2] = waterWeakness;
+    };
+}
+
 console.log(pokemonData);
 
 /**
@@ -79,11 +115,13 @@ Object.entries(pokemonData).forEach(entry => {
     //creates new list entry and populates it with attributes
     const newPokemonLi = document.createElement("li");
     newPokemonLi.classList.add("pokedex-entry");
-    newPokemonLi.setAttribute("onclick", "console.log('"+entry[0]+"')");
+    newPokemonLi.setAttribute("id", entry[0]);
     newPokemonLi.setAttribute("title", entry[0]);
-    newPokemonLi.setAttribute("data-region-pokedex-id", entry[1].region_pokedex_id);
-    newPokemonLi.setAttribute("data-national-pokedex-id", entry[1].national_pokedex_id);
-    newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
+    //creates new button with pokemon name as id
+    const newPokemonButton = document.createElement("button");
+    newPokemonButton.classList.add("pokedex-button");
+    newPokemonButton.setAttribute("id", entry[0]);
+    newPokemonLi.appendChild(newPokemonButton);
     //creates new image of pokemon
     const newPokemonImageContainer = document.createElement("div");
     newPokemonImageContainer.classList.add("pokemon-image-container");
@@ -146,40 +184,18 @@ Object.entries(pokemonData).forEach(entry => {
 
 /**
  * 
- * Functions
+ * 
  * 
  */
 
-function abilityWeaknessModifier(entry) {
-    if (entry[1].ability_weakness_modifier == "none") {
-        //if pokemon does not have an ability that modifies weakness, do nothing
-    } else if (entry[1].ability_weakness_modifier == "dry skin") {
-        //if pokemon has flash fire ability, negates water damage and slightly increases fire damage (1.25x)
-        let fireWeakness = (entry[1].weakness_array[1]) * 1.25;
-        let waterWeakness = (entry[1].weakness_array[2]) * 0;
-        entry[1].weakness_array[1] = fireWeakness;
-        entry[1].weakness_array[2] = waterWeakness;
-    } else if (entry[1].ability_weakness_modifier == "flash fire") {
-        //if pokemon has flash fire ability, negates fire damage
-        let fireWeakness = (entry[1].weakness_array[1]) * 0;
-        entry[1].weakness_array[1] = fireWeakness;
-    } else if (entry[1].ability_weakness_modifier == "heatproof") {
-        //if pokemon has heatproof ability, halves fire weakness
-        let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
-        entry[1].weakness_array[1] = fireWeakness;
-    } else if (entry[1].ability_weakness_modifier == "levitate") {
-        //if pokemon has levitate ability, negates ground weakness
-        let groundWeakness = (entry[1].weakness_array[8]) * 0;
-        entry[1].weakness_array[8] = groundWeakness;
-    } else if (entry[1].ability_weakness_modifier == "thick fat") {
-        //if pokemon has levitate ability, halves fire and ice weakness
-        let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
-        let iceWeakness = (entry[1].weakness_array[1]) * 0.5;
-        entry[1].weakness_array[1] = fireWeakness;
-        entry[1].weakness_array[5] = iceWeakness;
-    } else if (entry[1].ability_weakness_modifier == "water absorb") {
-        //if pokemon has levitate ability, negates water weakness
-        let waterWeakness = (entry[1].weakness_array[2]) * 0;
-        entry[1].weakness_array[2] = waterWeakness;
-    };
-}
+document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
+    pokedexButton.addEventListener("click", function() {
+        let id = pokedexButton.id;
+        document.getElementById(id).classList.add("in-team");
+        Object.entries(pokemonData).forEach(entry => {
+            if(entry[0] == id) {
+                console.log(entry[1]);
+            }
+        });
+    });
+});
