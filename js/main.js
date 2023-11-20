@@ -79,29 +79,21 @@ Object.entries(pokemonData).forEach(entry => {
     //creates new list entry and populates it with attributes
     const newPokemonLi = document.createElement("li");
     newPokemonLi.classList.add("pokedex-entry");
+    newPokemonLi.setAttribute("onclick", "console.log('"+entry[0]+"')");
     newPokemonLi.setAttribute("title", entry[0]);
     newPokemonLi.setAttribute("data-region-pokedex-id", entry[1].region_pokedex_id);
     newPokemonLi.setAttribute("data-national-pokedex-id", entry[1].national_pokedex_id);
     newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
-    //creates new container for image and button
-    const newPokemonImageContainer = document.createElement("div");
-    newPokemonImageContainer.classList.add("pokemon-image-container");
-    newPokemonLi.appendChild(newPokemonImageContainer);
-    //creates new container for pokemon info
-    const newPokemonInfoContainer = document.createElement("div");
-    newPokemonInfoContainer.classList.add("pokemon-info-container");
-    newPokemonLi.appendChild(newPokemonInfoContainer);
-    //creates new button and populates it with attributes
-    const newPokemonButton = document.createElement("button");
-    newPokemonButton.setAttribute("onclick", "");
-    newPokemonButton.setAttribute("aria-label", entry[0]);
-    newPokemonImageContainer.appendChild(newPokemonButton);
     //creates new image of pokemon
     const newPokemonImage = document.createElement("img");
     newPokemonImage.setAttribute("src", "./images/"+entry[0]+".png");
     newPokemonImage.setAttribute("alt", entry[0]);
     newPokemonImage.setAttribute("onerror", "if (this.src != '/images/placeholder.png') this.src = './images/placeholder.png';");
-    newPokemonImageContainer.appendChild(newPokemonImage);
+    newPokemonLi.appendChild(newPokemonImage);
+    //creates new container for pokemon info
+    const newPokemonInfoContainer = document.createElement("div");
+    newPokemonInfoContainer.classList.add("pokemon-info-container");
+    newPokemonLi.appendChild(newPokemonInfoContainer);
     //creates new pokemon title
     const newPokemonTitle = document.createElement("div");
     newPokemonTitle.classList.add("pokemon-info-title");

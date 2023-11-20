@@ -37,25 +37,9 @@ body {
     height: auto;
     padding: 0px;
     border-radius: 9px;
-    & .pokemon-image-container {
+    & img {
         width: 96px;
         height: 96px;
-        padding: 0;
-        margin: 0;
-        & button {
-            position: absolute;
-            width: 96px;
-            height: 96px;
-            padding: 0;
-            margin: 0;
-            background-color: transparent;
-            border-radius: 8px;
-            border: none;
-        }
-        & img {
-            width: 96px;
-            height: 96px;
-        }
     }
     & .pokemon-info-container {
         display: flex;
@@ -110,6 +94,12 @@ body {
         }
     }
 }
+.pokedex-entry:hover {
+    cursor: pointer;
+    & button {
+        cursor: pointer;
+    }
+}
 
 @media screen and (min-width: 769px){
 #pokemonList {
@@ -120,17 +110,9 @@ body {
 .pokedex-entry {
     width: 128px;
     border-radius: 12px;
-    & .pokemon-image-container {
+    & img {
         width: 128px;
         height: 128px;
-        & button {
-            width: 128px;
-            height: 128px;
-        }
-        & img {
-            width: 128px;
-            height: 128px;
-        }
     }
     & .pokemon-info-container {
         width: 128px;
