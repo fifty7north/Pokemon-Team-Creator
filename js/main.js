@@ -80,19 +80,56 @@ const typeColours = [
 Object.entries(pokemonData).forEach(entry => {
     //creates new list entry and populates it with attributes
     const newPokemonLi = document.createElement("li");
-    newPokemonLi.setAttribute("class", "pokedex-entry");
+    newPokemonLi.classList.add("pokedex-entry");
     newPokemonLi.setAttribute("title", entry[0]);
     newPokemonLi.setAttribute("data-region-pokedex-id", entry[1].region_pokedex_id);
     newPokemonLi.setAttribute("data-national-pokedex-id", entry[1].national_pokedex_id);
     newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
+    //creates new container for image and button
+    const newPokemonImageContainer = document.createElement("div");
+    newPokemonImageContainer.classList.add("pokemon-image-container");
+    newPokemonLi.appendChild(newPokemonImageContainer);
+    //creates new container for pokemon info
+    const newPokemonInfoContainer = document.createElement("div");
+    newPokemonInfoContainer.classList.add("pokemon-info-container");
+    newPokemonLi.appendChild(newPokemonInfoContainer);
     //creates new button and populates it with attributes
     const newPokemonButton = document.createElement("button");
     newPokemonButton.setAttribute("onclick", "");
+    newPokemonImageContainer.appendChild(newPokemonButton);
     //creates new image of pokemon
     const newPokemonImage = document.createElement("img");
     newPokemonImage.setAttribute("src", "./images/"+entry[0]+".png");
     newPokemonImage.setAttribute("alt", entry[0]);
     newPokemonImage.setAttribute("onerror", "if (this.src != '/images/placeholder.png') this.src = './images/placeholder.png';");
+    newPokemonImageContainer.appendChild(newPokemonImage);
+    //creates new pokemon title
+    const newPokemonTitle = document.createElement("div");
+    newPokemonTitle.classList.add("pokemon-info-title");
+    newPokemonTitle.appendChild(document.createTextNode(entry[1].name));
+    newPokemonInfoContainer.appendChild(newPokemonTitle);
+    //creates new pokemon type cards
+    if (entry[1].pokemon_type.length > 1) {
+        //for duo type
+        for (let i = 0; i < entry[1].pokemon_type.length; i++) {
+            const newPokemonTypeCard = document.createElement("div");
+            newPokemonTypeCard.classList.add("pokemon-info-type");
+            newPokemonTypeCard.classList.add("duo-type-"+(i+1)+"");
+            let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[i]))/2);
+            newPokemonTypeCard.style.backgroundColor = typeColours[colourIndex][1];
+            newPokemonTypeCard.appendChild(document.createTextNode(entry[1].pokemon_type[i]));
+            newPokemonInfoContainer.appendChild(newPokemonTypeCard);
+        }
+    } else {
+        //for single type
+        const newPokemonTypeCard = document.createElement("div");
+        newPokemonTypeCard.classList.add("pokemon-info-type");
+        newPokemonTypeCard.classList.add("single-type");
+        newPokemonTypeCard.appendChild(document.createTextNode(entry[1].pokemon_type[0]));
+        let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0]))/2);
+        newPokemonTypeCard.style.backgroundColor = typeColours[colourIndex][1];
+        newPokemonInfoContainer.appendChild(newPokemonTypeCard);
+    }
     //assigns custom colours according to type
     if (entry[1].pokemon_type.length > 1) {
         //flattens typeColours array and finds the matching indexes in the flattened array for the pokemon's types
@@ -111,8 +148,6 @@ Object.entries(pokemonData).forEach(entry => {
     //adds new element to pokemonList in HTML
     let element = document.getElementById("pokemonList");
     element.appendChild(newPokemonLi);
-    newPokemonLi.appendChild(newPokemonButton);
-    newPokemonLi.appendChild(newPokemonImage);
 })
 
 /**
