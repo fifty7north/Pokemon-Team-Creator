@@ -80,8 +80,6 @@ const typeColours = [
 Object.entries(pokemonData).forEach(entry => {
     //creates new list entry and populates it with data
     const newPokemonLi = document.createElement("li");
-    newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
-    newPokemonLi.setAttribute("data-variant-id", entry[1].variant_id);
     newPokemonLi.setAttribute("class", "pokedex-entry");
     newPokemonLi.setAttribute("title", entry[0]);
     newPokemonLi.setAttribute("data-region-pokedex-id", entry[1].region_pokedex_id);
