@@ -148,6 +148,9 @@ main {
         }
     }
 }
+.pokedex-entry-hover {
+    bottom: 8px;
+}
 
 @media screen and (min-width: 769px){
 main {
@@ -191,5 +194,8 @@ main {
         font-size: 1rem;
 
     }
+}
+.pokedex-entry-hover {
+    bottom: 12px;
 }
 }

@@ -198,4 +198,12 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
             }
         });
     });
+    pokedexButton.addEventListener("mouseenter", function() {
+        let id = pokedexButton.id;
+        document.getElementById(id).classList.add("pokedex-entry-hover");
+    });
+    pokedexButton.addEventListener("mouseleave", function() {
+        let id = pokedexButton.id;
+        document.getElementById(id).classList.remove("pokedex-entry-hover");
+    });
 });
