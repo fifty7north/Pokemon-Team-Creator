@@ -73,6 +73,8 @@ main {
         .team-member-entry {
             position: relative;
             width: 96px;
+            margin: 16px 0;
+            font-size: 0.75rem;
             .team-member-button {
                 position: absolute;
                 width: 100%;
@@ -94,10 +96,61 @@ main {
                     justify-content: center;
                     align-items: center;
                     height: 60%;
-                    font:  0.75em 'Noto Sans Sinhala';
+                    font:  1em 'Noto Sans Sinhala';
                     font-weight: 700;
                     color: white;
                     text-align: center;
+                }
+                .team-member-type-container {
+                    position: relative;
+                    height: 40%;
+                    .team-single-type {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 4px;
+                        text-align: center;
+                        font:  0.75em 'Noto Sans Sinhala';
+                        font-weight: 400;
+                        font-style: italic;
+                        color: white;
+                        text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
+                        
+                    }
+                    .team-duo-type-container {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        display: flex;
+                        border-radius: 6px;
+                        text-align: center;
+                        font:  0.75em 'Noto Sans Sinhala';
+                        font-weight: 400;
+                        font-style: italic;
+                        color: white;
+                        text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
+                        .team-duo-type-1, .team-duo-type-2 {
+                            width: 50%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .team-duo-type-1 {
+                            border: 2px solid #111111;
+                            border-width: 0 2px 0 0;
+                            border-radius: 6px 0 0 6px;
+                        }
+                        .team-duo-type-2 {
+                            border: 2px solid #111111;
+                            border-width: 0 0 0 2px;
+                            border-radius: 0 6px 6px 0;
+                        }
+                    }
                 }
             }
         }
@@ -167,9 +220,9 @@ main {
             color: white;
         }
         .pokemon-info-type {
+            display: flex;
             width: 100%;
             height: 40%;
-            display: flex;
             justify-content: center;
             align-items: center;
             border: solid #111111 4px;
@@ -212,6 +265,7 @@ Media query for laptop/desktop
         .current-team {
             .team-member-entry {
                 width: 128px;
+                font-size: 1rem;
                 .team-member-image {
                     border-radius: 12px;
                 }

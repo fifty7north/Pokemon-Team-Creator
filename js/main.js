@@ -237,6 +237,12 @@ document.querySelectorAll(".team-member-button").forEach(teamMember => {
                 teamMember.setAttribute("pokemon", "");
                 teamMember.querySelector(".team-member-image").setAttribute("src", "");
                 teamMember.querySelector(".team-member-name").innerHTML = "";
+                teamMember.querySelector(".team-duo-type-1").innerHTML = "";
+                teamMember.querySelector(".team-duo-type-2").innerHTML = "";
+                teamMember.querySelector(".team-single-type").innerHTML = "";
+                teamMember.querySelector(".team-duo-type-1").style.backgroundColor = "transparent";
+                teamMember.querySelector(".team-duo-type-2").style.backgroundColor = "transparent";
+                teamMember.querySelector(".team-single-type").style.backgroundColor = "transparent";
             };
             //updates current team ui
             updateTeamArray();
@@ -253,6 +259,18 @@ function updateTeamArray() {
             teamMember.setAttribute("pokemon", currentTeamArray[i][0]);
             teamMember.querySelector(".team-member-image").setAttribute("src", "./images/pokemon/"+currentTeamArray[i][0]+".png");
             teamMember.querySelector(".team-member-name").innerHTML = currentTeamArray[i][1].name;
+            if (currentTeamArray[i][1].pokemon_type.length > 1) {
+                teamMember.querySelector(".team-duo-type-1").innerHTML = currentTeamArray[i][1].pokemon_type[0];
+                let colourIndex1 = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[0]))/2);
+                teamMember.querySelector(".team-duo-type-1").style.backgroundColor = typeColours[colourIndex1][1];
+                teamMember.querySelector(".team-duo-type-2").innerHTML = currentTeamArray[i][1].pokemon_type[1];    
+                let colourIndex2 = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[1]))/2);
+                teamMember.querySelector(".team-duo-type-2").style.backgroundColor = typeColours[colourIndex2][1];            
+            } else {
+                teamMember.querySelector(".team-single-type").innerHTML = currentTeamArray[i][1].pokemon_type[0];
+                let colourIndex = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[0]))/2);
+                teamMember.querySelector(".team-single-type").style.backgroundColor = typeColours[colourIndex][1];
+            }
         };
     };
 };
