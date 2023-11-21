@@ -25,6 +25,11 @@ body {
     margin: 0px;
     background-color: white;
 }
+
+/*
+Navbar elements
+*/
+
 nav {
     position: fixed;
     z-index: 1;
@@ -40,6 +45,11 @@ nav {
     width: 100%;
     height: 55px
 }
+
+/*
+Main page elements
+*/
+
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -58,9 +68,9 @@ main {
     background-color: lightgray;
     border-radius: 16px;
     overflow-y: scroll;
-}
-.pokemon-list-container::-webkit-scrollbar {
-    display: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 #pokemon-list {
     display: grid;
@@ -86,7 +96,7 @@ main {
     & button:hover {
         cursor: pointer;
     }
-    & .pokemon-image-container {
+    .pokemon-image-container {
         height: 96px;
         & img {
             padding: 8px;
@@ -96,31 +106,34 @@ main {
             border-radius: 8px 8px 0 0;
         }
     }
-    & .pokemon-info-container {
+    .pokemon-info-container {
         display: flex;
         flex-wrap: wrap;
         width: 96px;
-        height: 48px;
+        height: 60px;
         padding: 0;
         background-color: #111111;
         border-radius: 0px 0px 8px 8px;
         font-size: 0.75rem;
-        & .pokemon-info-title {
+        .pokemon-info-title {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 50%;
+            height: 60%;
             text-align: center;
             font:  1em 'Noto Sans Sinhala';
             font-weight: 700;
             color: white;
         }
-        & .pokemon-info-type {
+        .pokemon-info-type {
+            width: 100%;
+            height: 40%;
             display: flex;
             justify-content: center;
             align-items: center;
             border: solid #111111 4px;
+            border-radius: 6px;
             box-sizing: border-box;
             text-align: center;
             font:  0.75em 'Noto Sans Sinhala';
@@ -129,20 +142,13 @@ main {
             color: white;
             text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
         }
-        & .single-type {
-            width: 100%;
-            height: 50%;
-            border-radius: 6px;
-        }
-        & .duo-type-1 {
+        .duo-type-1 {
             width: 50%;
-            height: 50%;
             border-radius: 6px 0px 0px 6px;
             border-right-width: 2px;
         }
-        & .duo-type-2 {
+        .duo-type-2 {
             width: 50%;
-            height: 50%;
             border-radius: 0px 6px 6px 0px;
             border-left-width: 2px;
         }
@@ -151,6 +157,10 @@ main {
 .pokedex-entry-hover {
     bottom: 8px;
 }
+
+/*
+Media query for laptop/desktop
+*/
 
 @media screen and (min-width: 769px){
 main {
@@ -177,7 +187,7 @@ main {
         width: 128px;
         height: 192px;
     }
-    & .pokemon-image-container {
+    .pokemon-image-container {
         height: 128px;
         & img {
             padding: 12px;
@@ -186,9 +196,9 @@ main {
             border-radius: 12px 12px 0 0;
         }
     }
-    & .pokemon-info-container {
+    .pokemon-info-container {
         width: 128px;
-        height: 64px;
+        height: 80px;
         background-color: #111111;
         border-radius: 0px 0px 8px 8px;
         font-size: 1rem;
