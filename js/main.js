@@ -190,16 +190,81 @@ Object.entries(pokemonData).forEach(entry => {
  * 
  */
 
+//array for storing members of current team
+const currentTeamArray = [];
+
+//on clicking a pokedex entry to add that pokemon to the current team, 
 document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
     pokedexButton.addEventListener("click", function() {
         let id = pokedexButton.id;
-        document.getElementById(id).classList.add("in-team");
+        if(currentTeamArray.length < 6) {
+            //If current team has < 6 pokemon, hides the clicked pokedex entry in the pokemon list
+            document.getElementById(id).classList.add("in-team");
+        } else {
+            //If current team has >= 6 pokemon, displays error message on screen
+            alert("Team slots already filled");
+        };
         Object.entries(pokemonData).forEach(entry => {
             if(entry[0] == id) {
-                console.log(entry[1]);
-            }
+                //for every entry in pokemon data, checks if the id of the clicked pokedex entry matches an entry
+                //if there is a match, adds that data entry to the current team array
+                currentTeamArray.push(entry);
+                if(currentTeamArray.length > 6) {
+                    //if current team > 6 pokemon, removes last pokemon added
+                    currentTeamArray.length = 6;
+                };
+                updateTeamArray();
+            };
         });
     });
+});
+
+//on clicking a team member entry to remove that pokemon from the current team
+document.querySelectorAll(".team-member-button").forEach(teamMember => {
+    teamMember.addEventListener("click", function() {
+        let pokemonID = (teamMember.parentElement.getAttribute("pokemon"));
+        if(pokemonID !== "") {
+            //unhides the pokemon clicked in the pokemon list
+            document.getElementById(pokemonID).classList.remove("in-team");
+            //if the team slot is not empty, gets the team member slot number and splices that number from the current team array
+            let id = teamMember.parentElement.getAttribute("id");
+            let teamMemberNum = id.substring(id.length-1);
+            let currentTeamArrayIndex = teamMemberNum - 1;
+            currentTeamArray.splice(currentTeamArrayIndex, 1);  
+            //removes all current team member ui entries on screen, so they can be updated to the new current team without the removed pokemon
+            for (let i = 1; i <= 6; i++) {
+                let teamMember = document.querySelector("#team-member-"+i);
+                teamMember.setAttribute("pokemon", "");
+                teamMember.querySelector(".team-member-image").setAttribute("src", "");
+                teamMember.querySelector(".team-member-name").innerHTML = "";
+            };
+            //updates current team ui
+            updateTeamArray();
+        };
+    });
+});
+
+//for each team slot, updates the current team ui data with the current team data
+function updateTeamArray() {
+    for (let i = 0; i < 6; i++) {
+        let slotNum = i + 1;
+        let teamMember = document.getElementById("team-member-"+slotNum);
+        if(slotNum <= currentTeamArray.length) {
+            teamMember.setAttribute("pokemon", currentTeamArray[i][0]);
+            teamMember.querySelector(".team-member-image").setAttribute("src", "./images/pokemon/"+currentTeamArray[i][0]+".png");
+            teamMember.querySelector(".team-member-name").innerHTML = currentTeamArray[i][1].name;
+        };
+    };
+};
+
+/**
+ * 
+ * Animations
+ * 
+ */
+
+//pokedex entry hover effect
+document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
     pokedexButton.addEventListener("mouseenter", function() {
         let id = pokedexButton.id;
         document.getElementById(id).classList.add("pokedex-entry-hover");
@@ -207,5 +272,17 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
     pokedexButton.addEventListener("mouseleave", function() {
         let id = pokedexButton.id;
         document.getElementById(id).classList.remove("pokedex-entry-hover");
+    });
+});
+
+//team member hover effect
+document.querySelectorAll(".team-member-entry").forEach(teamMember => {
+    teamMember.addEventListener("mouseenter", function() {
+        let id = teamMember.id;
+        document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "lightgrey";
+    });
+    teamMember.addEventListener("mouseleave", function() {
+        let id = teamMember.id;
+        document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "white";
     });
 });

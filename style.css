@@ -54,7 +54,9 @@ main {
     display: grid;
     gap: 16px;
     margin: 16px;
-
+}
+.in-team {
+    display: none;
 }
 
 /*Current team section elements*/
@@ -78,9 +80,11 @@ main {
                 background-color: transparent;
                 border: none;
             }
+            .team-member-button:hover {
+                cursor: not-allowed;
+            }
             .team-member-image {
                 width: 100%;
-                background-color: white;
                 border-radius: 8px;
             }
             .team-member-info-container {
@@ -90,7 +94,7 @@ main {
                     justify-content: center;
                     align-items: center;
                     height: 60%;
-                    font:  1em 'Noto Sans Sinhala';
+                    font:  0.75em 'Noto Sans Sinhala';
                     font-weight: 700;
                     color: white;
                     text-align: center;
@@ -113,7 +117,7 @@ main {
     gap: 24px 12px;
     justify-content: center;
     grid-auto-flow: row;
-    padding: 16px;
+    padding: 32px 16px;
     margin: 0;
 }
 .pokedex-entry {
@@ -210,6 +214,11 @@ Media query for laptop/desktop
                 width: 128px;
                 .team-member-image {
                     border-radius: 12px;
+                }
+                .team-member-info-container {
+                    .team-member-name {
+                        font-size: 1em;
+                    }
                 }
             }
         }
