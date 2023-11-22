@@ -24,6 +24,7 @@
     --steel: #B7B7CE;
     --fairy: #D685AD;
 }
+
 body {
     margin: 0px;
     background-color: white;
@@ -44,6 +45,7 @@ nav {
     border-right-width: 0;
     border-top-width: 0;
 }
+
 .nav-spacer {
     width: 100%;
     height: 55px
@@ -58,6 +60,7 @@ main {
     gap: 16px;
     margin: 16px;
 }
+
 .in-team {
     display: none;
 }
@@ -67,17 +70,21 @@ main {
 .team-container {
     border-radius: 16px;
     background-color: var(--ui_dark);
+
     .current-team {
         display: flex;
         flex-wrap: wrap;
         align-content: center;
         justify-content: space-evenly;
         margin: 16px;
+        gap: 16px;
+
         .team-member-entry {
             position: relative;
             width: 96px;
             margin: 16px 0;
             font-size: 0.75rem;
+
             .team-member-button {
                 position: absolute;
                 z-index: 2;
@@ -86,28 +93,34 @@ main {
                 background-color: transparent;
                 border: none;
             }
+
             .team-member-button:hover {
                 cursor: not-allowed;
             }
+
             .team-member-image {
                 width: 100%;
                 border-radius: 8px;
             }
+
             .team-member-info-container {
                 height: 60px;
+
                 .team-member-name {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     height: 60%;
-                    font:  1em 'Noto Sans Sinhala';
+                    font: 1em 'Noto Sans Sinhala';
                     font-weight: 700;
                     color: white;
                     text-align: center;
                 }
+
                 .team-member-type-container {
                     position: relative;
                     height: 40%;
+
                     .team-single-type {
                         width: 100%;
                         height: 100%;
@@ -118,12 +131,13 @@ main {
                         align-items: center;
                         border-radius: 4px;
                         text-align: center;
-                        font:  0.75em 'Noto Sans Sinhala';
+                        font: 0.75em 'Noto Sans Sinhala';
                         font-weight: 400;
                         font-style: italic;
                         color: white;
-                        text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;  
+                        text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
                     }
+
                     .team-duo-type-container {
                         width: 100%;
                         height: 100%;
@@ -131,23 +145,27 @@ main {
                         display: flex;
                         border-radius: 6px;
                         text-align: center;
-                        font:  0.75em 'Noto Sans Sinhala';
+                        font: 0.75em 'Noto Sans Sinhala';
                         font-weight: 400;
                         font-style: italic;
                         color: white;
                         text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
-                        .team-duo-type-1, .team-duo-type-2 {
+
+                        .team-duo-type-1,
+                        .team-duo-type-2 {
                             width: 50%;
                             height: 100%;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                         }
+
                         .team-duo-type-1 {
                             border: 2px solid var(--ui_dark);
                             border-width: 0 2px 0 0;
                             border-radius: 6px 0 0 6px;
                         }
+
                         .team-duo-type-2 {
                             border: 2px solid var(--ui_dark);
                             border-width: 0 0 0 2px;
@@ -167,6 +185,7 @@ main {
     background-color: var(--ui_light);
     border-radius: 16px;
 }
+
 #pokemon-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(96px, 96px));
@@ -176,12 +195,14 @@ main {
     padding: 32px 16px;
     margin: 0;
 }
+
 .pokedex-entry {
     position: relative;
     list-style-type: none;
     width: 96px;
     height: auto;
     border-radius: 8px;
+
     .pokedex-button {
         position: absolute;
         width: 96px;
@@ -189,11 +210,14 @@ main {
         background-color: transparent;
         border: none;
     }
+
     .pokedex-button:hover {
         cursor: pointer;
     }
+
     .pokemon-image-container {
         height: 96px;
+
         & img {
             padding: 8px;
             width: 72px;
@@ -202,6 +226,7 @@ main {
             border-radius: 8px 8px 0 0;
         }
     }
+
     .pokemon-info-container {
         display: flex;
         flex-wrap: wrap;
@@ -211,6 +236,7 @@ main {
         background-color: var(--ui_dark);
         border-radius: 0px 0px 8px 8px;
         font-size: 0.75rem;
+
         .pokemon-info-title {
             display: flex;
             justify-content: center;
@@ -218,10 +244,11 @@ main {
             width: 100%;
             height: 60%;
             text-align: center;
-            font:  1em 'Noto Sans Sinhala';
+            font: 1em 'Noto Sans Sinhala';
             font-weight: 700;
             color: white;
         }
+
         .pokemon-info-type {
             display: flex;
             width: 100%;
@@ -232,17 +259,19 @@ main {
             border-radius: 6px;
             box-sizing: border-box;
             text-align: center;
-            font:  0.75em 'Noto Sans Sinhala';
+            font: 0.75em 'Noto Sans Sinhala';
             font-weight: 400;
             font-style: italic;
             color: white;
             text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
         }
+
         .duo-type-1 {
             width: 50%;
             border-radius: 6px 0px 0px 6px;
             border-right-width: 2px;
         }
+
         .duo-type-2 {
             width: 50%;
             border-radius: 0px 6px 6px 0px;
@@ -250,6 +279,7 @@ main {
         }
     }
 }
+
 .pokedex-entry-hover {
     bottom: 12px;
 }
@@ -258,20 +288,23 @@ main {
 Media query for laptop/desktop
 */
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 769px) {
     main {
         margin: 25px;
     }
 
     .team-container {
         border-radius: 24px;
+
         .current-team {
             .team-member-entry {
                 width: 128px;
                 font-size: 1rem;
+
                 .team-member-image {
                     border-radius: 12px;
                 }
+
                 .team-member-info-container {
                     .team-member-name {
                         font-size: 1em;
@@ -284,18 +317,23 @@ Media query for laptop/desktop
     #pokemon-list {
         grid-template-columns: repeat(auto-fit, minmax(128px, 128px));
     }
+
     .pokemon-list-container {
         border-radius: 24px;
     }
+
     .pokedex-entry {
         width: 128px;
         border-radius: 12px;
+
         .pokedex-button {
             width: 128px;
             height: 208px;
         }
+
         .pokemon-image-container {
             height: 128px;
+
             & img {
                 padding: 12px;
                 width: 96px;
@@ -303,6 +341,7 @@ Media query for laptop/desktop
                 border-radius: 12px 12px 0 0;
             }
         }
+
         .pokemon-info-container {
             width: 128px;
             height: 80px;
