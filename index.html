@@ -14,6 +14,7 @@
 
         </nav>
         <div class="nav-spacer"></div>
+
         <main>
             <div class="team-container">
                 <div class="current-team">
@@ -61,7 +62,7 @@
                     </div>
                     <div class="team-member-entry" id="team-member-4" pokemon="">
                         <button class="team-member-button" id=""></button>
-                        <img class="team-member-image" src="" onerror="if (this.src != '/images/pokeball.svg') this.src = './images/pokeball.svg';" style="background-color: white;">
+                        <img class="team-member-image" src="" onerror="if (this.src != './images/pokeball.svg') this.src = './images/pokeball.svg';" style="background-color: white;">
                         <div class="team-member-info-container">
                             <div class="team-member-name"></div>
                             <div class="team-member-type-container">
@@ -75,7 +76,7 @@
                     </div>
                     <div class="team-member-entry" id="team-member-5" pokemon="">
                         <button class="team-member-button" id=""></button>
-                        <img class="team-member-image" src="" onerror="if (this.src != '/images/pokeball.svg') this.src = './images/pokeball.svg';" style="background-color: white;">
+                        <img class="team-member-image" src="" onerror="if (this.src != './images/pokeball.svg') this.src = './images/pokeball.svg';" style="background-color: white;">
                         <div class="team-member-info-container">
                             <div class="team-member-name"></div>
                             <div class="team-member-type-container">
@@ -89,7 +90,7 @@
                     </div>
                     <div class="team-member-entry" id="team-member-6" pokemon="">
                         <button class="team-member-button" id=""></button>
-                        <img class="team-member-image" src="" onerror="if (this.src != '/images/pokeball.svg') this.src = './images/pokeball.svg';" style="background-color: white;">
+                        <img class="team-member-image" src="" onerror="if (this.src != './images/pokeball.svg') this.src = './images/pokeball.svg';" style="background-color: white;">
                         <div class="team-member-info-container">
                             <div class="team-member-name"></div>
                             <div class="team-member-type-container">
@@ -103,8 +104,228 @@
                     </div>
                 </div>
             </div>
+
+            <ol class="team-type-info">
+                <li class="type-indicator-container" id="normal-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_normal.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="normal-type-indicator-1"></div>
+                        <div class="type-indicator" id="normal-type-indicator-2"></div>
+                        <div class="type-indicator" id="normal-type-indicator-3"></div>
+                        <div class="type-indicator" id="normal-type-indicator-4"></div>
+                        <div class="type-indicator" id="normal-type-indicator-5"></div>
+                        <div class="type-indicator" id="normal-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="normal-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="fire-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_fire.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="fire-type-indicator-1"></div>
+                        <div class="type-indicator" id="fire-type-indicator-2"></div>
+                        <div class="type-indicator" id="fire-type-indicator-3"></div>
+                        <div class="type-indicator" id="fire-type-indicator-4"></div>
+                        <div class="type-indicator" id="fire-type-indicator-5"></div>
+                        <div class="type-indicator" id="fire-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="fire-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="water-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_water.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="water-type-indicator-1"></div>
+                        <div class="type-indicator" id="water-type-indicator-2"></div>
+                        <div class="type-indicator" id="water-type-indicator-3"></div>
+                        <div class="type-indicator" id="water-type-indicator-4"></div>
+                        <div class="type-indicator" id="water-type-indicator-5"></div>
+                        <div class="type-indicator" id="water-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="water-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="electric-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_electric.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="electric-type-indicator-1"></div>
+                        <div class="type-indicator" id="electric-type-indicator-2"></div>
+                        <div class="type-indicator" id="electric-type-indicator-3"></div>
+                        <div class="type-indicator" id="electric-type-indicator-4"></div>
+                        <div class="type-indicator" id="electric-type-indicator-5"></div>
+                        <div class="type-indicator" id="electric-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="electric-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="grass-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_grass.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="grass-type-indicator-1"></div>
+                        <div class="type-indicator" id="grass-type-indicator-2"></div>
+                        <div class="type-indicator" id="grass-type-indicator-3"></div>
+                        <div class="type-indicator" id="grass-type-indicator-4"></div>
+                        <div class="type-indicator" id="grass-type-indicator-5"></div>
+                        <div class="type-indicator" id="grass-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="grass-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="ice-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_ice.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="ice-type-indicator-1"></div>
+                        <div class="type-indicator" id="ice-type-indicator-2"></div>
+                        <div class="type-indicator" id="ice-type-indicator-3"></div>
+                        <div class="type-indicator" id="ice-type-indicator-4"></div>
+                        <div class="type-indicator" id="ice-type-indicator-5"></div>
+                        <div class="type-indicator" id="ice-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="ice-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="fighting-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_fighting.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="fighting-type-indicator-1"></div>
+                        <div class="type-indicator" id="fighting-type-indicator-2"></div>
+                        <div class="type-indicator" id="fighting-type-indicator-3"></div>
+                        <div class="type-indicator" id="fighting-type-indicator-4"></div>
+                        <div class="type-indicator" id="fighting-type-indicator-5"></div>
+                        <div class="type-indicator" id="fighting-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="fighting-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="poison-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_poison.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="poison-type-indicator-1"></div>
+                        <div class="type-indicator" id="poison-type-indicator-2"></div>
+                        <div class="type-indicator" id="poison-type-indicator-3"></div>
+                        <div class="type-indicator" id="poison-type-indicator-4"></div>
+                        <div class="type-indicator" id="poison-type-indicator-5"></div>
+                        <div class="type-indicator" id="poison-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="poison-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="ground-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_ground.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="ground-type-indicator-1"></div>
+                        <div class="type-indicator" id="ground-type-indicator-2"></div>
+                        <div class="type-indicator" id="ground-type-indicator-3"></div>
+                        <div class="type-indicator" id="ground-type-indicator-4"></div>
+                        <div class="type-indicator" id="ground-type-indicator-5"></div>
+                        <div class="type-indicator" id="ground-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="ground-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="flying-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_flying.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="flying-type-indicator-1"></div>
+                        <div class="type-indicator" id="flying-type-indicator-2"></div>
+                        <div class="type-indicator" id="flying-type-indicator-3"></div>
+                        <div class="type-indicator" id="flying-type-indicator-4"></div>
+                        <div class="type-indicator" id="flying-type-indicator-5"></div>
+                        <div class="type-indicator" id="flying-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="psychic-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="psychic-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_psychic.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="psychic-type-indicator-1"></div>
+                        <div class="type-indicator" id="psychic-type-indicator-2"></div>
+                        <div class="type-indicator" id="psychic-type-indicator-3"></div>
+                        <div class="type-indicator" id="psychic-type-indicator-4"></div>
+                        <div class="type-indicator" id="psychic-type-indicator-5"></div>
+                        <div class="type-indicator" id="psychic-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="bug-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="bug-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_bug.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="bug-type-indicator-1"></div>
+                        <div class="type-indicator" id="bug-type-indicator-2"></div>
+                        <div class="type-indicator" id="bug-type-indicator-3"></div>
+                        <div class="type-indicator" id="bug-type-indicator-4"></div>
+                        <div class="type-indicator" id="bug-type-indicator-5"></div>
+                        <div class="type-indicator" id="bug-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="rock-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="rock-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_rock.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="rock-type-indicator-1"></div>
+                        <div class="type-indicator" id="rock-type-indicator-2"></div>
+                        <div class="type-indicator" id="rock-type-indicator-3"></div>
+                        <div class="type-indicator" id="rock-type-indicator-4"></div>
+                        <div class="type-indicator" id="rock-type-indicator-5"></div>
+                        <div class="type-indicator" id="rock-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="ghost-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="ghost-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_ghost.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="ghost-type-indicator-1"></div>
+                        <div class="type-indicator" id="ghost-type-indicator-2"></div>
+                        <div class="type-indicator" id="ghost-type-indicator-3"></div>
+                        <div class="type-indicator" id="ghost-type-indicator-4"></div>
+                        <div class="type-indicator" id="ghost-type-indicator-5"></div>
+                        <div class="type-indicator" id="ghost-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="dragon-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="dragon-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_dragon.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="dragon-type-indicator-1"></div>
+                        <div class="type-indicator" id="dragon-type-indicator-2"></div>
+                        <div class="type-indicator" id="dragon-type-indicator-3"></div>
+                        <div class="type-indicator" id="dragon-type-indicator-4"></div>
+                        <div class="type-indicator" id="dragon-type-indicator-5"></div>
+                        <div class="type-indicator" id="dragon-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="dark-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="dark-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_dark.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="dark-type-indicator-1"></div>
+                        <div class="type-indicator" id="dark-type-indicator-2"></div>
+                        <div class="type-indicator" id="dark-type-indicator-3"></div>
+                        <div class="type-indicator" id="dark-type-indicator-4"></div>
+                        <div class="type-indicator" id="dark-type-indicator-5"></div>
+                        <div class="type-indicator" id="dark-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="dark-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="steel-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_steel.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="steel-type-indicator-1"></div>
+                        <div class="type-indicator" id="steel-type-indicator-2"></div>
+                        <div class="type-indicator" id="steel-type-indicator-3"></div>
+                        <div class="type-indicator" id="steel-type-indicator-4"></div>
+                        <div class="type-indicator" id="steel-type-indicator-5"></div>
+                        <div class="type-indicator" id="steel-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="steel-icon-shadow"></div>
+                </li>
+                <li class="type-indicator-container" id="fairy-type-indicators">
+                    <img class="type-indicator-icon" src="./images/type_icons/Pokemon_Type_Icon_fairy.svg">
+                    <div class="type-indicator-marks">
+                        <div class="type-indicator" id="fairy-type-indicator-1"></div>
+                        <div class="type-indicator" id="fairy-type-indicator-2"></div>
+                        <div class="type-indicator" id="fairy-type-indicator-3"></div>
+                        <div class="type-indicator" id="fairy-type-indicator-4"></div>
+                        <div class="type-indicator" id="fairy-type-indicator-5"></div>
+                        <div class="type-indicator" id="fairy-type-indicator-6"></div>
+                    </div>
+                    <div class="type-icon-shadow" id="fairy-icon-shadow"></div>
+                </li>
+            </ol>
+
             <div class="pokemon-list-container">
-                <ol id="pokemon-list"></ol>
+                <ol class="pokemon-list"></ol>
             </div>
         </main>
     </body>
