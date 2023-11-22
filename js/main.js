@@ -304,9 +304,9 @@ function updateTeamWeakness() {
 
         //
         for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
-            if(currentTeamWeaknessArrays[teamSize][type] > 1) {
+            if (currentTeamWeaknessArrays[teamSize][type] > 1) {
                 teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] + 1;
-            } else if(currentTeamWeaknessArrays[teamSize][type] < 1) {
+            } else if (currentTeamWeaknessArrays[teamSize][type] < 1) {
                 teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] - 1;
             };
         };
