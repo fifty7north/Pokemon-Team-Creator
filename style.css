@@ -2,6 +2,9 @@
 
 :root {
     --pokemonRed: #D21E3D;
+    --ui_light: #ECECEC;
+    --ui_dark: #111111;
+    /*Type colours*/
     --normal: #A8A77A;
     --fire: #EE8130;
     --water: #6390F0;
@@ -63,7 +66,7 @@ main {
 
 .team-container {
     border-radius: 16px;
-    background-color: #111111;
+    background-color: var(--ui_dark);
     .current-team {
         display: flex;
         flex-wrap: wrap;
@@ -77,6 +80,7 @@ main {
             font-size: 0.75rem;
             .team-member-button {
                 position: absolute;
+                z-index: 2;
                 width: 100%;
                 height: 100%;
                 background-color: transparent;
@@ -118,8 +122,7 @@ main {
                         font-weight: 400;
                         font-style: italic;
                         color: white;
-                        text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
-                        
+                        text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;  
                     }
                     .team-duo-type-container {
                         width: 100%;
@@ -141,12 +144,12 @@ main {
                             align-items: center;
                         }
                         .team-duo-type-1 {
-                            border: 2px solid #111111;
+                            border: 2px solid var(--ui_dark);
                             border-width: 0 2px 0 0;
                             border-radius: 6px 0 0 6px;
                         }
                         .team-duo-type-2 {
-                            border: 2px solid #111111;
+                            border: 2px solid var(--ui_dark);
                             border-width: 0 0 0 2px;
                             border-radius: 0 6px 6px 0;
                         }
@@ -161,7 +164,7 @@ main {
 
 .pokemon-list-container {
     height: auto;
-    background-color: lightgray;
+    background-color: var(--ui_light);
     border-radius: 16px;
 }
 #pokemon-list {
@@ -195,7 +198,7 @@ main {
             padding: 8px;
             width: 72px;
             height: 72px;
-            border: solid #111111 4px;
+            border: solid var(--ui_dark) 4px;
             border-radius: 8px 8px 0 0;
         }
     }
@@ -205,7 +208,7 @@ main {
         width: 96px;
         height: 60px;
         padding: 0;
-        background-color: #111111;
+        background-color: var(--ui_dark);
         border-radius: 0px 0px 8px 8px;
         font-size: 0.75rem;
         .pokemon-info-title {
@@ -225,7 +228,7 @@ main {
             height: 40%;
             justify-content: center;
             align-items: center;
-            border: solid #111111 4px;
+            border: solid var(--ui_dark) 4px;
             border-radius: 6px;
             box-sizing: border-box;
             text-align: center;
@@ -303,7 +306,7 @@ Media query for laptop/desktop
         .pokemon-info-container {
             width: 128px;
             height: 80px;
-            background-color: #111111;
+            background-color: var(--ui_dark);
             border-radius: 0px 0px 8px 8px;
             font-size: 1rem;
         }
