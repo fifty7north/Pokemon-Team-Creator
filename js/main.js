@@ -40,7 +40,7 @@ Object.entries(pokemonData).forEach(entry => {
         }
     }
     //adds weakness array to corresponding pokemon in pokemonData
-    Object.assign(pokemonDataEntries, {weakness_array: pokemonCombinedWeakness.slice()});
+    Object.assign(pokemonDataEntries, { weakness_array: pokemonCombinedWeakness.slice() });
     //calls ability weakness modifier function to adjust pokemon weakness values where necessary
     abilityWeaknessModifier(entry)
     //resets weakness and combined weakness arrays
@@ -128,9 +128,9 @@ Object.entries(pokemonData).forEach(entry => {
     const newPokemonImageContainer = document.createElement("div");
     newPokemonImageContainer.classList.add("pokemon-image-container");
     const newPokemonImage = document.createElement("img");
-    newPokemonImage.setAttribute("src", "./images/pokemon/"+entry[0]+".png");
+    newPokemonImage.setAttribute("src", "./images/pokemon/" + entry[0] + ".png");
     newPokemonImage.setAttribute("alt", entry[0]);
-    newPokemonImage.setAttribute("onerror", "if (this.src != '/images/pokeball.png') this.src = './images/pokeball.png';");
+    newPokemonImage.setAttribute("onerror", "if (this.src != '/images/pokeball.svg') this.src = './images/pokeball.svg';");
     newPokemonLi.appendChild(newPokemonImageContainer);
     newPokemonImageContainer.appendChild(newPokemonImage);
     //creates new container for pokemon info
@@ -148,8 +148,8 @@ Object.entries(pokemonData).forEach(entry => {
         for (let i = 0; i < entry[1].pokemon_type.length; i++) {
             const newPokemonTypeCard = document.createElement("div");
             newPokemonTypeCard.classList.add("pokemon-info-type");
-            newPokemonTypeCard.classList.add("duo-type-"+(i+1)+"");
-            let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[i]))/2);
+            newPokemonTypeCard.classList.add("duo-type-" + (i + 1) + "");
+            let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[i])) / 2);
             newPokemonTypeCard.style.backgroundColor = typeColours[colourIndex][1];
             newPokemonTypeCard.appendChild(document.createTextNode(entry[1].pokemon_type[i]));
             newPokemonInfoContainer.appendChild(newPokemonTypeCard);
@@ -160,7 +160,7 @@ Object.entries(pokemonData).forEach(entry => {
         newPokemonTypeCard.classList.add("pokemon-info-type");
         newPokemonTypeCard.classList.add("single-type");
         newPokemonTypeCard.appendChild(document.createTextNode(entry[1].pokemon_type[0]));
-        let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0]))/2);
+        let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0])) / 2);
         newPokemonTypeCard.style.backgroundColor = typeColours[colourIndex][1];
         newPokemonInfoContainer.appendChild(newPokemonTypeCard);
     }
@@ -169,18 +169,18 @@ Object.entries(pokemonData).forEach(entry => {
         //flattens typeColours array and finds the matching indexes in the flattened array for the pokemon's types
         //halves those values so that they will correspond with the corresponding indexes in the non-flattened typeColours arrays
         //assigns the background gradient to the colour codes of the colourIndex variables
-        let colourIndex1 = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0]))/2);
-        let colourIndex2 = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[1]))/2);
-        newPokemonLi.style.backgroundImage = "linear-gradient("+typeColours[colourIndex1][1]+", "+typeColours[colourIndex2][1]+")";
+        let colourIndex1 = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0])) / 2);
+        let colourIndex2 = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[1])) / 2);
+        newPokemonLi.style.backgroundImage = "linear-gradient(" + typeColours[colourIndex1][1] + ", " + typeColours[colourIndex2][1] + ")";
     } else {
         //flattens typeColours array and finds the matching index in the flattened array for the pokemon's type
         //halves that value so that it will correspond with the same index in the non-flattened typeColours array
         //assigns the background colour to the colour code of the colourIndex
-        let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0]))/2);
+        let colourIndex = ((typeColours.flat().findIndex(x => x == entry[1].pokemon_type[0])) / 2);
         newPokemonLi.style.backgroundColor = typeColours[colourIndex][1];
     }
     //adds new element to pokemonList in HTML
-    let element = document.getElementById("pokemon-list");
+    let element = document.querySelector(".pokemon-list");
     element.appendChild(newPokemonLi);
 });
 
@@ -192,12 +192,13 @@ Object.entries(pokemonData).forEach(entry => {
 
 //array for storing members of current team
 const currentTeamArray = [];
+const currentTeamWeaknessArrays = []
 
 //on clicking a pokedex entry to add that pokemon to the current team, 
 document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
-    pokedexButton.addEventListener("click", function() {
+    pokedexButton.addEventListener("click", function () {
         let id = pokedexButton.id;
-        if(currentTeamArray.length < 6) {
+        if (currentTeamArray.length < 6) {
             //If current team has < 6 pokemon, hides the clicked pokedex entry in the pokemon list
             document.getElementById(id).classList.add("in-team");
         } else {
@@ -205,15 +206,18 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
             alert("Team slots already filled");
         };
         Object.entries(pokemonData).forEach(entry => {
-            if(entry[0] == id) {
+            if (entry[0] == id) {
                 //for every entry in pokemon data, checks if the id of the clicked pokedex entry matches an entry
                 //if there is a match, adds that data entry to the current team array
                 currentTeamArray.push(entry);
-                if(currentTeamArray.length > 6) {
+                if (currentTeamArray.length > 6) {
                     //if current team > 6 pokemon, removes last pokemon added
                     currentTeamArray.length = 6;
                 };
+                //updates current team ui
                 updateTeamArray();
+                //updates current team weakness data
+                updateTeamWeakness();
             };
         });
     });
@@ -221,19 +225,19 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
 
 //on clicking a team member entry to remove that pokemon from the current team
 document.querySelectorAll(".team-member-button").forEach(teamMember => {
-    teamMember.addEventListener("click", function() {
+    teamMember.addEventListener("click", function () {
         let pokemonID = (teamMember.parentElement.getAttribute("pokemon"));
-        if(pokemonID !== "") {
+        if (pokemonID !== "") {
             //unhides the pokemon clicked in the pokemon list
             document.getElementById(pokemonID).classList.remove("in-team");
             //if the team slot is not empty, gets the team member slot number and splices that number from the current team array
             let id = teamMember.parentElement.getAttribute("id");
-            let teamMemberNum = id.substring(id.length-1);
+            let teamMemberNum = id.substring(id.length - 1);
             let currentTeamArrayIndex = teamMemberNum - 1;
-            currentTeamArray.splice(currentTeamArrayIndex, 1);  
+            currentTeamArray.splice(currentTeamArrayIndex, 1);
             //removes all current team member ui entries on screen, so they can be updated to the new current team without the removed pokemon
             for (let i = 1; i <= 6; i++) {
-                let teamMember = document.querySelector("#team-member-"+i);
+                let teamMember = document.querySelector("#team-member-" + i);
                 teamMember.setAttribute("pokemon", "");
                 teamMember.querySelector(".team-member-image").setAttribute("src", "");
                 teamMember.querySelector(".team-member-name").innerHTML = "";
@@ -246,6 +250,8 @@ document.querySelectorAll(".team-member-button").forEach(teamMember => {
             };
             //updates current team ui
             updateTeamArray();
+            //updates current team weakness data
+            updateTeamWeakness();
         };
     });
 });
@@ -254,25 +260,83 @@ document.querySelectorAll(".team-member-button").forEach(teamMember => {
 function updateTeamArray() {
     for (let i = 0; i < 6; i++) {
         let slotNum = i + 1;
-        let teamMember = document.getElementById("team-member-"+slotNum);
-        if(slotNum <= currentTeamArray.length) {
+        let teamMember = document.getElementById("team-member-" + slotNum);
+        if (slotNum <= currentTeamArray.length) {
             teamMember.setAttribute("pokemon", currentTeamArray[i][0]);
-            teamMember.querySelector(".team-member-image").setAttribute("src", "./images/pokemon/"+currentTeamArray[i][0]+".png");
+            teamMember.querySelector(".team-member-image").setAttribute("src", "./images/pokemon/" + currentTeamArray[i][0] + ".png");
             teamMember.querySelector(".team-member-name").innerHTML = currentTeamArray[i][1].name;
             if (currentTeamArray[i][1].pokemon_type.length > 1) {
                 teamMember.querySelector(".team-duo-type-1").innerHTML = currentTeamArray[i][1].pokemon_type[0];
-                let colourIndex1 = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[0]))/2);
+                let colourIndex1 = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[0])) / 2);
                 teamMember.querySelector(".team-duo-type-1").style.backgroundColor = typeColours[colourIndex1][1];
-                teamMember.querySelector(".team-duo-type-2").innerHTML = currentTeamArray[i][1].pokemon_type[1];    
-                let colourIndex2 = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[1]))/2);
-                teamMember.querySelector(".team-duo-type-2").style.backgroundColor = typeColours[colourIndex2][1];            
+                teamMember.querySelector(".team-duo-type-2").innerHTML = currentTeamArray[i][1].pokemon_type[1];
+                let colourIndex2 = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[1])) / 2);
+                teamMember.querySelector(".team-duo-type-2").style.backgroundColor = typeColours[colourIndex2][1];
             } else {
                 teamMember.querySelector(".team-single-type").innerHTML = currentTeamArray[i][1].pokemon_type[0];
-                let colourIndex = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[0]))/2);
+                let colourIndex = ((typeColours.flat().findIndex(x => x == currentTeamArray[i][1].pokemon_type[0])) / 2);
                 teamMember.querySelector(".team-single-type").style.backgroundColor = typeColours[colourIndex][1];
-            }
+            };
         };
     };
+};
+
+function updateTeamWeakness() {
+    //resets array data needed for calculation
+    currentTeamWeaknessArrays.length = 0;
+    const teamWeaknessResistRaw = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    const teamWeaknessResistNumbered = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    //resets colours in type weakness ui
+    document.querySelectorAll(".type-indicator").forEach(element => { element.style.backgroundColor = "var(--ui_light)" });
+
+    currentTeamArray.forEach(entry => {
+        //for each team member, push their weakness data to an array with all the team member's weakness data
+        currentTeamWeaknessArrays.push(entry[1].weakness_array);
+    });
+
+    for (let teamSize = 0; teamSize < currentTeamWeaknessArrays.length; teamSize++) {
+        //for each type weakness, calculate the overall team's weakness to that by multiplying all team's weakness to that type together
+        //store each of these values in an array with the whole team's average type weakness
+        for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
+            teamWeaknessResistRaw[type] = teamWeaknessResistRaw[type] * currentTeamWeaknessArrays[teamSize][type]
+        };
+
+        //
+        for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
+            if(currentTeamWeaknessArrays[teamSize][type] > 1) {
+                teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] + 1;
+            } else if(currentTeamWeaknessArrays[teamSize][type] < 1) {
+                teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] - 1;
+            };
+        };
+
+        //for each type indicator, sets the value of each type indicator in the type weakness ui to green or red if a pokemon in the team resists or is weak to a type respectively
+        for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
+            let typeIndicator = document.getElementById(type + "-type-indicator-" + (teamSize + 1));
+            if (currentTeamArray[teamSize][1].weakness_array[type] > 1) {
+                typeIndicator.style.backgroundColor = "var(--pokemonRed)";
+            } else if (currentTeamArray[teamSize][1].weakness_array[type] < 1) {
+                typeIndicator.style.backgroundColor = "var(--grass)";
+            };
+        };
+    };
+
+    //for total team weakness, sets green/red icon around type icon in type weakness ui depending on if the team on average resists or is weak to that type respectively
+    for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
+        let shadow = document.getElementById(type + "-icon-shadow");
+        if (teamWeaknessResistNumbered[type] > 0) {
+            shadow.classList.add("type-icon-shadow-weak");
+            shadow.classList.remove("type-icon-shadow-resist");
+        } else if (teamWeaknessResistNumbered[type] < 0) {
+            shadow.classList.remove("type-icon-shadow-weak");
+            shadow.classList.add("type-icon-shadow-resist");
+        } else {
+            shadow.classList.remove("type-icon-shadow-weak");
+            shadow.classList.remove("type-icon-shadow-resist");
+        }
+    }
+    console.log(teamWeaknessResistNumbered);
 };
 
 /**
@@ -283,11 +347,11 @@ function updateTeamArray() {
 
 //pokedex entry hover effect
 document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
-    pokedexButton.addEventListener("mouseenter", function() {
+    pokedexButton.addEventListener("mouseenter", function () {
         let id = pokedexButton.id;
         document.getElementById(id).classList.add("pokedex-entry-hover");
     });
-    pokedexButton.addEventListener("mouseleave", function() {
+    pokedexButton.addEventListener("mouseleave", function () {
         let id = pokedexButton.id;
         document.getElementById(id).classList.remove("pokedex-entry-hover");
     });
@@ -295,11 +359,11 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
 
 //team member hover effect
 document.querySelectorAll(".team-member-entry").forEach(teamMember => {
-    teamMember.addEventListener("mouseenter", function() {
+    teamMember.addEventListener("mouseenter", function () {
         let id = teamMember.id;
         document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "lightgrey";
     });
-    teamMember.addEventListener("mouseleave", function() {
+    teamMember.addEventListener("mouseleave", function () {
         let id = teamMember.id;
         document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "white";
     });
