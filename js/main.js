@@ -288,7 +288,7 @@ function updateTeamWeakness() {
     const teamWeaknessResistNumbered = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     //resets colours in type weakness ui
-    document.querySelectorAll(".type-indicator").forEach(element => { element.style.backgroundColor = "var(--ui_light)" });
+    document.querySelectorAll(".type-indicator").forEach(element => { element.style.backgroundColor = "#D9D9D9" });
 
     currentTeamArray.forEach(entry => {
         //for each team member, push their weakness data to an array with all the team member's weakness data

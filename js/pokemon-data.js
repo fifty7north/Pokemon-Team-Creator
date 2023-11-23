@@ -135,7 +135,7 @@ export default {
         "region_pokedex_id": 35,
         "national_pokedex_id": 206,
         "variant_id": 0,
-        "name": "Gyarados",
+        "name": "Steelix",
         "pokemon_type": ["steel", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
