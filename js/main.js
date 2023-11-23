@@ -345,6 +345,7 @@ function updateTeamWeakness() {
  */
 const inTeam = [];
 const notInTeam = [];
+const teamCombinations = [];
 
 document.querySelector(".team-optimiser-button").addEventListener("click", function() {
     //checks if there is at least 1 pokemon in the team
@@ -368,10 +369,18 @@ document.querySelector(".team-optimiser-button").addEventListener("click", funct
             !pokemon[0].includes(inTeam[4]) && 
             !pokemon[0].includes(inTeam[5])
             ) {
-                notInTeam.push(pokemon[0]);
+                notInTeam.push(pokemon[1].weakness_array);
             };
         });
-        console.log(notInTeam)
+        //removes duplicate weaknesses
+        let duplicateWeaknessRemove = new Map();
+        notInTeam.forEach((item) => duplicateWeaknessRemove.set(item.join(), item));
+        const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
+
+        console.log(notInTeamUnique);
+
+        teamCombinations.length = emptySlots;
+        console.log(teamCombinations)
     } else {
         alert("Please add at least 1 pokémon to the team")
     }
