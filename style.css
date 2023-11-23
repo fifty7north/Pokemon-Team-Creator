@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Poppins:wght@400;700&display=swap');
 
 :root {
     --pokemonRed: #D21E3D;
@@ -35,15 +35,30 @@ Navbar elements
 */
 
 nav {
-    position: fixed;
-    z-index: 1;
     width: 100%;
     height: 50px;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--pokemonRed);
     border: 5px solid black;
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
+    .logo {
+        margin-left: 16px;
+        font: 400 1.5em 'Pixelify Sans';
+        color: white;
+        text-shadow: 0.1em 0.1em 0 black;
+    }
+    .menu-button {
+        width: 30px;
+        height: 30px;
+        margin-right: 16px;
+        background-color: black;
+    }
 }
 
 .nav-spacer {
@@ -237,6 +252,7 @@ main {
     }
 }
 
+
 /*Pokemon list section elements*/
 
 .pokemon-list-container {
@@ -343,11 +359,28 @@ main {
     bottom: 12px;
 }
 
+/*Footer*/
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: var(--ui_dark);
+}
+
 /*
 Media query for laptop/desktop
 */
 
 @media screen and (min-width: 769px) {
+    nav {
+        .logo {
+            margin-left: 24px;
+        }
+        .menu-button {
+            margin-right: 24px;
+        }
+    }
+
     main {
         margin: 25px;
     }
