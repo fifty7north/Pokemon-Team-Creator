@@ -31,7 +31,7 @@ onmessage = (input) => {
     notInTeam.forEach((item) => duplicateWeaknessRemove.set(item.join(), item));
     const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
     //gets an array of all possible remaining team combinations
-    const calcResult = (combo(notInTeamUnique, 1, emptySlots));
+    const calcResult = (combo(notInTeamUnique, emptySlots, emptySlots));
     postMessage(calcResult);
 };
 
