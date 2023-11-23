@@ -343,46 +343,20 @@ function updateTeamWeakness() {
  * Calculation
  * 
  */
-const inTeam = [];
-const notInTeam = [];
-const teamCombinations = [];
 
-document.querySelector(".team-optimiser-button").addEventListener("click", function() {
+
+const worker = new Worker("./js/calc.js");
+
+document.querySelector(".team-optimiser-button").addEventListener("click", function () {
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
-        //resets current team name array
-        inTeam.length = 0;
-        notInTeam.length = 0;
-        //gets number of empty slots in team
-        let emptySlots = 6 - currentTeamArray.length;
-        //gets names of all pokemon in team
-        for (let teamSize = 0; teamSize < currentTeamArray.length; teamSize++) {
-            inTeam.push(currentTeamArray[teamSize][0]);
+        worker.postMessage([currentTeamArray, pokemonData]);
+        worker.onmessage = (calcResult) => {
+            var result = calcResult.data;
+            console.log(result);
         }
-        //for each pokemon in pokemon data that isn't in the team,
-        Object.entries(pokemonData).forEach(pokemon => {
-            if (
-            !pokemon[0].includes(inTeam[0]) &&
-            !pokemon[0].includes(inTeam[1]) && 
-            !pokemon[0].includes(inTeam[2]) &&
-            !pokemon[0].includes(inTeam[3]) &&
-            !pokemon[0].includes(inTeam[4]) && 
-            !pokemon[0].includes(inTeam[5])
-            ) {
-                notInTeam.push(pokemon[1].weakness_array);
-            };
-        });
-        //removes duplicate weaknesses
-        let duplicateWeaknessRemove = new Map();
-        notInTeam.forEach((item) => duplicateWeaknessRemove.set(item.join(), item));
-        const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
-
-        console.log(notInTeamUnique);
-
-        teamCombinations.length = emptySlots;
-        console.log(teamCombinations)
     } else {
-        alert("Please add at least 1 pokémon to the team")
+        alert("Please add at least 1 pokémon to the team");
     }
 });
 
