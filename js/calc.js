@@ -1,7 +1,7 @@
 onmessage = (input) => {
     //processes input (current team array & pokemon data) from worker.postmessage into variables used in calculator
-    let currentTeamArray = input.data[0];
-    let pokemonData = input.data[1];   
+    const currentTeamArray = input.data[0];
+    const pokemonData = input.data[1];
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
@@ -31,8 +31,51 @@ onmessage = (input) => {
     notInTeam.forEach((item) => duplicateWeaknessRemove.set(item.join(), item));
     const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
     //gets an array of all possible remaining team combinations
-    const calcResult = (combo(notInTeamUnique, emptySlots, emptySlots));
-    postMessage(calcResult);
+    const possibleCombos = (combo(notInTeamUnique, emptySlots, emptySlots));
+    //adds current team members to start of array to create a full team for each possible combo
+    for (let i = 0; i < possibleCombos.length; i++) {
+        for (let teamSize = currentTeamArray.length - 1; teamSize > -1; teamSize--) {
+            possibleCombos[i].unshift(currentTeamArray[teamSize][1].weakness_array);
+        };
+    };
+    //calculates each possible team's overall type weakness array
+    for (let i = 0; i < possibleCombos.length; i++) {
+        let combinedTeamWeaknessArray = [];
+        combinedTeamWeaknessArray.length = 0;
+        let combinedTeamWeakness = 0;
+        let combinedTeamResist = 0;
+        for (let type = 0; type < possibleCombos[i][0].length; type++) {
+            combinedTeamWeaknessArray.push(0);
+        };
+        for (let teamSize = 0; teamSize < possibleCombos[i].length; teamSize++) {
+            for (let type = 0; type < combinedTeamWeaknessArray.length; type++) {
+                if (possibleCombos[i][teamSize][type] > 1) {
+                    combinedTeamWeaknessArray[type] = ++combinedTeamWeaknessArray[type];
+                } else if (possibleCombos[i][teamSize][type] < 1) {
+                    combinedTeamWeaknessArray[type] = --combinedTeamWeaknessArray[type];
+                };
+            };
+        };
+        //calculates each possible team's total number of weaknesses and resists
+        for (let type = 0; type < combinedTeamWeaknessArray.length; type++) {
+            if (combinedTeamWeaknessArray[type] > 0) {
+                ++combinedTeamWeakness;
+            } else if (combinedTeamWeaknessArray[type] < 0) {
+                ++combinedTeamResist;
+            };
+        }
+        //adds team weakness data to the relevant entry in the possible combos array
+        possibleCombos[i].unshift({"weaknesses": combinedTeamWeakness, "resists": combinedTeamResist, "array": combinedTeamWeaknessArray});
+    };
+    //sorts possible combos array by total weaknesses and resists
+    possibleCombos.sort((a, b) => {
+        if (a[0].weaknesses === b[0].weaknesses) {
+            return a[0].resists - b[0].resists;
+        } else {
+            return a[0].weaknesses - b[0].weaknesses;
+        }
+    });
+    postMessage(possibleCombos);
 };
 
 //function that combines, link @https://github.com/firstandthird/combinations, credit to the following:

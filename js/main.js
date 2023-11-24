@@ -302,7 +302,7 @@ function updateTeamWeakness() {
             teamWeaknessResistRaw[type] = teamWeaknessResistRaw[type] * currentTeamWeaknessArrays[teamSize][type]
         };
 
-        //
+        //for each type, sets the corresponding value in the teamWeaknessResistNumbered array to 1 or -1 depending on if the team overall is weak to or resists that type respectively
         for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
             if (currentTeamWeaknessArrays[teamSize][type] > 1) {
                 teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] + 1;
