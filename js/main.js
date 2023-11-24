@@ -344,21 +344,27 @@ function updateTeamWeakness() {
  * 
  */
 
-
 const worker = new Worker("./js/calc.js");
-
 document.querySelector(".team-optimiser-button").addEventListener("click", function () {
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
+        console.log("test");
         worker.postMessage([currentTeamArray, pokemonData]);
-        worker.onmessage = (calcResult) => {
-            var result = calcResult.data;
-            console.log(result);
-        }
     } else {
         alert("Please add at least 1 pokémon to the team");
     }
 });
+
+/**
+ * 
+ * 
+ * 
+ */
+
+worker.onmessage = (calcResult) => {
+    var result = calcResult.data;
+    console.log(result);
+}
 
 /**
  * 

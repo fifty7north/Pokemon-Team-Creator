@@ -65,17 +65,28 @@ onmessage = (input) => {
             };
         }
         //adds team weakness data to the relevant entry in the possible combos array
-        possibleCombos[i].unshift({"weaknesses": combinedTeamWeakness, "resists": combinedTeamResist, "array": combinedTeamWeaknessArray});
+        possibleCombos[i].unshift({ "weaknesses": combinedTeamWeakness, "resists": combinedTeamResist, "array": combinedTeamWeaknessArray });
     };
     //sorts possible combos array by total weaknesses and resists
     possibleCombos.sort((a, b) => {
         if (a[0].weaknesses === b[0].weaknesses) {
-            return a[0].resists - b[0].resists;
+            return b[0].resists - a[0].resists;
         } else {
             return a[0].weaknesses - b[0].weaknesses;
         }
     });
-    postMessage(possibleCombos);
+    //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main.js
+    //if there is a team where the total weaknesses <= size of current team, returns all team combos weaknesses <= size of current team
+    //e.g. for 2 chosen team members, returns all teams with total weaknesses <= 2
+    //otherwise removes all teams with more weaknesses than the best team
+    let a = possibleCombos.findIndex((element) => element[0].weaknesses > currentTeamArray.length)
+    if (a >= 0) {
+        postMessage(possibleCombos.splice(0, a));
+    } else {
+        let bestTeamWeaknesses = possibleCombos[0][0].weaknesses
+        let b = possibleCombos.findIndex((element) => element[0].weaknesses > bestTeamWeaknesses);
+        postMessage(possibleCombos.splice(0, b));
+    };
 };
 
 //function that combines, link @https://github.com/firstandthird/combinations, credit to the following:
