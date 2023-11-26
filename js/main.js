@@ -1,15 +1,18 @@
 import pokemonData from "./pokemon-data.js"
 import typeDataObject from "./type-data.js"
+import coverageDataObject from "./coverage-data.js"
 
 const typeData = Object.entries(typeDataObject);
-const pokemonWeakness = [];
-const pokemonCombinedWeakness = [];
+const coverageData = Object.entries(coverageDataObject);
 
 /**
  * 
  * Populate pokemonData object with pokemon type weaknesses
  * 
  */
+
+const pokemonWeakness = [];
+const pokemonCombinedWeakness = [];
 
 Object.entries(pokemonData).forEach(entry => {
     const [, pokemonDataEntries] = entry;
@@ -82,6 +85,50 @@ function abilityWeaknessModifier(entry) {
         entry[1].weakness_array[2] = waterWeakness;
     };
 }
+
+/**
+ * 
+ * Populate pokemonData object with pokemon type coverage
+ * 
+ */
+
+const pokemonCoverage = [];
+const pokemonCombinedCoverage = [];
+
+Object.entries(pokemonData).forEach(entry => {
+    const [, pokemonDataEntries] = entry;
+    //for each type the pokemon has, checks through list of all types to find matching types and adds their data to weakness array
+    pokemonDataEntries.pokemon_type.forEach(type => {
+        for (let i = 0; i < coverageData.length; i++) {
+            if (coverageData[i][0] == type) {
+                let typeIndex = coverageData[i][1];
+                pokemonCoverage.push(typeIndex);
+            }
+        }
+    });
+    if (pokemonCoverage.length > 1) {
+        //if pokemon has 2 types, slices the data from both weakness arrays in the main pokemon weakness array, calculates the combines type weakness and pushes it to pokemonData
+        //slices the data from both weakness arrays in the main pokemon weakness array and assigns them their own variable for calculation
+        let coverage1 = pokemonCoverage[0].slice();
+        let coverage2 = pokemonCoverage[1].slice();
+        //calculates combined type weakness for pokemon
+        for (let i = 0; i < typeData.length; i++) {
+            let coverage = coverage1[i] + coverage2[i];
+            pokemonCombinedCoverage.push(coverage);
+        }
+    } else if (pokemonCoverage.length == 1) {
+        //if pokemon has 1 type, slices the data from main pokemon weakness array and pushes it to pokemonData
+        let coverage = pokemonCoverage[0].slice();
+        for (let i = 0; i < typeData.length; i++) {
+            pokemonCombinedCoverage.push(coverage[i]);
+        }
+    }
+    //adds weakness array to corresponding pokemon in pokemonData
+    Object.assign(pokemonDataEntries, { coverage_array: pokemonCombinedCoverage.slice() });
+    //resets weakness and combined weakness arrays
+    pokemonCoverage.length = 0;
+    pokemonCombinedCoverage.length = 0;
+});
 
 console.log(pokemonData);
 

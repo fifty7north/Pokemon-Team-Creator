@@ -43,8 +43,8 @@ onmessage = (input) => {
         };
     };
     
-    //calculates each possible team's overall type weakness array
     for (let i = 0; i < possibleCombos.length; i++) {
+        //calculates each possible team's overall type weaknesses and resists
         let totalWeaknesses = 0;
         let combinedTeamWeakness = 0;
         let combinedTeamResist = 0;
@@ -70,16 +70,39 @@ onmessage = (input) => {
             } else if (combinedTeamWeaknessArray[type] < 0) {
                 ++combinedTeamResist;
             };
-        }
-        //adds team weakness data to the relevant entry in the possible combos array
-        possibleCombos[i].unshift({"total_weaknesses": totalWeaknesses, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray });
+        };
+        //calculates each possible team's overall type coverage
+        let totalTypeCoverage = 0;
+        let combinedTypeCoverageArray = [];
+        combinedTypeCoverageArray.length = 0;
+        for (let type = 0; type < possibleCombos[i][0][1].coverage_array.length; type++) {
+            combinedTypeCoverageArray.push(0);
+        };
+        for (let teamSize = 0; teamSize < possibleCombos[i].length; teamSize++) {
+            for (let type = 0; type < combinedTypeCoverageArray.length; type++) {
+                if (possibleCombos[i][teamSize][1].coverage_array[type] > 0) {
+                    combinedTypeCoverageArray[type] = ++combinedTypeCoverageArray[type];
+                };
+            };
+        };
+        //calculates each possible team's total type coverage
+        for (let type = 0; type < combinedTypeCoverageArray.length; type++) {
+            if (combinedTypeCoverageArray[type] > 0) {
+                ++totalTypeCoverage;
+            };
+        };
+        //adds team weaknesses, resists and coverage data to the relevant entry in the possible combos array
+        possibleCombos[i].unshift({"coverage_array": combinedTypeCoverageArray, "total_type_coverage": totalTypeCoverage, "total_weaknesses": totalWeaknesses, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray });
     };
+
     //sorts possible combos array by total weaknesses and resists
     possibleCombos.sort((a, b) => {
-        if (a[0].total_weaknesses === b[0].total_weaknesses && a[0].type_weaknesses === b[0].type_weaknesses) {
+        if (a[0].total_weaknesses === b[0].total_weaknesses && a[0].total_type_coverage === b[0].total_type_coverage && a[0].type_weaknesses === b[0].type_weaknesses) {
             return b[0].type_resists - a[0].type_resists;
+        } else if (a[0].total_weaknesses === b[0].total_weaknesses && a[0].total_type_coverage === b[0].total_type_coverage) {
+            return b[0].type_weaknesses - a[0].type_weaknesses;
         } else if (a[0].total_weaknesses === b[0].total_weaknesses) {
-            return a[0].type_weaknesses - b[0].type_weaknesses;
+            return b[0].total_type_coverage - a[0].total_type_coverage;
         } else {
             return a[0].total_weaknesses - b[0].total_weaknesses;
         }
