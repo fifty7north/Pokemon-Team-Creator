@@ -3,6 +3,7 @@
 :root {
     --pokemonRed: #D21E3D;
     --ui_light: #ECECEC;
+    --ui-mid: #7F7F7F;
     --ui_dark: #111111;
     /*Type colours*/
     --normal: #A8A77A;
@@ -43,16 +44,18 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: var(--pokemonRed);
-    border: 5px solid black;
+    border: 5px solid var(--ui_dark);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
+
     .logo {
         margin-left: 16px;
         font: 400 1.5em 'Pixelify Sans';
         color: white;
         text-shadow: 0.1em 0.1em 0 black;
     }
+
     .menu-button {
         width: 30px;
         height: 30px;
@@ -188,6 +191,51 @@ main {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .team-optimiser-buttons-container {
+        margin: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        & button {
+            width: 100%;
+            max-width: 344px;
+            background-color: var(--pokemonRed);
+            border: none;
+            border-radius: 8px;
+            font: 400 1.5em 'Pixelify Sans';
+            color: white;
+            text-shadow: 0.1em 0.1em 0 black;
+        }
+
+        & button:hover {
+            cursor: pointer;
+        }
+    }
+
+    .settings-menu {
+        height: 100px;
+
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            font: 1em 'Poppins';
+            font-weight: 500;
+            color: white;
+
+            & p {
+                margin-left: 16px;
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            & input {
+                margin-right: 16px;
             }
         }
     }
@@ -376,6 +424,7 @@ Media query for laptop/desktop
         .logo {
             margin-left: 24px;
         }
+
         .menu-button {
             margin-right: 24px;
         }

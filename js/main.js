@@ -387,16 +387,35 @@ function updateTeamWeakness() {
 
 /**
  * 
+ * Settings Toggles
+ * 
+ */
+
+//default states
+var uniqueTypesOnly = false;
+
+document.getElementById("setting-unique-types-only").addEventListener("click", () => {if (uniqueTypesOnly == false) {uniqueTypesOnly = true;} else {uniqueTypesOnly = false;}});
+
+function settingsToggle(setting) {
+    if (setting == false) {
+        setting = true;
+    } else {
+        setting = false;
+    };
+    console.log(setting);
+};
+
+/**
+ * 
  * Calculation
  * 
  */
 
 const worker = new Worker("./js/calc.js");
-document.querySelector(".team-optimiser-button").addEventListener("click", function () {
+document.querySelector(".calculate-button").addEventListener("click", function () {
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
-        console.log("test");
-        worker.postMessage([currentTeamArray, pokemonData]);
+        worker.postMessage([currentTeamArray, pokemonData, uniqueTypesOnly]);
     } else {
         alert("Please add at least 1 pokémon to the team");
     }

@@ -2,7 +2,7 @@ onmessage = (input) => {
     //processes input (current team array & pokemon data) from worker.postmessage into variables used in calculator
     const currentTeamArray = input.data[0];
     const pokemonData = input.data[1];
-    var uniqueTypesOnlyToggle = true;
+    var uniqueTypesOnlyToggle = input.data[2];
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
