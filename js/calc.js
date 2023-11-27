@@ -30,17 +30,14 @@ onmessage = (input) => {
         };
     });
 
-    
-    //removes duplicate pokemon
+    //removes duplicate weakness arrays
     let duplicateWeaknessRemove = new Map();
     notInTeam.forEach((pokemon) => duplicateWeaknessRemove.set(pokemon.join(), pokemon));
     const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
     
-    
-    
     //gets an array of all possible remaining team combinations
     const possibleCombos = (combo(notInTeamUnique, emptySlots, emptySlots));
-    //adds data for current team members and possible team members to each combo entry
+
     for (let i = 0; i < possibleCombos.length; i++) {
         //adds current team weakness data
         for (let teamSize = currentTeamArray.length - 1; teamSize > -1; teamSize--) {
@@ -62,10 +59,7 @@ onmessage = (input) => {
                     possibleCombos[i][0][x].push(pokemon);
                 };
             });
-        };  
-    };
-
-    for (let i = 0; i < possibleCombos.length; i++) {
+        };
         //calculates each possible team's overall type weaknesses and resists
         let totalWeaknesses = 0;
         let combinedTeamWeakness = 0;
@@ -117,7 +111,7 @@ onmessage = (input) => {
         //adds team weaknesses, resists and coverage data to the relevant entry in the possible combos array
         possibleCombos[i].unshift({"total_weaknesses": totalWeaknesses, "total_type_coverage": totalTypeCoverage, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray, "coverage_array": combinedTypeCoverageArray});
     };
-
+    
     //sorts possible combos array by total weaknesses and resists
     possibleCombos.sort((a, b) => {
         if (a[0].total_weaknesses === b[0].total_weaknesses && a[0].total_type_coverage === b[0].total_type_coverage && a[0].type_weaknesses === b[0].type_weaknesses) {
@@ -131,17 +125,42 @@ onmessage = (input) => {
         }
     });
 
+    /*
+    //
+    for (let i = 0; i < possibleCombos.length; i++) {
+        //
+        const allTeamMembers = possibleCombos[i][0].flat();
+        const nameCheck = [];
+        allTeamMembers.forEach(pokemon => {
+            nameCheck.push(pokemon[1].name)
+        });
+        
+        nameCheck.sort((a, b) => {return a - b});
+        possibleCombos[i].push(nameCheck);
+        for (let x = 0; x < nameCheck.length; x++) {
+            if (nameCheck[x] === nameCheck[x + 1]) {
+                possibleCombos.splice(i, 1);
+                i--;
+            };
+        };
+    };
+    */
+    
     //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main.js
     //if there is a team where the total weaknesses <= size of current team, returns all team combos weaknesses <= size of current team
     //e.g. for 2 chosen team members, returns all teams with total weaknesses <= 2
     //otherwise removes all teams with more weaknesses than the best team
     let a = possibleCombos.findIndex((element) => element[0].type_weaknesses > currentTeamArray.length)
     if (a >= 0) {
-        postMessage(possibleCombos.splice(0, a));
+        const finalCombos = possibleCombos.splice(0, a);
+        removeDuplicatePokemon (finalCombos);
+        postMessage(finalCombos);
     } else {
         let bestTeamWeaknesses = possibleCombos[0][0].type_weaknesses
         let b = possibleCombos.findIndex((element) => element[0].type_weaknesses > bestTeamWeaknesses);
-        postMessage(possibleCombos.splice(0, b));
+        const finalCombos = possibleCombos.splice(0, b);
+        removeDuplicatePokemon (finalCombos);
+        postMessage(finalCombos);
     };
 };
 
@@ -180,3 +199,21 @@ function arraysEqual(a, b) {
     }
     return true;
 };
+
+function removeDuplicatePokemon (teams) {
+    for (let i = 0; i < teams.length; i++) {
+        const allTeamMembers = teams[i][1].flat();
+        const nameCheck = [];
+        allTeamMembers.forEach(pokemon => {
+            nameCheck.push(pokemon[1].name)
+        });
+        nameCheck.sort();
+        for (let x = 0; x < nameCheck.length; x++) {
+            if (nameCheck[x] === nameCheck[x + 1]) {
+                teams[i].push("test")
+                teams.splice(i, 1);
+                i--;
+            };
+        };
+    };
+}
