@@ -2,6 +2,7 @@ onmessage = (input) => {
     //processes input (current team array & pokemon data) from worker.postmessage into variables used in calculator
     const currentTeamArray = input.data[0];
     const pokemonData = input.data[1];
+    var uniqueTypesOnlyToggle = true;
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
@@ -34,7 +35,7 @@ onmessage = (input) => {
     let duplicateWeaknessRemove = new Map();
     notInTeam.forEach((pokemon) => duplicateWeaknessRemove.set(pokemon.join(), pokemon));
     const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
-    
+
     //gets an array of all possible remaining team combinations
     const possibleCombos = (combo(notInTeamUnique, emptySlots, emptySlots));
 
@@ -87,7 +88,7 @@ onmessage = (input) => {
                 ++combinedTeamResist;
             };
         };
-        
+
         //calculates each possible team's overall type coverage
         let totalTypeCoverage = 0;
         let combinedTypeCoverageArray = [];
@@ -109,9 +110,9 @@ onmessage = (input) => {
             };
         };
         //adds team weaknesses, resists and coverage data to the relevant entry in the possible combos array
-        possibleCombos[i].unshift({"total_weaknesses": totalWeaknesses, "total_type_coverage": totalTypeCoverage, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray, "coverage_array": combinedTypeCoverageArray});
+        possibleCombos[i].unshift({ "total_weaknesses": totalWeaknesses, "total_type_coverage": totalTypeCoverage, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray, "coverage_array": combinedTypeCoverageArray });
     };
-    
+
     //sorts possible combos array by total weaknesses and resists
     possibleCombos.sort((a, b) => {
         if (a[0].total_weaknesses === b[0].total_weaknesses && a[0].total_type_coverage === b[0].total_type_coverage && a[0].type_weaknesses === b[0].type_weaknesses) {
@@ -125,27 +126,6 @@ onmessage = (input) => {
         }
     });
 
-    /*
-    //
-    for (let i = 0; i < possibleCombos.length; i++) {
-        //
-        const allTeamMembers = possibleCombos[i][0].flat();
-        const nameCheck = [];
-        allTeamMembers.forEach(pokemon => {
-            nameCheck.push(pokemon[1].name)
-        });
-        
-        nameCheck.sort((a, b) => {return a - b});
-        possibleCombos[i].push(nameCheck);
-        for (let x = 0; x < nameCheck.length; x++) {
-            if (nameCheck[x] === nameCheck[x + 1]) {
-                possibleCombos.splice(i, 1);
-                i--;
-            };
-        };
-    };
-    */
-    
     //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main.js
     //if there is a team where the total weaknesses <= size of current team, returns all team combos weaknesses <= size of current team
     //e.g. for 2 chosen team members, returns all teams with total weaknesses <= 2
@@ -153,13 +133,19 @@ onmessage = (input) => {
     let a = possibleCombos.findIndex((element) => element[0].type_weaknesses > currentTeamArray.length)
     if (a >= 0) {
         const finalCombos = possibleCombos.splice(0, a);
-        removeDuplicatePokemon (finalCombos);
+        removeDuplicatePokemon(finalCombos);
+        if (uniqueTypesOnlyToggle == true) {
+            uniqueTypesOnly(finalCombos);
+        };
         postMessage(finalCombos);
     } else {
         let bestTeamWeaknesses = possibleCombos[0][0].type_weaknesses
         let b = possibleCombos.findIndex((element) => element[0].type_weaknesses > bestTeamWeaknesses);
         const finalCombos = possibleCombos.splice(0, b);
-        removeDuplicatePokemon (finalCombos);
+        removeDuplicatePokemon(finalCombos);
+        if (uniqueTypesOnlyToggle == true) {
+            uniqueTypesOnly(finalCombos);
+        };
         postMessage(finalCombos);
     };
 };
@@ -193,14 +179,14 @@ var combo = function (a, min, max) {
 function arraysEqual(a, b) {
     if (a === b) return true;
     if (a == null || b == null) return false;
-    if (a.length !== b.length) return false;  
+    if (a.length !== b.length) return false;
     for (var i = 0; i < a.length; ++i) {
-      if (a[i] !== b[i]) return false;
+        if (a[i] !== b[i]) return false;
     }
     return true;
 };
 
-function removeDuplicatePokemon (teams) {
+function removeDuplicatePokemon(teams) {
     for (let i = 0; i < teams.length; i++) {
         const allTeamMembers = teams[i][1].flat();
         const nameCheck = [];
@@ -216,4 +202,26 @@ function removeDuplicatePokemon (teams) {
             };
         };
     };
-}
+};
+
+function uniqueTypesOnly(teams) {
+    const forbiddenTypes = [];
+    for (let team = 0; team < teams.length; team++) {
+        forbiddenTypes.length = 0;
+        let removeTeam = false;
+        for (let i = 0; i < teams[team][1].length; i++) {
+            forbiddenTypes.push(teams[team][1][i][0][1].pokemon_type);
+        }
+        const typeCompareList = (forbiddenTypes.flat().sort());
+        teams[team].push(typeCompareList);
+        for (let type = 0; type < typeCompareList.length; type++) {
+            if (typeCompareList[type] == typeCompareList[type + 1]) {
+                removeTeam = true;
+            }
+        }
+        if (removeTeam == true) {
+            teams.splice(team, 1);
+            team--;
+        };
+    };
+};
