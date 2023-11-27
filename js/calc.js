@@ -5,8 +5,10 @@ onmessage = (input) => {
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
+    const notInTeamData = [];
     inTeam.length = 0;
     notInTeam.length = 0;
+    notInTeamData.length = 0;
     //gets number of empty slots in team
     let emptySlots = 6 - currentTeamArray.length;
     //gets names of all pokemon in team
@@ -23,26 +25,46 @@ onmessage = (input) => {
             !pokemon[0].includes(inTeam[4]) &&
             !pokemon[0].includes(inTeam[5])
         ) {
-            notInTeam.push(pokemon);
+            notInTeamData.push(pokemon);
+            notInTeam.push(pokemon[1].weakness_array);
         };
     });
 
     
-    //removes duplicate weaknesses
+    //removes duplicate pokemon
     let duplicateWeaknessRemove = new Map();
-    notInTeam.forEach((pokemon) => duplicateWeaknessRemove.set(pokemon[1].weakness_array.join(), pokemon));
+    notInTeam.forEach((pokemon) => duplicateWeaknessRemove.set(pokemon.join(), pokemon));
     const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
+    
     
     
     //gets an array of all possible remaining team combinations
     const possibleCombos = (combo(notInTeamUnique, emptySlots, emptySlots));
-    //adds current team members to start of array to create a full team for each possible combo
+    //adds data for current team members and possible team members to each combo entry
     for (let i = 0; i < possibleCombos.length; i++) {
+        //adds current team weakness data
         for (let teamSize = currentTeamArray.length - 1; teamSize > -1; teamSize--) {
-            possibleCombos[i].unshift(currentTeamArray[teamSize]);
+            possibleCombos[i].unshift(currentTeamArray[teamSize][1].weakness_array);
         };
+        //adds current team data to self contained team data array
+        possibleCombos[i].unshift([]);
+        for (let teamSize = 0; teamSize < currentTeamArray.length; teamSize++) {
+            possibleCombos[i][0].push([]);
+            possibleCombos[i][0][teamSize].push(currentTeamArray[teamSize]);
+        };
+        //moves full team weakness data to self contained team weaknesses array
+        possibleCombos[i][1] = possibleCombos[i].splice(1, 6);
+        //gets data of all pokemon that match the weakness arrays of possible team members and adds them to team data array
+        for (let x = possibleCombos[i][0].length; x < possibleCombos[i][1].length; x++) {
+            possibleCombos[i][0][x] = [];
+            notInTeamData.forEach(pokemon => {
+                if (arraysEqual(pokemon[1].weakness_array, possibleCombos[i][1][x]) == true) {
+                    possibleCombos[i][0][x].push(pokemon);
+                };
+            });
+        };  
     };
-    
+
     for (let i = 0; i < possibleCombos.length; i++) {
         //calculates each possible team's overall type weaknesses and resists
         let totalWeaknesses = 0;
@@ -50,14 +72,14 @@ onmessage = (input) => {
         let combinedTeamResist = 0;
         let combinedTeamWeaknessArray = [];
         combinedTeamWeaknessArray.length = 0;
-        for (let type = 0; type < possibleCombos[i][0][1].weakness_array.length; type++) {
+        for (let type = 0; type < possibleCombos[i][1][0].length; type++) {
             combinedTeamWeaknessArray.push(0);
         };
-        for (let teamSize = 0; teamSize < possibleCombos[i].length; teamSize++) {
+        for (let teamSize = 0; teamSize < possibleCombos[i][1].length; teamSize++) {
             for (let type = 0; type < combinedTeamWeaknessArray.length; type++) {
-                if (possibleCombos[i][teamSize][1].weakness_array[type] > 1) {
+                if (possibleCombos[i][1][teamSize][type] > 1) {
                     combinedTeamWeaknessArray[type] = ++combinedTeamWeaknessArray[type];
-                } else if (possibleCombos[i][teamSize][1].weakness_array[type] < 1) {
+                } else if (possibleCombos[i][1][teamSize][type] < 1) {
                     combinedTeamWeaknessArray[type] = --combinedTeamWeaknessArray[type];
                 };
             };
@@ -71,16 +93,17 @@ onmessage = (input) => {
                 ++combinedTeamResist;
             };
         };
+        
         //calculates each possible team's overall type coverage
         let totalTypeCoverage = 0;
         let combinedTypeCoverageArray = [];
         combinedTypeCoverageArray.length = 0;
-        for (let type = 0; type < possibleCombos[i][0][1].coverage_array.length; type++) {
+        for (let type = 0; type < possibleCombos[i][0][0][0][1].coverage_array.length; type++) {
             combinedTypeCoverageArray.push(0);
         };
-        for (let teamSize = 0; teamSize < possibleCombos[i].length; teamSize++) {
+        for (let teamSize = 0; teamSize < possibleCombos[i][0].length; teamSize++) {
             for (let type = 0; type < combinedTypeCoverageArray.length; type++) {
-                if (possibleCombos[i][teamSize][1].coverage_array[type] > 0) {
+                if (possibleCombos[i][0][teamSize][0][1].coverage_array[type] > 0) {
                     combinedTypeCoverageArray[type] = ++combinedTypeCoverageArray[type];
                 };
             };
@@ -92,7 +115,7 @@ onmessage = (input) => {
             };
         };
         //adds team weaknesses, resists and coverage data to the relevant entry in the possible combos array
-        possibleCombos[i].unshift({"coverage_array": combinedTypeCoverageArray, "total_type_coverage": totalTypeCoverage, "total_weaknesses": totalWeaknesses, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray });
+        possibleCombos[i].unshift({"total_weaknesses": totalWeaknesses, "total_type_coverage": totalTypeCoverage, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray, "coverage_array": combinedTypeCoverageArray});
     };
 
     //sorts possible combos array by total weaknesses and resists
@@ -107,6 +130,7 @@ onmessage = (input) => {
             return a[0].total_weaknesses - b[0].total_weaknesses;
         }
     });
+
     //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main.js
     //if there is a team where the total weaknesses <= size of current team, returns all team combos weaknesses <= size of current team
     //e.g. for 2 chosen team members, returns all teams with total weaknesses <= 2
@@ -145,4 +169,14 @@ var combo = function (a, min, max) {
     }
     if (a.length == max) all.push(a);
     return all;
+};
+
+function arraysEqual(a, b) {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    if (a.length !== b.length) return false;  
+    for (var i = 0; i < a.length; ++i) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
 };
