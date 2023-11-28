@@ -164,7 +164,7 @@ onmessage = (input) => {
             return a[0].total_weaknesses - b[0].total_weaknesses;
         }
     });
-    //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main.js
+    //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main js file
     //if there is a team where the total weaknesses <= size of current team, returns all team combos weaknesses <= size of current team
     //e.g. for 2 chosen team members, returns all teams with total weaknesses <= 2
     //otherwise removes all teams with more weaknesses than the best team
@@ -198,7 +198,7 @@ onmessage = (input) => {
     if (onlyOneStarterToggle == true) {
         finalCombos = starterFilterPostSort(finalCombos, currentTeamArray);
     }
-    //post final results back to main.js
+    //post final results back to main js file
     console.log(finalCombos);
 };
 

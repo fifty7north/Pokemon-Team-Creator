@@ -5,6 +5,7 @@
     --ui_light: #ECECEC;
     --ui-mid: #7F7F7F;
     --ui_dark: #111111;
+    --ui_settings: #222222;
     /*Type colours*/
     --normal: #A8A77A;
     --fire: #EE8130;
@@ -225,24 +226,46 @@ Main page elements
     .settings-menu {
         height: fit-content;
         margin: 16px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 8px;
 
-        .setting {
-            display: flex;
-            justify-content: space-between;
-            font: 1em 'Poppins';
-            font-weight: 500;
-            color: white;
+        .setting-group {
+            width: calc(100% - 16px);
+            padding: 8px;
+            border-radius: 8px;
+            background-color: var(--ui_settings);
 
-            & p {
-                margin-left: 16px;
-                flex-grow: 1;
+            & h1 {
+                font: 1.5em 'Poppins';
+                font-weight: 700;
+                color: white;
                 text-align: center;
             }
 
-            & input {
-                margin-right: 16px;
+            .setting {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font: 1em 'Poppins';
+                font-weight: 500;
+                color: white;
+
+                & p {
+                    width: calc(100% - 60px);
+                    margin: 0.5em 0px;
+                    text-align: left;
+                }
+
+                & input {
+                    width: 60px;
+                    height: 30px;
+                }
             }
         }
+
     }
 }
 
@@ -497,6 +520,14 @@ Media query for laptop/desktop
                         font-size: 1em;
                     }
                 }
+            }
+        }
+
+        .settings-menu {
+            flex-direction: row;
+
+            .setting-group {
+                width: 30%;
             }
         }
     }
