@@ -388,28 +388,57 @@ function updateTeamWeakness() {
  */
 
 //default states
-var uniqueTypesOnly = false;
-var onlyOneStarter = false;
+var generationResults = true;
+var generation1 = true;
+var generation2 = true;
+var generation3 = true;
+var generation4 = true;
 var versionExclusiveResults = true;
 var nonExclusive = true;
 var diamondExclusive = true;
 var pearlExclusive = true;
 var platinumExclusive = true;
-
-document.getElementById("setting-unique-types-only").addEventListener("click", () => {if (uniqueTypesOnly == false) {uniqueTypesOnly = true;} else {uniqueTypesOnly = false;}});
-document.getElementById("setting-only-one-starter").addEventListener("click", () => {if (onlyOneStarter == false) {onlyOneStarter = true;} else {onlyOneStarter = false;}});
-document.getElementById("setting-version-exclusive-teams").addEventListener("click", () => {if (versionExclusiveResults == false) {versionExclusiveResults = true;} else {versionExclusiveResults = false;}});
-document.getElementById("setting-all-games").addEventListener("click", () => {if (nonExclusive == false) {nonExclusive = true;} else {nonExclusive = false;}});
-document.getElementById("setting-diamond-exclusive").addEventListener("click", () => {if (diamondExclusive == false) {diamondExclusive = true;} else {diamondExclusive = false;}});
-document.getElementById("setting-pearl-exclusive").addEventListener("click", () => {if (pearlExclusive == false) {pearlExclusive = true;} else {pearlExclusive = false;}});
-document.getElementById("setting-platinum-exclusive").addEventListener("click", () => {if (platinumExclusive == false) {platinumExclusive = true;} else {platinumExclusive = false;}});
-
+var noLegendaries = false;
+var noTradeEvolve = false;
+var uniqueTypesOnly = false;
+var onlyOneStarter = false;
+//settings buttons listeners that toggle settings to true and false
+document.getElementById("setting-generation-1").addEventListener("click", () => { if (generation1 == false) { generation1 = true; } else { generation1 = false; } });
+document.getElementById("setting-generation-2").addEventListener("click", () => { if (generation2 == false) { generation2 = true; } else { generation2 = false; } });
+document.getElementById("setting-generation-3").addEventListener("click", () => { if (generation3 == false) { generation3 = true; } else { generation3 = false; } });
+document.getElementById("setting-generation-4").addEventListener("click", () => { if (generation4 == false) { generation4 = true; } else { generation4 = false; } });
+document.getElementById("setting-all-games").addEventListener("click", () => { if (nonExclusive == false) { nonExclusive = true; } else { nonExclusive = false; } });
+document.getElementById("setting-diamond-exclusive").addEventListener("click", () => { if (diamondExclusive == false) { diamondExclusive = true; } else { diamondExclusive = false; } });
+document.getElementById("setting-pearl-exclusive").addEventListener("click", () => { if (pearlExclusive == false) { pearlExclusive = true; } else { pearlExclusive = false; } });
+document.getElementById("setting-platinum-exclusive").addEventListener("click", () => { if (platinumExclusive == false) { platinumExclusive = true; } else { platinumExclusive = false; } });
+document.getElementById("setting-no-legendaries").addEventListener("click", () => { if (noLegendaries == false) { noLegendaries = true; } else { noLegendaries = false; } });
+document.getElementById("setting-no-trade-evolve").addEventListener("click", () => { if (noTradeEvolve == false) { noTradeEvolve = true; } else { noTradeEvolve = false; } });
+document.getElementById("setting-unique-types-only").addEventListener("click", () => { if (uniqueTypesOnly == false) { uniqueTypesOnly = true; } else { uniqueTypesOnly = false; } });
+document.getElementById("setting-only-one-starter").addEventListener("click", () => { if (onlyOneStarter == false) { onlyOneStarter = true; } else { onlyOneStarter = false; } });
+//show/hide pokemon from specific generation
+document.getElementById("setting-generation-1").addEventListener("click", () => { generationCheck(1, generation1) });
+document.getElementById("setting-generation-2").addEventListener("click", () => { generationCheck(2, generation2) });
+document.getElementById("setting-generation-3").addEventListener("click", () => { generationCheck(3, generation3) });
+document.getElementById("setting-generation-4").addEventListener("click", () => { generationCheck(4, generation4) });
+function generationCheck(generationFilter, settingToggleStatus) {
+    Object.entries(pokemonData).forEach(pokemon => {
+        var generation = pokemon[1]["debut_generation"];
+        if (generation == generationFilter && settingToggleStatus == false) {
+            pokemon[1].hidden_settings[0] = true;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+        } else if (generation == generationFilter && settingToggleStatus == true) {
+            pokemon[1].hidden_settings[0] = false;
+            let check = false;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+        }
+    });
+}
 //show/hide version exclusive pokemon
-document.getElementById("setting-all-games").addEventListener("click", () => {versionCheck("all", nonExclusive)});
-document.getElementById("setting-diamond-exclusive").addEventListener("click", () => {versionCheck("diamond", diamondExclusive)});
-document.getElementById("setting-pearl-exclusive").addEventListener("click", () => {versionCheck("pearl", pearlExclusive)});
-document.getElementById("setting-platinum-exclusive").addEventListener("click", () => {versionCheck("platinum", platinumExclusive)});
-
+document.getElementById("setting-all-games").addEventListener("click", () => { versionCheck("all", nonExclusive) });
+document.getElementById("setting-diamond-exclusive").addEventListener("click", () => { versionCheck("diamond", diamondExclusive) });
+document.getElementById("setting-pearl-exclusive").addEventListener("click", () => { versionCheck("pearl", pearlExclusive) });
+document.getElementById("setting-platinum-exclusive").addEventListener("click", () => { versionCheck("platinum", platinumExclusive) });
 function versionCheck(versionSetting, settingVariable) {
     Object.entries(pokemonData).forEach(pokemon => {
         let pokemonVersion = pokemon[1].version;
@@ -423,13 +452,48 @@ function versionCheck(versionSetting, settingVariable) {
             }
         })
         if (pokemon[1].version_setting_value == 0) {
-            document.getElementById(pokemon[0]).classList.add("result-hidden");
+            pokemon[1].hidden_settings[1] = true;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
         } else {
-            document.getElementById(pokemon[0]).classList.remove("result-hidden");
+            pokemon[1].hidden_settings[1] = false;
+            let check = false;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
         }
     });
 }
-
+//
+document.getElementById("setting-no-legendaries").addEventListener("click", () => { legendaryCheck(noLegendaries) });
+function legendaryCheck(settingToggleStatus) {
+    Object.entries(pokemonData).forEach(pokemon => {
+        var legendaryCheck = pokemon[1]["legendary/mythic"];
+        if (legendaryCheck == true && settingToggleStatus == true) {
+            pokemon[1].hidden_settings[2] = true;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+        } else if (legendaryCheck == true && settingToggleStatus == false) {
+            pokemon[1].hidden_settings[2] = false;
+            let check = false;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+        }
+    });
+}
+//
+document.getElementById("setting-no-trade-evolve").addEventListener("click", () => { tradeEvolveCheck(noTradeEvolve) });
+function tradeEvolveCheck(settingToggleStatus) {
+    Object.entries(pokemonData).forEach(pokemon => {
+        var tradeEvolveCheck = pokemon[1]["trade_evolution"];
+        if (tradeEvolveCheck == true && settingToggleStatus == true) {
+            pokemon[1].hidden_settings[3] = true;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+        } else if (tradeEvolveCheck == true && settingToggleStatus == false) {
+            pokemon[1].hidden_settings[3] = false;
+            let check = false;
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+        }
+    });
+}
 
 /**
  * 
@@ -441,7 +505,7 @@ const worker = new Worker("./js/calc.js");
 document.querySelector(".calculate-button").addEventListener("click", function () {
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
-        var currentSettings = [uniqueTypesOnly, onlyOneStarter, versionExclusiveResults];
+        var currentSettings = [uniqueTypesOnly, onlyOneStarter];
         document.querySelector(".create-team-section").style.display = "none";
         document.querySelector(".loading-screen").style.display = "block";
         console.log(currentSettings);

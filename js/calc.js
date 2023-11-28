@@ -1,17 +1,16 @@
 onmessage = (input) => {
-    
-/**
- * 
- * Create array of all possible combos
- * 
- */
+
+    /**
+     * 
+     * Create array of all possible combos
+     * 
+     */
 
     //processes input (current team array & pokemon data) from worker.postmessage into variables used in calculator
     const currentTeamArray = input.data[0];
     const pokemonData = input.data[1];
     var uniqueTypesOnlyToggle = input.data[2][0];
     var onlyOneStarterToggle = input.data[2][1];
-    var versionExclusiveResultsToggle = input.data[2][2];
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
@@ -40,15 +39,21 @@ onmessage = (input) => {
             settingsFilter.push(pokemon);
         };
     });
+    //primary pokemon filter for generation, version, legendary/mythic status & trade evolution
+    for (let i = 0; i < settingsFilter.length; i++) {
+        let usePokemon = true;
+        settingsFilter[i][1].hidden_settings.forEach(setting => { if (setting == true) { usePokemon = false } });
+        if (usePokemon == false) {
+            settingsFilter.splice(settingsFilter.indexOf(settingsFilter[i]), 1);
+            i--;
+        }
+    }
     //various settings to filter certain types of pokemon
     if (uniqueTypesOnlyToggle == true) {
         settingsFilter = uniqueTypesOnly(currentTeamArray, settingsFilter);
     };
     if (onlyOneStarterToggle == true) {
         settingsFilter = starterFilter(currentTeamArray, settingsFilter);
-    }
-    if (versionExclusiveResultsToggle == true) {
-        settingsFilter = versionFilter(settingsFilter);
     }
     //
     for (let i = 0; i < settingsFilter.length; i++) {
@@ -58,15 +63,15 @@ onmessage = (input) => {
     //removes duplicate weakness arrays
     let duplicateWeaknessRemove = new Map();
     notInTeam.forEach((pokemon) => duplicateWeaknessRemove.set(pokemon.join(), pokemon));
-    const notInTeamUnique = Array.from(duplicateWeaknessRemove.values()); 
+    const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
     //gets an array of all possible remaining team combinations
     const possibleCombos = (combo(notInTeamUnique, emptySlots, emptySlots));
 
-/**
- * 
- * Adds data to each possible team combo, such as team weaknesses, resists and coverage
- * 
- */
+    /**
+     * 
+     * Adds data to each possible team combo, such as team weaknesses, resists and coverage
+     * 
+     */
 
     for (let i = 0; i < possibleCombos.length; i++) {
         //adds current team weakness data
@@ -141,11 +146,11 @@ onmessage = (input) => {
         possibleCombos[i].unshift({ "total_weaknesses": totalWeaknesses, "total_type_coverage": totalTypeCoverage, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray, "coverage_array": combinedTypeCoverageArray });
     };
 
-/**
- * 
- * Organise and further filter possible team combos
- * 
- */
+    /**
+     * 
+     * Organise and further filter possible team combos
+     * 
+     */
 
     //sorts possible combos array by total weaknesses and resists
     possibleCombos.sort((a, b) => {
@@ -203,7 +208,7 @@ onmessage = (input) => {
  * 
  */
 
-function uniqueTypesOnly (inTeam, notInTeam) {
+function uniqueTypesOnly(inTeam, notInTeam) {
     let inTeamTypes = [];
     inTeam.forEach(pokemon => {
         inTeamTypes.push(pokemon[1].pokemon_type)
@@ -226,7 +231,7 @@ function uniqueTypesOnly (inTeam, notInTeam) {
     return notInTeam;
 }
 
-function uniqueTypesOnlyPostSort (listOfTeams, currentTeam) {
+function uniqueTypesOnlyPostSort(listOfTeams, currentTeam) {
     for (let i = 0; i < listOfTeams.length; i++) {
         let removeTeam = false;
         let notInTeam = [];
@@ -237,7 +242,7 @@ function uniqueTypesOnlyPostSort (listOfTeams, currentTeam) {
         for (let j = 0; j < notInTeam.length; j++) {
             if (notInTeam[j] == notInTeam[j + 1]) {
                 removeTeam = true;
-            }            
+            }
         }
         if (removeTeam == true) {
             listOfTeams.splice(i, 1);
@@ -247,7 +252,7 @@ function uniqueTypesOnlyPostSort (listOfTeams, currentTeam) {
     return listOfTeams;
 }
 
-function starterFilter (inTeam, notInTeam) {
+function starterFilter(inTeam, notInTeam) {
     let starterInTeamCheck = false;
     for (let i = 0; i < inTeam.length; i++) {
         if (inTeam[i][1].starter == true) {
@@ -265,7 +270,7 @@ function starterFilter (inTeam, notInTeam) {
     return notInTeam;
 }
 
-function starterFilterPostSort (listOfTeams, currentTeam) {
+function starterFilterPostSort(listOfTeams, currentTeam) {
     for (let i = 0; i < listOfTeams.length; i++) {
         let notInTeam = [];
         notInTeam.length = 0;
@@ -285,16 +290,6 @@ function starterFilterPostSort (listOfTeams, currentTeam) {
         }
     }
     return listOfTeams;
-}
-
-function versionFilter (listOfPokemon) {
-    for (let i = 0; i < listOfPokemon.length; i++) {
-        if (listOfPokemon[i][1].version_setting_value == 0) {
-            listOfPokemon.splice(i, 1);
-            i--;
-        }
-    }
-    return listOfPokemon;
 }
 
 //function that combines, link @https://github.com/firstandthird/combinations, credit to the following:

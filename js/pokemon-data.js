@@ -7,11 +7,12 @@ export default {
         "pokemon_type": ["grass", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": true,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "infernape": {
         "region_pokedex_id": 6,
@@ -21,11 +22,12 @@ export default {
         "pokemon_type": ["fire", "fighting"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": true,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "empoleon": {
         "region_pokedex_id": 9,
@@ -35,11 +37,12 @@ export default {
         "pokemon_type": ["water", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": true,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "staraptor": {
         "region_pokedex_id": 12,
@@ -49,11 +52,12 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "bibarel": {
         "region_pokedex_id": 14,
@@ -63,11 +67,12 @@ export default {
         "pokemon_type": ["normal", "water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "kricketune": {
         "region_pokedex_id": 16,
@@ -77,11 +82,12 @@ export default {
         "pokemon_type": ["bug"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "luxray": {
         "region_pokedex_id": 19,
@@ -91,11 +97,12 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "alakazam": {
         "region_pokedex_id": 22,
@@ -105,11 +112,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "gyarados": {
         "region_pokedex_id": 24,
@@ -119,11 +127,12 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "roserade": {
         "region_pokedex_id": 27,
@@ -133,11 +142,12 @@ export default {
         "pokemon_type": ["grass", "poison"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "crobat": {
         "region_pokedex_id": 30,
@@ -147,11 +157,12 @@ export default {
         "pokemon_type": ["poison", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "golem": {
         "region_pokedex_id": 33,
@@ -161,11 +172,12 @@ export default {
         "pokemon_type": ["rock", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "steelix": {
         "region_pokedex_id": 35,
@@ -175,11 +187,12 @@ export default {
         "pokemon_type": ["steel", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "rampardos": {
         "region_pokedex_id": 37,
@@ -189,11 +202,12 @@ export default {
         "pokemon_type": ["rock"],
         "ability_weakness_modifier": "none",
         "version": ["diamond", "platinum"],
-        "version_setting_value": 2,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 2,
+        "hidden_settings": [false, false, false, false]
     },
     "bastiodon": {
         "region_pokedex_id": 39,
@@ -203,11 +217,12 @@ export default {
         "pokemon_type": ["rock", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["pearl", "platinum"],
-        "version_setting_value": 2,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 2,
+        "hidden_settings": [false, false, false, false]
     },
     "machamp": {
         "region_pokedex_id": 42,
@@ -217,11 +232,12 @@ export default {
         "pokemon_type": ["fighting"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "golduck": {
         "region_pokedex_id": 44,
@@ -231,11 +247,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "wormadam (plant cloak)": {
         "region_pokedex_id": 46,
@@ -245,11 +262,12 @@ export default {
         "pokemon_type": ["bug", "grass"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "wormadam (sandy cloak)": {
         "region_pokedex_id": 46,
@@ -259,11 +277,12 @@ export default {
         "pokemon_type": ["bug", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "wormadam (trash cloak)": {
         "region_pokedex_id": 46,
@@ -273,11 +292,12 @@ export default {
         "pokemon_type": ["bug", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "mothim": {
         "region_pokedex_id": 47,
@@ -287,11 +307,12 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "beautifly": {
         "region_pokedex_id": 50,
@@ -301,11 +322,12 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "dustox": {
         "region_pokedex_id": 52,
@@ -315,11 +337,12 @@ export default {
         "pokemon_type": ["bug", "poison"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "vespiquen": {
         "region_pokedex_id": 54,
@@ -329,11 +352,12 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "pachirisu": {
         "region_pokedex_id": 55,
@@ -343,11 +367,12 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "floatzel": {
         "region_pokedex_id": 57,
@@ -357,11 +382,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "cherrim": {
         "region_pokedex_id": 59,
@@ -371,11 +397,12 @@ export default {
         "pokemon_type": ["grass"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "gastrodon": {
         "region_pokedex_id": 61,
@@ -385,11 +412,12 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "heracross": {
         "region_pokedex_id": 62,
@@ -399,11 +427,12 @@ export default {
         "pokemon_type": ["bug", "fighting"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "ambipom": {
         "region_pokedex_id": 64,
@@ -413,11 +442,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "drifblim": {
         "region_pokedex_id": 66,
@@ -427,11 +457,12 @@ export default {
         "pokemon_type": ["ghost", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "lopunny": {
         "region_pokedex_id": 68,
@@ -441,11 +472,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "gengar": {
         "region_pokedex_id": 71,
@@ -455,11 +487,12 @@ export default {
         "pokemon_type": ["ghost", "poison"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "mismagius": {
         "region_pokedex_id": 73,
@@ -469,11 +502,12 @@ export default {
         "pokemon_type": ["ghost"],
         "ability_weakness_modifier": "levitate",
         "version": ["pearl"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "honchkrow": {
         "region_pokedex_id": 75,
@@ -483,11 +517,12 @@ export default {
         "pokemon_type": ["dark", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["diamond"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "purugly": {
         "region_pokedex_id": 77,
@@ -497,11 +532,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["pearl"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "purugly (thick fat)": {
         "region_pokedex_id": 77,
@@ -511,11 +547,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "thick fat",
         "version": ["pearl"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "seaking": {
         "region_pokedex_id": 79,
@@ -525,11 +562,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "whiscash": {
         "region_pokedex_id": 81,
@@ -539,11 +577,12 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "chimecho": {
         "region_pokedex_id": 83,
@@ -553,11 +592,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "skuntank": {
         "region_pokedex_id": 85,
@@ -567,11 +607,12 @@ export default {
         "pokemon_type": ["poison", "dark"],
         "ability_weakness_modifier": "none",
         "version": ["diamond"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "medicham": {
         "region_pokedex_id": 87,
@@ -581,11 +622,12 @@ export default {
         "pokemon_type": ["fighting", "psychic"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "bronzong": {
         "region_pokedex_id": 89,
@@ -595,11 +637,12 @@ export default {
         "pokemon_type": ["steel", "psychic"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "bronzong (levitate)": {
         "region_pokedex_id": 89,
@@ -609,11 +652,12 @@ export default {
         "pokemon_type": ["steel", "psychic"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "bronzong (heatproof)": {
         "region_pokedex_id": 89,
@@ -623,11 +667,12 @@ export default {
         "pokemon_type": ["steel", "psychic"],
         "ability_weakness_modifier": "heatproof",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "rapidash": {
         "region_pokedex_id": 91,
@@ -637,11 +682,12 @@ export default {
         "pokemon_type": ["fire"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     /*
     "rapidash (flash fire)": {
@@ -652,11 +698,12 @@ export default {
         "pokemon_type": ["fire"],
         "ability_weakness_modifier": "flash fire",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     */
     "sudowoodo": {
@@ -667,11 +714,12 @@ export default {
         "pokemon_type": ["rock"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "mr. mime": {
         "region_pokedex_id": 95,
@@ -681,11 +729,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "blissey": {
         "region_pokedex_id": 98,
@@ -695,11 +744,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "clefable": {
         "region_pokedex_id": 101,
@@ -709,11 +759,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "chatot": {
         "region_pokedex_id": 102,
@@ -723,11 +774,12 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "raichu": {
         "region_pokedex_id": 105,
@@ -737,11 +789,12 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "noctowl": {
         "region_pokedex_id": 107,
@@ -751,11 +804,12 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "spiritomb": {
         "region_pokedex_id": 108,
@@ -765,11 +819,12 @@ export default {
         "pokemon_type": ["ghost", "dark"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "garchomp": {
         "region_pokedex_id": 111,
@@ -779,11 +834,12 @@ export default {
         "pokemon_type": ["dragon", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "snorlax": {
         "region_pokedex_id": 113,
@@ -793,11 +849,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "snorlax (thick fat)": {
         "region_pokedex_id": 113,
@@ -807,11 +864,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "thick fat",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "unown": {
         "region_pokedex_id": 114,
@@ -821,11 +879,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "lucario": {
         "region_pokedex_id": 116,
@@ -835,11 +894,12 @@ export default {
         "pokemon_type": ["fighting", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "quagsire": {
         "region_pokedex_id": 118,
@@ -849,11 +909,12 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "quagsire (water absorb)": {
         "region_pokedex_id": 118,
@@ -863,11 +924,12 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "water absorb",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "pelipper": {
         "region_pokedex_id": 120,
@@ -877,11 +939,12 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "girafarig": {
         "region_pokedex_id": 121,
@@ -891,11 +954,12 @@ export default {
         "pokemon_type": ["normal", "psychic"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "hippowdon": {
         "region_pokedex_id": 123,
@@ -905,11 +969,12 @@ export default {
         "pokemon_type": ["ground"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "azumarill": {
         "region_pokedex_id": 126,
@@ -919,11 +984,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     /*
     "azumarill (thick fat)": {
@@ -934,11 +1000,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "thick fat",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     */
     "drapion": {
@@ -949,11 +1016,12 @@ export default {
         "pokemon_type": ["poison", "dark"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "toxicroak": {
         "region_pokedex_id": 130,
@@ -963,11 +1031,12 @@ export default {
         "pokemon_type": ["poison", "fighting"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "toxicroak (dry skin)": {
         "region_pokedex_id": 130,
@@ -977,11 +1046,12 @@ export default {
         "pokemon_type": ["poison", "fighting"],
         "ability_weakness_modifier": "dry skin",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "carnivine": {
         "region_pokedex_id": 131,
@@ -991,11 +1061,12 @@ export default {
         "pokemon_type": ["grass"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "octillery": {
         "region_pokedex_id": 133,
@@ -1005,11 +1076,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "lumineon": {
         "region_pokedex_id": 135,
@@ -1019,11 +1091,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "tentacruel": {
         "region_pokedex_id": 137,
@@ -1033,11 +1106,12 @@ export default {
         "pokemon_type": ["water", "poison"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "milotic": {
         "region_pokedex_id": 139,
@@ -1047,11 +1121,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "mantine": {
         "region_pokedex_id": 141,
@@ -1061,11 +1136,12 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     /*
     "mantine (water absorb)": {
@@ -1076,11 +1152,12 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "water absorb",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     */
     "abomasnow": {
@@ -1091,11 +1168,12 @@ export default {
         "pokemon_type": ["grass", "ice"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "weavile": {
         "region_pokedex_id": 145,
@@ -1105,11 +1183,12 @@ export default {
         "pokemon_type": ["dark", "ice"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "uxie": {
         "region_pokedex_id": 146,
@@ -1119,11 +1198,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "mesprit": {
         "region_pokedex_id": 147,
@@ -1133,11 +1213,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "azelf": {
         "region_pokedex_id": 148,
@@ -1147,11 +1228,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "dialga": {
         "region_pokedex_id": 149,
@@ -1161,11 +1243,12 @@ export default {
         "pokemon_type": ["steel", "dragon"],
         "ability_weakness_modifier": "none",
         "version": ["diamond", "platinum"],
-        "version_setting_value": 2,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 2,
+        "hidden_settings": [false, false, false, false]
     },
     "palkia": {
         "region_pokedex_id": 150,
@@ -1175,11 +1258,12 @@ export default {
         "pokemon_type": ["water", "dragon"],
         "ability_weakness_modifier": "none",
         "version": ["pearl", "platinum"],
-        "version_setting_value": 2,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 2,
+        "hidden_settings": [false, false, false, false]
     },
     "manaphy": {
         "region_pokedex_id": 151,
@@ -1189,11 +1273,12 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": ["all"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "rotom": {
         "region_pokedex_id": 152,
@@ -1203,11 +1288,12 @@ export default {
         "pokemon_type": ["electric", "ghost"],
         "ability_weakness_modifier": "levitate",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "gliscor": {
         "region_pokedex_id": 154,
@@ -1217,11 +1303,12 @@ export default {
         "pokemon_type": ["ground", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "probopass": {
         "region_pokedex_id": 156,
@@ -1231,11 +1318,12 @@ export default {
         "pokemon_type": ["rock", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "gardevoir": {
         "region_pokedex_id": 159,
@@ -1245,11 +1333,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "gallade": {
         "region_pokedex_id": 160,
@@ -1259,11 +1348,12 @@ export default {
         "pokemon_type": ["psychic", "fighting"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "lickilicky": {
         "region_pokedex_id": 162,
@@ -1273,25 +1363,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
-    },
-    "eevee": {
-        "region_pokedex_id": 163,
-        "national_pokedex_id": 133,
-        "variant_id": 0,
-        "name": "Eevee",
-        "pokemon_type": ["normal"],
-        "ability_weakness_modifier": "none",
-        "version": ["platinum"],
+        "trade_evolution": false,
         "version_setting_value": 1,
-        "debut generation": 1,
-        "starter": false,
-        "legendary/mythic": false,
-        "trade evolution": false
+        "hidden_settings": [false, false, false, false]
     },
     "vaporeon": {
         "region_pokedex_id": 164,
@@ -1299,13 +1376,14 @@ export default {
         "variant_id": 0,
         "name": "Vaporeon",
         "pokemon_type": ["water"],
-        "ability_weakness_modifier": "water absorb",
+        "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "jolteon": {
         "region_pokedex_id": 165,
@@ -1313,13 +1391,14 @@ export default {
         "variant_id": 0,
         "name": "Jolteon",
         "pokemon_type": ["electric"],
-        "ability_weakness_modifier": "volt absorb",
+        "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "flareon": {
         "region_pokedex_id": 166,
@@ -1327,13 +1406,14 @@ export default {
         "variant_id": 0,
         "name": "Flareon",
         "pokemon_type": ["fire"],
-        "ability_weakness_modifier": "flash fire",
+        "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 1,
+        "debut_generation": 1,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "espeon": {
         "region_pokedex_id": 167,
@@ -1343,11 +1423,12 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "umbreon": {
         "region_pokedex_id": 168,
@@ -1357,11 +1438,12 @@ export default {
         "pokemon_type": ["dark"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "leafeon": {
         "region_pokedex_id": 169,
@@ -1371,11 +1453,12 @@ export default {
         "pokemon_type": ["grass"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "glaceon": {
         "region_pokedex_id": 170,
@@ -1385,11 +1468,12 @@ export default {
         "pokemon_type": ["ice"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "altaria": {
         "region_pokedex_id": 172,
@@ -1399,11 +1483,12 @@ export default {
         "pokemon_type": ["dragon", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "togekiss": {
         "region_pokedex_id": 175,
@@ -1413,11 +1498,12 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "houndoom": {
         "region_pokedex_id": 177,
@@ -1427,11 +1513,12 @@ export default {
         "pokemon_type": ["dark", "fire"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     /*
     "houndoom (flash fire)": {
@@ -1442,11 +1529,12 @@ export default {
         "pokemon_type": ["dark", "fire"],
         "ability_weakness_modifier": "flash fire",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     */
     "magnezone": {
@@ -1457,11 +1545,12 @@ export default {
         "pokemon_type": ["electric", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "tangrowth": {
         "region_pokedex_id": 182,
@@ -1471,11 +1560,12 @@ export default {
         "pokemon_type": ["grass"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "yanmega": {
         "region_pokedex_id": 184,
@@ -1485,11 +1575,12 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "tropius": {
         "region_pokedex_id": 185,
@@ -1499,11 +1590,12 @@ export default {
         "pokemon_type": ["grass", "flying"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "rhyperior": {
         "region_pokedex_id": 188,
@@ -1513,11 +1605,12 @@ export default {
         "pokemon_type": ["ground", "rock"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "dusknoir": {
         "region_pokedex_id": 191,
@@ -1527,11 +1620,12 @@ export default {
         "pokemon_type": ["ghost"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "porygon-z": {
         "region_pokedex_id": 194,
@@ -1541,11 +1635,12 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "scizor": {
         "region_pokedex_id": 196,
@@ -1555,11 +1650,12 @@ export default {
         "pokemon_type": ["bug", "steel"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 2,
+        "debut_generation": 2,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "electivire": {
         "region_pokedex_id": 199,
@@ -1569,11 +1665,12 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "motor drive",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "magmortar": {
         "region_pokedex_id": 202,
@@ -1583,11 +1680,12 @@ export default {
         "pokemon_type": ["fire"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": true
+        "trade_evolution": true,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "mamoswine": {
         "region_pokedex_id": 205,
@@ -1597,11 +1695,12 @@ export default {
         "pokemon_type": ["ice", "ground"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "glalie": {
         "region_pokedex_id": 207,
@@ -1611,11 +1710,12 @@ export default {
         "pokemon_type": ["ice"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "froslass": {
         "region_pokedex_id": 208,
@@ -1625,11 +1725,12 @@ export default {
         "pokemon_type": ["ice", "ghost"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "absol": {
         "region_pokedex_id": 209,
@@ -1639,11 +1740,12 @@ export default {
         "pokemon_type": ["dark"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 3,
+        "debut_generation": 3,
         "starter": false,
         "legendary/mythic": false,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "giratina": {
         "region_pokedex_id": 210,
@@ -1653,11 +1755,12 @@ export default {
         "pokemon_type": ["ghost", "dragon"],
         "ability_weakness_modifier": "none",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
     "giratina (origin forme)": {
         "region_pokedex_id": 210,
@@ -1667,10 +1770,11 @@ export default {
         "pokemon_type": ["ghost", "dragon"],
         "ability_weakness_modifier": "levitate",
         "version": ["platinum"],
-        "version_setting_value": 1,
-        "debut generation": 4,
+        "debut_generation": 4,
         "starter": false,
         "legendary/mythic": true,
-        "trade evolution": false
+        "trade_evolution": false,
+        "version_setting_value": 1,
+        "hidden_settings": [false, false, false, false]
     },
 };
