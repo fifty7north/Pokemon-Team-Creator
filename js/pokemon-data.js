@@ -643,6 +643,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    /*
     "rapidash (flash fire)": {
         "region_pokedex_id": 91,
         "national_pokedex_id": 78,
@@ -657,6 +658,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    */
     "sudowoodo": {
         "region_pokedex_id": 93,
         "national_pokedex_id": 185,
@@ -923,6 +925,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    /*
     "azumarill (thick fat)": {
         "region_pokedex_id": 126,
         "national_pokedex_id": 184,
@@ -937,6 +940,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    */
     "drapion": {
         "region_pokedex_id": 128,
         "national_pokedex_id": 452,
@@ -1063,6 +1067,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    /*
     "mantine (water absorb)": {
         "region_pokedex_id": 141,
         "national_pokedex_id": 226,
@@ -1077,6 +1082,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    */
     "abomasnow": {
         "region_pokedex_id": 143,
         "national_pokedex_id": 460,
@@ -1427,6 +1433,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    /*
     "houndoom (flash fire)": {
         "region_pokedex_id": 177,
         "national_pokedex_id": 229,
@@ -1441,6 +1448,7 @@ export default {
         "legendary/mythic": false,
         "trade evolution": false
     },
+    */
     "magnezone": {
         "region_pokedex_id": 180,
         "national_pokedex_id": 462,
