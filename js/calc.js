@@ -273,7 +273,6 @@ function starterFilterPostSort (listOfTeams, currentTeam) {
             notInTeam.push(listOfTeams[i][1][j])
         }
         notInTeam = notInTeam.flat();
-        listOfTeams[i].push(notInTeam);
         let starterCount = 0;
         notInTeam.forEach(pokemon => {
             if (pokemon[1].starter == true) {

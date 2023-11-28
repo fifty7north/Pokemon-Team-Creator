@@ -53,34 +53,30 @@ Object.entries(pokemonData).forEach(entry => {
 
 //adjust pokemon weakness values where necessary according to ability
 function abilityWeaknessModifier(entry) {
-    if (entry[1].ability_weakness_modifier == "none") {
-        //if pokemon does not have an ability that modifies weakness, do nothing
-    } else if (entry[1].ability_weakness_modifier == "dry skin") {
-        //if pokemon has flash fire ability, negates water damage and slightly increases fire damage (1.25x)
+    if (entry[1].ability_weakness_modifier == "none") {//if pokemon does not have an ability that modifies weakness, do nothing
+    } else if (entry[1].ability_weakness_modifier == "dry skin") {//if pokemon has dry skin ability, negates water damage and slightly increases fire damage (1.25x)
         let fireWeakness = (entry[1].weakness_array[1]) * 1.25;
         let waterWeakness = (entry[1].weakness_array[2]) * 0;
         entry[1].weakness_array[1] = fireWeakness;
         entry[1].weakness_array[2] = waterWeakness;
-    } else if (entry[1].ability_weakness_modifier == "flash fire") {
-        //if pokemon has flash fire ability, negates fire damage
+    } else if (entry[1].ability_weakness_modifier == "flash fire") {//if pokemon has flash fire ability, negates fire damage
         let fireWeakness = (entry[1].weakness_array[1]) * 0;
         entry[1].weakness_array[1] = fireWeakness;
-    } else if (entry[1].ability_weakness_modifier == "heatproof") {
-        //if pokemon has heatproof ability, halves fire weakness
+    } else if (entry[1].ability_weakness_modifier == "heatproof") {//if pokemon has heatproof ability, halves fire weakness
         let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
         entry[1].weakness_array[1] = fireWeakness;
-    } else if (entry[1].ability_weakness_modifier == "levitate") {
-        //if pokemon has levitate ability, negates ground weakness
+    } else if (entry[1].ability_weakness_modifier == "levitate") {//if pokemon has levitate ability, negates ground weakness
         let groundWeakness = (entry[1].weakness_array[8]) * 0;
         entry[1].weakness_array[8] = groundWeakness;
-    } else if (entry[1].ability_weakness_modifier == "thick fat") {
-        //if pokemon has levitate ability, halves fire and ice weakness
+    } else if (entry[1].ability_weakness_modifier == "motor drive" || entry[1].ability_weakness_modifier == "volt absorb") {//if pokemon has motor drive or volt absorb ability, negates electric weakness
+        let electricWeakness = (entry[1].weakness_array[3]) * 0;
+        entry[1].weakness_array[3] = electricWeakness;
+    } else if (entry[1].ability_weakness_modifier == "thick fat") {//if pokemon has thick fat ability, halves fire and ice weakness
         let fireWeakness = (entry[1].weakness_array[1]) * 0.5;
         let iceWeakness = (entry[1].weakness_array[1]) * 0.5;
         entry[1].weakness_array[1] = fireWeakness;
         entry[1].weakness_array[5] = iceWeakness;
-    } else if (entry[1].ability_weakness_modifier == "water absorb") {
-        //if pokemon has levitate ability, negates water weakness
+    } else if (entry[1].ability_weakness_modifier == "water absorb") {//if pokemon has water absorb ability, negates water weakness
         let waterWeakness = (entry[1].weakness_array[2]) * 0;
         entry[1].weakness_array[2] = waterWeakness;
     };
