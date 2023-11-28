@@ -409,6 +409,8 @@ document.querySelector(".calculate-button").addEventListener("click", function (
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
         var currentSettings = [uniqueTypesOnly, onlyOneStarter];
+        document.querySelector(".create-team-section").style.display = "none";
+        document.querySelector(".loading-screen").style.display = "block";
         console.log(currentSettings);
         worker.postMessage([currentTeamArray, pokemonData, currentSettings]);
     } else {
