@@ -247,7 +247,7 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
         let id = pokedexButton.id;
         if (currentTeamArray.length < 6) {
             //If current team has < 6 pokemon, hides the clicked pokedex entry in the pokemon list
-            document.getElementById(id).classList.add("in-team");
+            document.getElementById(id).classList.add("result-hidden");
         } else {
             //If current team has >= 6 pokemon, displays error message on screen
             alert("Team slots already filled");
@@ -276,7 +276,7 @@ document.querySelectorAll(".team-member-button").forEach(teamMember => {
         let pokemonID = (teamMember.parentElement.getAttribute("pokemon"));
         if (pokemonID !== "") {
             //unhides the pokemon clicked in the pokemon list
-            document.getElementById(pokemonID).classList.remove("in-team");
+            document.getElementById(pokemonID).classList.remove("result-hidden");
             //if the team slot is not empty, gets the team member slot number and splices that number from the current team array
             let id = teamMember.parentElement.getAttribute("id");
             let teamMemberNum = id.substring(id.length - 1);
@@ -394,9 +394,46 @@ function updateTeamWeakness() {
 //default states
 var uniqueTypesOnly = false;
 var onlyOneStarter = false;
+var versionExclusiveResults = true;
+var nonExclusive = true;
+var diamondExclusive = true;
+var pearlExclusive = true;
+var platinumExclusive = true;
 
 document.getElementById("setting-unique-types-only").addEventListener("click", () => {if (uniqueTypesOnly == false) {uniqueTypesOnly = true;} else {uniqueTypesOnly = false;}});
 document.getElementById("setting-only-one-starter").addEventListener("click", () => {if (onlyOneStarter == false) {onlyOneStarter = true;} else {onlyOneStarter = false;}});
+document.getElementById("setting-version-exclusive-teams").addEventListener("click", () => {if (versionExclusiveResults == false) {versionExclusiveResults = true;} else {versionExclusiveResults = false;}});
+document.getElementById("setting-all-games").addEventListener("click", () => {if (nonExclusive == false) {nonExclusive = true;} else {nonExclusive = false;}});
+document.getElementById("setting-diamond-exclusive").addEventListener("click", () => {if (diamondExclusive == false) {diamondExclusive = true;} else {diamondExclusive = false;}});
+document.getElementById("setting-pearl-exclusive").addEventListener("click", () => {if (pearlExclusive == false) {pearlExclusive = true;} else {pearlExclusive = false;}});
+document.getElementById("setting-platinum-exclusive").addEventListener("click", () => {if (platinumExclusive == false) {platinumExclusive = true;} else {platinumExclusive = false;}});
+
+//show/hide version exclusive pokemon
+document.getElementById("setting-all-games").addEventListener("click", () => {versionCheck("all", nonExclusive)});
+document.getElementById("setting-diamond-exclusive").addEventListener("click", () => {versionCheck("diamond", diamondExclusive)});
+document.getElementById("setting-pearl-exclusive").addEventListener("click", () => {versionCheck("pearl", pearlExclusive)});
+document.getElementById("setting-platinum-exclusive").addEventListener("click", () => {versionCheck("platinum", platinumExclusive)});
+
+function versionCheck(versionSetting, settingVariable) {
+    Object.entries(pokemonData).forEach(pokemon => {
+        let pokemonVersion = pokemon[1].version;
+        pokemonVersion.forEach(version => {
+            if (version == versionSetting) {
+                if (settingVariable == false) {
+                    --pokemon[1].version_setting_value;
+                } else {
+                    ++pokemon[1].version_setting_value;
+                }
+            }
+        })
+        if (pokemon[1].version_setting_value == 0) {
+            document.getElementById(pokemon[0]).classList.add("result-hidden");
+        } else {
+            document.getElementById(pokemon[0]).classList.remove("result-hidden");
+        }
+    });
+}
+
 
 /**
  * 
@@ -408,7 +445,7 @@ const worker = new Worker("./js/calc.js");
 document.querySelector(".calculate-button").addEventListener("click", function () {
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
-        var currentSettings = [uniqueTypesOnly, onlyOneStarter];
+        var currentSettings = [uniqueTypesOnly, onlyOneStarter, versionExclusiveResults];
         document.querySelector(".create-team-section").style.display = "none";
         document.querySelector(".loading-screen").style.display = "block";
         console.log(currentSettings);

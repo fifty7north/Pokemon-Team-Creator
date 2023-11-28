@@ -11,6 +11,7 @@ onmessage = (input) => {
     const pokemonData = input.data[1];
     var uniqueTypesOnlyToggle = input.data[2][0];
     var onlyOneStarterToggle = input.data[2][1];
+    var versionExclusiveResultsToggle = input.data[2][2];
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
@@ -45,6 +46,9 @@ onmessage = (input) => {
     };
     if (onlyOneStarterToggle == true) {
         settingsFilter = starterFilter(currentTeamArray, settingsFilter);
+    }
+    if (versionExclusiveResultsToggle == true) {
+        settingsFilter = versionFilter(settingsFilter);
     }
     //
     for (let i = 0; i < settingsFilter.length; i++) {
@@ -211,16 +215,16 @@ function uniqueTypesOnly (inTeam, notInTeam) {
             inTeamTypes.forEach(inTeamType => {
                 if (inTeamType == notInTeamType) {
                     removePokemon = true;
-                };
+                }
             });
         });
         if (removePokemon == true) {
             notInTeam.splice(i, 1);
             i--;
-        };
-    };
+        }
+    }
     return notInTeam;
-};
+}
 
 function uniqueTypesOnlyPostSort (listOfTeams, currentTeam) {
     for (let i = 0; i < listOfTeams.length; i++) {
@@ -241,25 +245,25 @@ function uniqueTypesOnlyPostSort (listOfTeams, currentTeam) {
         }
     }
     return listOfTeams;
-};
+}
 
 function starterFilter (inTeam, notInTeam) {
     let starterInTeamCheck = false;
     for (let i = 0; i < inTeam.length; i++) {
-        if (inTeam[i][1].starter == "true") {
+        if (inTeam[i][1].starter == true) {
             starterInTeamCheck = true;
-        };
-    };
+        }
+    }
     if (starterInTeamCheck == true) {
         for (let i = 0; i < notInTeam.length; i++) {
-            if (notInTeam[i][1].starter == "true") {
+            if (notInTeam[i][1].starter == true) {
                 notInTeam.splice(i, 1);
                 i--;
-            };
-        };
-    };
+            }
+        }
+    }
     return notInTeam;
-};
+}
 
 function starterFilterPostSort (listOfTeams, currentTeam) {
     for (let i = 0; i < listOfTeams.length; i++) {
@@ -272,7 +276,7 @@ function starterFilterPostSort (listOfTeams, currentTeam) {
         listOfTeams[i].push(notInTeam);
         let starterCount = 0;
         notInTeam.forEach(pokemon => {
-            if (pokemon[1].starter == "true") {
+            if (pokemon[1].starter == true) {
                 starterCount++;
             }
         });
@@ -282,6 +286,16 @@ function starterFilterPostSort (listOfTeams, currentTeam) {
         }
     }
     return listOfTeams;
+}
+
+function versionFilter (listOfPokemon) {
+    for (let i = 0; i < listOfPokemon.length; i++) {
+        if (listOfPokemon[i][1].version_setting_value == 0) {
+            listOfPokemon.splice(i, 1);
+            i--;
+        }
+    }
+    return listOfPokemon;
 }
 
 //function that combines, link @https://github.com/firstandthird/combinations, credit to the following:

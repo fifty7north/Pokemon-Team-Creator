@@ -83,7 +83,7 @@ Main page elements
     margin: 16px;
 }
 
-.in-team {
+.result-hidden {
     display: none;
 }
 
@@ -223,7 +223,8 @@ Main page elements
     }
 
     .settings-menu {
-        height: 100px;
+        height: fit-content;
+        margin: 16px;
 
         .setting {
             display: flex;
