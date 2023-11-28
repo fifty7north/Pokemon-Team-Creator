@@ -1,17 +1,27 @@
 onmessage = (input) => {
+    
+/**
+ * 
+ * Create array of all possible combos
+ * 
+ */
+
     //processes input (current team array & pokemon data) from worker.postmessage into variables used in calculator
     const currentTeamArray = input.data[0];
     const pokemonData = input.data[1];
-    var uniqueTypesOnlyToggle = input.data[2];
+    var uniqueTypesOnlyToggle = input.data[2][0];
+    var onlyOneStarterToggle = input.data[2][1];
     //defines/resets current inTeam and notInTeam arrays
     const inTeam = [];
     const notInTeam = [];
     const notInTeamData = [];
+    var settingsFilter = [];
     inTeam.length = 0;
     notInTeam.length = 0;
     notInTeamData.length = 0;
+    settingsFilter.length = 0;
     //gets number of empty slots in team
-    let emptySlots = 6 - currentTeamArray.length;
+    const emptySlots = 6 - currentTeamArray.length;
     //gets names of all pokemon in team
     for (let teamSize = 0; teamSize < currentTeamArray.length; teamSize++) {
         inTeam.push(currentTeamArray[teamSize][0]);
@@ -26,18 +36,33 @@ onmessage = (input) => {
             !pokemon[0].includes(inTeam[4]) &&
             !pokemon[0].includes(inTeam[5])
         ) {
-            notInTeamData.push(pokemon);
-            notInTeam.push(pokemon[1].weakness_array);
+            settingsFilter.push(pokemon);
         };
     });
-
+    //various settings to filter certain types of pokemon
+    if (uniqueTypesOnlyToggle == true) {
+        settingsFilter = uniqueTypesOnly(currentTeamArray, settingsFilter);
+    };
+    if (onlyOneStarterToggle == true) {
+        settingsFilter = starterFilter(currentTeamArray, settingsFilter);
+    }
+    //
+    for (let i = 0; i < settingsFilter.length; i++) {
+        notInTeam.push(settingsFilter[i][1].weakness_array);
+        notInTeamData.push(settingsFilter[i]);
+    };
     //removes duplicate weakness arrays
     let duplicateWeaknessRemove = new Map();
     notInTeam.forEach((pokemon) => duplicateWeaknessRemove.set(pokemon.join(), pokemon));
-    const notInTeamUnique = Array.from(duplicateWeaknessRemove.values());
-
+    const notInTeamUnique = Array.from(duplicateWeaknessRemove.values()); 
     //gets an array of all possible remaining team combinations
     const possibleCombos = (combo(notInTeamUnique, emptySlots, emptySlots));
+
+/**
+ * 
+ * Adds data to each possible team combo, such as team weaknesses, resists and coverage
+ * 
+ */
 
     for (let i = 0; i < possibleCombos.length; i++) {
         //adds current team weakness data
@@ -88,7 +113,6 @@ onmessage = (input) => {
                 ++combinedTeamResist;
             };
         };
-
         //calculates each possible team's overall type coverage
         let totalTypeCoverage = 0;
         let combinedTypeCoverageArray = [];
@@ -113,6 +137,12 @@ onmessage = (input) => {
         possibleCombos[i].unshift({ "total_weaknesses": totalWeaknesses, "total_type_coverage": totalTypeCoverage, "type_weaknesses": combinedTeamWeakness, "type_resists": combinedTeamResist, "weakness_array": combinedTeamWeaknessArray, "coverage_array": combinedTypeCoverageArray });
     };
 
+/**
+ * 
+ * Organise and further filter possible team combos
+ * 
+ */
+
     //sorts possible combos array by total weaknesses and resists
     possibleCombos.sort((a, b) => {
         if (a[0].total_weaknesses === b[0].total_weaknesses && a[0].total_type_coverage === b[0].total_type_coverage && a[0].type_weaknesses === b[0].type_weaknesses) {
@@ -125,30 +155,134 @@ onmessage = (input) => {
             return a[0].total_weaknesses - b[0].total_weaknesses;
         }
     });
-
     //removes excess combos by splicing the possible combos array in one of two ways, then posts the resulting array back to main.js
     //if there is a team where the total weaknesses <= size of current team, returns all team combos weaknesses <= size of current team
     //e.g. for 2 chosen team members, returns all teams with total weaknesses <= 2
     //otherwise removes all teams with more weaknesses than the best team
-    let a = possibleCombos.findIndex((element) => element[0].type_weaknesses > currentTeamArray.length)
-    if (a >= 0) {
-        const finalCombos = possibleCombos.splice(0, a);
-        removeDuplicatePokemon(finalCombos);
-        if (uniqueTypesOnlyToggle == true) {
-            uniqueTypesOnly(finalCombos);
-        };
-        postMessage(finalCombos);
+    let a = possibleCombos.findIndex((element) => element[0].type_weaknesses > currentTeamArray.length);
+    if (a > 0) {
+        var finalCombos = possibleCombos.slice(0, a);
     } else {
         let bestTeamWeaknesses = possibleCombos[0][0].type_weaknesses
         let b = possibleCombos.findIndex((element) => element[0].type_weaknesses > bestTeamWeaknesses);
-        const finalCombos = possibleCombos.splice(0, b);
-        removeDuplicatePokemon(finalCombos);
-        if (uniqueTypesOnlyToggle == true) {
-            uniqueTypesOnly(finalCombos);
-        };
-        postMessage(finalCombos);
+        var finalCombos = possibleCombos.slice(0, b);
     };
+    //removes teams with duplicate pokemon (e.g. 2 of the same pokemon with different abilities)
+    finalCombos.forEach(team => {
+        let notInTeam = [];
+        for (let i = currentTeamArray.length; i < team[1].length; i++) {
+            team[1][i].forEach(pokemon => {
+                notInTeam.push(pokemon[1].name)
+            });
+        }
+        notInTeam = notInTeam.flat();
+        for (let i = 0; i < notInTeam.length; i++) {
+            if (notInTeam[i] == notInTeam[i + 1]) {
+                finalCombos.splice(finalCombos.indexOf(team), 1);
+            };
+        };
+    });
+    //various settings
+    if (uniqueTypesOnlyToggle == true) {
+        finalCombos = uniqueTypesOnlyPostSort(finalCombos, currentTeamArray);
+    }
+    if (onlyOneStarterToggle == true) {
+        finalCombos = starterFilterPostSort(finalCombos, currentTeamArray);
+    }
+    //post final results back to main.js
+    console.log(finalCombos);
 };
+
+/**
+ * 
+ * Functions
+ * 
+ */
+
+function uniqueTypesOnly (inTeam, notInTeam) {
+    let inTeamTypes = [];
+    inTeam.forEach(pokemon => {
+        inTeamTypes.push(pokemon[1].pokemon_type)
+    });
+    inTeamTypes = inTeamTypes.flat();
+    for (let i = 0; i < notInTeam.length; i++) {
+        let removePokemon = false;
+        notInTeam[i][1].pokemon_type.forEach(notInTeamType => {
+            inTeamTypes.forEach(inTeamType => {
+                if (inTeamType == notInTeamType) {
+                    removePokemon = true;
+                };
+            });
+        });
+        if (removePokemon == true) {
+            notInTeam.splice(i, 1);
+            i--;
+        };
+    };
+    return notInTeam;
+};
+
+function uniqueTypesOnlyPostSort (listOfTeams, currentTeam) {
+    for (let i = 0; i < listOfTeams.length; i++) {
+        let removeTeam = false;
+        let notInTeam = [];
+        for (let j = currentTeam.length; j < listOfTeams[i][1].length; j++) {
+            notInTeam.push(listOfTeams[i][1][j][0][1].pokemon_type);
+        }
+        notInTeam = notInTeam.flat().sort();
+        for (let j = 0; j < notInTeam.length; j++) {
+            if (notInTeam[j] == notInTeam[j + 1]) {
+                removeTeam = true;
+            }            
+        }
+        if (removeTeam == true) {
+            listOfTeams.splice(i, 1);
+            i--;
+        }
+    }
+    return listOfTeams;
+};
+
+function starterFilter (inTeam, notInTeam) {
+    let starterInTeamCheck = false;
+    for (let i = 0; i < inTeam.length; i++) {
+        if (inTeam[i][1].starter == "true") {
+            starterInTeamCheck = true;
+        };
+    };
+    if (starterInTeamCheck == true) {
+        for (let i = 0; i < notInTeam.length; i++) {
+            if (notInTeam[i][1].starter == "true") {
+                notInTeam.splice(i, 1);
+                i--;
+            };
+        };
+    };
+    return notInTeam;
+};
+
+function starterFilterPostSort (listOfTeams, currentTeam) {
+    for (let i = 0; i < listOfTeams.length; i++) {
+        let notInTeam = [];
+        notInTeam.length = 0;
+        for (let j = currentTeam.length; j < listOfTeams[i][1].length; j++) {
+            notInTeam.push(listOfTeams[i][1][j])
+        }
+        notInTeam = notInTeam.flat();
+        listOfTeams[i].push(notInTeam);
+        let starterCount = 0;
+        notInTeam.forEach(pokemon => {
+            if (pokemon[1].starter == "true") {
+                starterCount++;
+            }
+        });
+        if (starterCount > 1) {
+            listOfTeams.splice(i, 1);
+            i--;
+        }
+    }
+    return listOfTeams;
+}
 
 //function that combines, link @https://github.com/firstandthird/combinations, credit to the following:
 //jgallen23, iX315, andfaulkner: creators/contributors
@@ -184,44 +318,4 @@ function arraysEqual(a, b) {
         if (a[i] !== b[i]) return false;
     }
     return true;
-};
-
-function removeDuplicatePokemon(teams) {
-    for (let i = 0; i < teams.length; i++) {
-        const allTeamMembers = teams[i][1].flat();
-        const nameCheck = [];
-        allTeamMembers.forEach(pokemon => {
-            nameCheck.push(pokemon[1].name)
-        });
-        nameCheck.sort();
-        for (let x = 0; x < nameCheck.length; x++) {
-            if (nameCheck[x] === nameCheck[x + 1]) {
-                teams[i].push("test")
-                teams.splice(i, 1);
-                i--;
-            };
-        };
-    };
-};
-
-function uniqueTypesOnly(teams) {
-    const forbiddenTypes = [];
-    for (let team = 0; team < teams.length; team++) {
-        forbiddenTypes.length = 0;
-        let removeTeam = false;
-        for (let i = 0; i < teams[team][1].length; i++) {
-            forbiddenTypes.push(teams[team][1][i][0][1].pokemon_type);
-        }
-        const typeCompareList = (forbiddenTypes.flat().sort());
-        teams[team].push(typeCompareList);
-        for (let type = 0; type < typeCompareList.length; type++) {
-            if (typeCompareList[type] == typeCompareList[type + 1]) {
-                removeTeam = true;
-            }
-        }
-        if (removeTeam == true) {
-            teams.splice(team, 1);
-            team--;
-        };
-    };
 };

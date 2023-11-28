@@ -7,6 +7,8 @@ export default {
         "pokemon_type": ["grass", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "true",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -18,6 +20,8 @@ export default {
         "pokemon_type": ["fire", "fighting"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "true",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -29,6 +33,8 @@ export default {
         "pokemon_type": ["water", "steel"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "true",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -40,6 +46,8 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -51,6 +59,8 @@ export default {
         "pokemon_type": ["normal", "water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -62,6 +72,8 @@ export default {
         "pokemon_type": ["bug"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -73,6 +85,8 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -84,6 +98,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -95,6 +111,8 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -106,6 +124,8 @@ export default {
         "pokemon_type": ["grass", "poison"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -117,6 +137,8 @@ export default {
         "pokemon_type": ["poison", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -128,6 +150,8 @@ export default {
         "pokemon_type": ["rock", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -139,6 +163,8 @@ export default {
         "pokemon_type": ["steel", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -150,6 +176,8 @@ export default {
         "pokemon_type": ["fighting"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -161,6 +189,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -172,6 +202,8 @@ export default {
         "pokemon_type": ["bug", "grass"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -183,6 +215,8 @@ export default {
         "pokemon_type": ["bug", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -194,6 +228,8 @@ export default {
         "pokemon_type": ["bug", "steel"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -205,6 +241,8 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -216,6 +254,8 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -227,6 +267,8 @@ export default {
         "pokemon_type": ["bug", "poison"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -238,6 +280,8 @@ export default {
         "pokemon_type": ["bug", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -249,6 +293,8 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -260,6 +306,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -271,6 +319,8 @@ export default {
         "pokemon_type": ["grass"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -282,6 +332,8 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -293,6 +345,8 @@ export default {
         "pokemon_type": ["bug", "fighting"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -304,6 +358,8 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -315,6 +371,8 @@ export default {
         "pokemon_type": ["ghost", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -326,6 +384,8 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -337,6 +397,8 @@ export default {
         "pokemon_type": ["ghost", "poison"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -348,6 +410,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -359,6 +423,8 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -370,6 +436,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -381,6 +449,8 @@ export default {
         "pokemon_type": ["fighting", "psychic"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -392,6 +462,8 @@ export default {
         "pokemon_type": ["steel", "psychic"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -403,6 +475,8 @@ export default {
         "pokemon_type": ["steel", "psychic"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -414,6 +488,8 @@ export default {
         "pokemon_type": ["steel", "psychic"],
         "ability_weakness_modifier": "heatproof",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -425,6 +501,8 @@ export default {
         "pokemon_type": ["fire"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -436,6 +514,8 @@ export default {
         "pokemon_type": ["fire"],
         "ability_weakness_modifier": "flash fire",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -447,6 +527,8 @@ export default {
         "pokemon_type": ["rock"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -458,6 +540,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -469,6 +553,8 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -480,6 +566,8 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -491,6 +579,8 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -502,6 +592,8 @@ export default {
         "pokemon_type": ["electric"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -513,6 +605,8 @@ export default {
         "pokemon_type": ["normal", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -524,6 +618,8 @@ export default {
         "pokemon_type": ["ghost", "dark"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -535,6 +631,8 @@ export default {
         "pokemon_type": ["dragon", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -546,6 +644,8 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -557,6 +657,8 @@ export default {
         "pokemon_type": ["normal"],
         "ability_weakness_modifier": "thick fat",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -568,6 +670,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -579,6 +683,8 @@ export default {
         "pokemon_type": ["fighting", "steel"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -590,6 +696,8 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -601,6 +709,8 @@ export default {
         "pokemon_type": ["water", "ground"],
         "ability_weakness_modifier": "water absorb",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -612,6 +722,8 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -623,6 +735,8 @@ export default {
         "pokemon_type": ["normal", "psychic"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -634,6 +748,8 @@ export default {
         "pokemon_type": ["ground"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -645,6 +761,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -656,6 +774,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "thick fat",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -667,6 +787,8 @@ export default {
         "pokemon_type": ["poison", "dark"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -678,6 +800,8 @@ export default {
         "pokemon_type": ["poison", "fighting"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -689,6 +813,8 @@ export default {
         "pokemon_type": ["poison", "fighting"],
         "ability_weakness_modifier": "dry skin",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -700,6 +826,8 @@ export default {
         "pokemon_type": ["grass"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -711,6 +839,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -722,6 +852,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -733,6 +865,8 @@ export default {
         "pokemon_type": ["water", "poison"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -744,6 +878,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "true"
     },
@@ -755,6 +891,8 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -766,6 +904,8 @@ export default {
         "pokemon_type": ["water", "flying"],
         "ability_weakness_modifier": "water absorb",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -777,6 +917,8 @@ export default {
         "pokemon_type": ["grass", "ice"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -788,6 +930,8 @@ export default {
         "pokemon_type": ["dark", "ice"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "false",
         "trade evolution": "false"
     },
@@ -799,6 +943,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "true",
         "trade evolution": "false"
     },
@@ -810,6 +956,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "true",
         "trade evolution": "false"
     },
@@ -821,6 +969,8 @@ export default {
         "pokemon_type": ["psychic"],
         "ability_weakness_modifier": "levitate",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "true",
         "trade evolution": "false"
     },
@@ -832,6 +982,8 @@ export default {
         "pokemon_type": ["water"],
         "ability_weakness_modifier": "none",
         "version": "all",
+        "debut generation": "",
+        "starter": "false",
         "legendary/mythic": "true",
         "trade evolution": "false"
     },

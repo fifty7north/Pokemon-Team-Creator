@@ -393,17 +393,10 @@ function updateTeamWeakness() {
 
 //default states
 var uniqueTypesOnly = false;
+var onlyOneStarter = false;
 
 document.getElementById("setting-unique-types-only").addEventListener("click", () => {if (uniqueTypesOnly == false) {uniqueTypesOnly = true;} else {uniqueTypesOnly = false;}});
-
-function settingsToggle(setting) {
-    if (setting == false) {
-        setting = true;
-    } else {
-        setting = false;
-    };
-    console.log(setting);
-};
+document.getElementById("setting-only-one-starter").addEventListener("click", () => {if (onlyOneStarter == false) {onlyOneStarter = true;} else {onlyOneStarter = false;}});
 
 /**
  * 
@@ -415,7 +408,9 @@ const worker = new Worker("./js/calc.js");
 document.querySelector(".calculate-button").addEventListener("click", function () {
     //checks if there is at least 1 pokemon in the team
     if (currentTeamArray.length > 0) {
-        worker.postMessage([currentTeamArray, pokemonData, uniqueTypesOnly]);
+        var currentSettings = [uniqueTypesOnly, onlyOneStarter];
+        console.log(currentSettings);
+        worker.postMessage([currentTeamArray, pokemonData, currentSettings]);
     } else {
         alert("Please add at least 1 pokémon to the team");
     }
