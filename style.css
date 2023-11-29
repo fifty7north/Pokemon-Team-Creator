@@ -241,7 +241,7 @@ Main page elements
 
 .team-weakness-info,
 .team-coverage-info {
-    width: 50%;
+    width: calc(100% - 32px);
     padding: 16px;
     margin: 0;
     display: flex;
