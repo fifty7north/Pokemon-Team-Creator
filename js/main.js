@@ -2,6 +2,9 @@ import pokemonData from "./pokemon-data.js"
 import typeDataObject from "./type-data.js"
 import coverageDataObject from "./coverage-data.js"
 
+const gamePokemonData = pokemonData["dppt"];
+const gameGeneration = 4;
+
 const typeData = Object.entries(typeDataObject);
 const coverageData = Object.entries(coverageDataObject);
 
@@ -14,7 +17,7 @@ const coverageData = Object.entries(coverageDataObject);
 const pokemonWeakness = [];
 const pokemonCombinedWeakness = [];
 
-Object.entries(pokemonData).forEach(entry => {
+Object.entries(gamePokemonData).forEach(entry => {
     const [, pokemonDataEntries] = entry;
     //for each type the pokemon has, checks through list of all types to find matching types and adds their data to weakness array
     pokemonDataEntries.pokemon_type.forEach(type => {
@@ -91,7 +94,7 @@ function abilityWeaknessModifier(entry) {
 const pokemonCoverage = [];
 const pokemonCombinedCoverage = [];
 
-Object.entries(pokemonData).forEach(entry => {
+Object.entries(gamePokemonData).forEach(entry => {
     const [, pokemonDataEntries] = entry;
     //for each type the pokemon has, checks through list of all types to find matching types and adds their data to weakness array
     pokemonDataEntries.pokemon_type.forEach(type => {
@@ -126,7 +129,29 @@ Object.entries(pokemonData).forEach(entry => {
     pokemonCombinedCoverage.length = 0;
 });
 
-console.log(pokemonData);
+/**
+ * 
+ * Removes types depending on generation
+ * 
+ */
+
+if (gameGeneration >= 2 && gameGeneration <= 5) {
+    Object.entries(gamePokemonData).forEach(pokemon => {
+        pokemon[1].weakness_array.length = 17;
+        pokemon[1].coverage_array.length = 17;
+    });
+    document.querySelectorAll(".fairy").forEach(element => { element.style.display = "none"; });
+} else if (gameGeneration == 1) {
+    Object.entries(gamePokemonData).forEach(pokemon => {
+        pokemon[1].weakness_array.length = 15;
+        pokemon[1].coverage_array.length = 15;
+    });
+    document.querySelectorAll(".dark").forEach(element => { element.style.display = "none"; });
+    document.querySelectorAll(".steel").forEach(element => { element.style.display = "none"; });
+    document.querySelectorAll(".fairy").forEach(element => { element.style.display = "none"; });
+}
+
+console.log(gamePokemonData);
 
 /**
  * 
@@ -156,7 +181,7 @@ const typeColours = [
     ["fairy", "#D685AD"]
 ];
 
-Object.entries(pokemonData).forEach(entry => {
+Object.entries(gamePokemonData).forEach(entry => {
     //creates new list entry and populates it with attributes
     const newPokemonLi = document.createElement("li");
     newPokemonLi.classList.add("pokedex-entry");
@@ -243,12 +268,12 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
         let id = pokedexButton.id;
         if (currentTeamArray.length < 6) {
             //If current team has < 6 pokemon, hides the clicked pokedex entry in the pokemon list
-            document.getElementById(id).classList.add("result-hidden");
+            document.getElementById(id).classList.add("hidden");
         } else {
             //If current team has >= 6 pokemon, displays error message on screen
             alert("Team slots already filled");
         };
-        Object.entries(pokemonData).forEach(entry => {
+        Object.entries(gamePokemonData).forEach(entry => {
             if (entry[0] == id) {
                 //for every entry in pokemon data, checks if the id of the clicked pokedex entry matches an entry
                 //if there is a match, adds that data entry to the current team array
@@ -274,7 +299,7 @@ document.querySelectorAll(".team-member-button").forEach(teamMember => {
         let pokemonID = (teamMember.parentElement.getAttribute("pokemon"));
         if (pokemonID !== "") {
             //unhides the pokemon clicked in the pokemon list
-            document.getElementById(pokemonID).classList.remove("result-hidden");
+            document.getElementById(pokemonID).classList.remove("hidden");
             //if the team slot is not empty, gets the team member slot number and splices that number from the current team array
             let id = teamMember.parentElement.getAttribute("id");
             let teamMemberNum = id.substring(id.length - 1);
@@ -462,16 +487,16 @@ document.getElementById("setting-generation-2").addEventListener("click", () => 
 document.getElementById("setting-generation-3").addEventListener("click", () => { generationCheck(3, generation3) });
 document.getElementById("setting-generation-4").addEventListener("click", () => { generationCheck(4, generation4) });
 function generationCheck(generationFilter, settingToggleStatus) {
-    Object.entries(pokemonData).forEach(pokemon => {
+    Object.entries(gamePokemonData).forEach(pokemon => {
         var generation = pokemon[1]["debut_generation"];
         if (generation == generationFilter && settingToggleStatus == false) {
             pokemon[1].hidden_settings[0] = true;
-            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("hidden") } });
         } else if (generation == generationFilter && settingToggleStatus == true) {
             pokemon[1].hidden_settings[0] = false;
             let check = false;
             pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
-            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("hidden") }
         }
     });
 }
@@ -481,7 +506,7 @@ document.getElementById("setting-diamond-exclusive").addEventListener("click", (
 document.getElementById("setting-pearl-exclusive").addEventListener("click", () => { versionCheck("pearl", pearlExclusive) });
 document.getElementById("setting-platinum-exclusive").addEventListener("click", () => { versionCheck("platinum", platinumExclusive) });
 function versionCheck(versionSetting, settingVariable) {
-    Object.entries(pokemonData).forEach(pokemon => {
+    Object.entries(gamePokemonData).forEach(pokemon => {
         let pokemonVersion = pokemon[1].version;
         pokemonVersion.forEach(version => {
             if (version == versionSetting) {
@@ -494,44 +519,44 @@ function versionCheck(versionSetting, settingVariable) {
         })
         if (pokemon[1].version_setting_value == 0) {
             pokemon[1].hidden_settings[1] = true;
-            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("hidden") } });
         } else {
             pokemon[1].hidden_settings[1] = false;
             let check = false;
             pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
-            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("hidden") }
         }
     });
 }
 //
 document.getElementById("setting-no-legendaries").addEventListener("click", () => { legendaryCheck(noLegendaries) });
 function legendaryCheck(settingToggleStatus) {
-    Object.entries(pokemonData).forEach(pokemon => {
+    Object.entries(gamePokemonData).forEach(pokemon => {
         var legendaryCheck = pokemon[1]["legendary/mythic"];
         if (legendaryCheck == true && settingToggleStatus == true) {
             pokemon[1].hidden_settings[2] = true;
-            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("hidden") } });
         } else if (legendaryCheck == true && settingToggleStatus == false) {
             pokemon[1].hidden_settings[2] = false;
             let check = false;
             pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
-            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("hidden") }
         }
     });
 }
 //
 document.getElementById("setting-no-trade-evolve").addEventListener("click", () => { tradeEvolveCheck(noTradeEvolve) });
 function tradeEvolveCheck(settingToggleStatus) {
-    Object.entries(pokemonData).forEach(pokemon => {
+    Object.entries(gamePokemonData).forEach(pokemon => {
         var tradeEvolveCheck = pokemon[1]["trade_evolution"];
         if (tradeEvolveCheck == true && settingToggleStatus == true) {
             pokemon[1].hidden_settings[3] = true;
-            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("result-hidden") } });
+            pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { document.getElementById(pokemon[0]).classList.add("hidden") } });
         } else if (tradeEvolveCheck == true && settingToggleStatus == false) {
             pokemon[1].hidden_settings[3] = false;
             let check = false;
             pokemon[1].hidden_settings.forEach(setting => { if (setting == true) { check = true } });
-            if (check == false) { document.getElementById(pokemon[0]).classList.remove("result-hidden") }
+            if (check == false) { document.getElementById(pokemon[0]).classList.remove("hidden") }
         }
     });
 }
@@ -549,7 +574,7 @@ document.querySelector(".calculate-button").addEventListener("click", function (
         var currentSettings = [uniqueTypesOnly, onlyOneStarter];
         document.querySelector(".create-team-section").style.display = "none";
         document.querySelector(".loading-screen").style.display = "block";
-        worker.postMessage([currentTeamArray, pokemonData, currentSettings]);
+        worker.postMessage([currentTeamArray, gamePokemonData, currentSettings]);
     } else {
         alert("Please add at least 1 pokémon to the team");
     }
