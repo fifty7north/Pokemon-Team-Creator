@@ -3,9 +3,9 @@
 :root {
     --pokemonRed: #D21E3D;
     --ui_light: #ECECEC;
-    --ui-mid: #7F7F7F;
-    --ui_dark: #111111;
-    --ui_settings: #222222;
+    --ui_dark_1: #111111;
+    --ui_dark_2: #222222;
+    --ui_dark_3: #444444;
     /*Type colours*/
     --normal: #A8A77A;
     --fire: #EE8130;
@@ -49,7 +49,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: var(--pokemonRed);
-    border: 5px solid var(--ui_dark);
+    border: 5px solid var(--ui_dark_1);
     border-left-width: 0;
     border-right-width: 0;
     border-top-width: 0;
@@ -92,7 +92,7 @@ Main page elements
 
 .team-container {
     border-radius: 16px;
-    background-color: var(--ui_dark);
+    background-color: var(--ui_dark_1);
 
     .current-team {
         display: flex;
@@ -105,8 +105,10 @@ Main page elements
         .team-member-entry {
             position: relative;
             width: 96px;
-            margin: 16px 0;
             font-size: 0.75rem;
+            background-color: var(--ui_dark_2);
+            border: 4px solid var(--ui_dark_2);
+            border-radius: 12px 12px 6px 6px;
 
             .team-member-button {
                 position: absolute;
@@ -123,17 +125,18 @@ Main page elements
 
             .team-member-image {
                 width: 100%;
+                background-color: var(--ui_dark_1);
                 border-radius: 8px;
             }
 
             .team-member-info-container {
-                height: 60px;
+                height: 80px;
 
                 .team-member-name {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 60%;
+                    height: 67%;
                     font: 1em 'Poppins';
                     font-weight: 700;
                     color: white;
@@ -142,7 +145,7 @@ Main page elements
 
                 .team-member-type-container {
                     position: relative;
-                    height: 40%;
+                    height: 33%;
 
                     .team-single-type {
                         width: 100%;
@@ -184,13 +187,13 @@ Main page elements
                         }
 
                         .team-duo-type-1 {
-                            border: 2px solid var(--ui_dark);
+                            border: 2px solid var(--ui_dark_2);
                             border-width: 0 2px 0 0;
                             border-radius: 6px 0 0 6px;
                         }
 
                         .team-duo-type-2 {
-                            border: 2px solid var(--ui_dark);
+                            border: 2px solid var(--ui_dark_2);
                             border-width: 0 0 0 2px;
                             border-radius: 0 6px 6px 0;
                         }
@@ -199,89 +202,61 @@ Main page elements
             }
         }
     }
+}
 
-    .team-optimiser-buttons-container {
-        margin: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
+/*Team Optimiser Button*/
 
-        & button {
-            width: 100%;
-            max-width: 344px;
-            background-color: var(--pokemonRed);
-            border: none;
-            border-radius: 8px;
-            font: 400 1.5em 'Pixelify Sans';
-            color: white;
-            text-shadow: 0.1em 0.1em 0 black;
-        }
+.team-optimiser-buttons-container {
+    margin: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 
-        & button:hover {
-            cursor: pointer;
-        }
+    & button {
+        width: 100%;
+        max-width: 344px;
+        background-color: var(--pokemonRed);
+        border: none;
+        border-radius: 8px;
+        font: 400 1.5em 'Pixelify Sans';
+        color: white;
+        text-shadow: 0.1em 0.1em 0 black;
     }
 
-    .settings-menu {
-        height: fit-content;
-        margin: 16px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        flex-direction: column;
-        gap: 8px;
-
-        .setting-group {
-            width: calc(100% - 16px);
-            padding: 8px;
-            border-radius: 8px;
-            background-color: var(--ui_settings);
-
-            & h1 {
-                font: 1.5em 'Poppins';
-                font-weight: 700;
-                color: white;
-                text-align: center;
-            }
-
-            .setting {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font: 1em 'Poppins';
-                font-weight: 500;
-                color: white;
-
-                & p {
-                    width: calc(100% - 60px);
-                    margin: 0.5em 0px;
-                    text-align: left;
-                }
-
-                & input {
-                    width: 60px;
-                    height: 30px;
-                }
-            }
-        }
-
+    & button:hover {
+        cursor: pointer;
     }
 }
 
 /*Type info section elements*/
 
+.team-stats {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    gap: 16px;
+}
+
 .team-type-info {
-    list-style: none;
-    padding: 0;
+    padding: 16px;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     gap: 12px;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: var(--ui_light);
+    background-color: var(--ui_dark_2);
+    border-radius: 8px;
+
+    & h1 {
+        width: 100%;
+        font: 1.5em 'Poppins';
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
 
     .type-indicator-container {
         width: 128px;
@@ -306,7 +281,7 @@ Main page elements
                 width: 5px;
                 border-radius: 5px;
                 height: 100%;
-                background-color: #D9D9D9;
+                background-color: var(--ui_dark_3);
             }
         }
 
@@ -319,7 +294,7 @@ Main page elements
         }
 
         .type-icon-shadow-weak {
-            box-shadow: 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed);
+            box-shadow: 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed);
         }
 
         .type-icon-shadow-resist {
@@ -328,6 +303,53 @@ Main page elements
     }
 }
 
+/*Settings Menu*/
+
+.settings-menu {
+    height: fit-content;
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 16px;
+
+    .setting-group {
+        width: calc(100% - 16px);
+        padding: 8px;
+        flex-grow: 1;
+        border-radius: 8px;
+        background-color: var(--ui_dark_2);
+
+        & h1 {
+            font: 1.5em 'Poppins';
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font: 1em 'Poppins';
+            font-weight: 500;
+            color: white;
+
+            & p {
+                width: calc(100% - 60px);
+                margin: 0.5em 0px;
+                text-align: left;
+            }
+
+            & input {
+                width: 60px;
+                height: 30px;
+            }
+        }
+    }
+
+}
 
 /*Pokemon list section elements*/
 
@@ -373,7 +395,7 @@ Main page elements
             padding: 8px;
             width: 72px;
             height: 72px;
-            border: solid var(--ui_dark) 4px;
+            border: solid var(--ui_dark_1) 4px;
             border-radius: 8px 8px 0 0;
         }
     }
@@ -384,7 +406,7 @@ Main page elements
         width: 96px;
         height: 60px;
         padding: 0;
-        background-color: var(--ui_dark);
+        background-color: var(--ui_dark_1);
         border-radius: 0px 0px 8px 8px;
         font-size: 0.75rem;
 
@@ -406,7 +428,7 @@ Main page elements
             height: 40%;
             justify-content: center;
             align-items: center;
-            border: solid var(--ui_dark) 4px;
+            border: solid var(--ui_dark_1) 4px;
             border-radius: 6px;
             box-sizing: border-box;
             text-align: center;
@@ -440,7 +462,7 @@ Main page elements
 footer {
     width: 100%;
     height: 200px;
-    background-color: var(--ui_dark);
+    background-color: var(--ui_dark_1);
 }
 
 /*Loading Screen*/
@@ -460,7 +482,7 @@ footer {
         flex-direction: column;
         padding: 16px;
         border-radius: 16px;
-        background-color: var(--ui_dark);
+        background-color: var(--ui_dark_1);
 
         .loading-icon {
             height: 128px;
@@ -510,6 +532,7 @@ Media query for laptop/desktop
             .team-member-entry {
                 width: 128px;
                 font-size: 1rem;
+                border-radius: 16px 16px 8px 8px;
 
                 .team-member-image {
                     border-radius: 12px;
@@ -522,13 +545,21 @@ Media query for laptop/desktop
                 }
             }
         }
+    }
 
-        .settings-menu {
-            flex-direction: row;
+    .team-stats {
+        flex-direction: row;
 
-            .setting-group {
-                width: 30%;
-            }
+        .team-type-info {
+            width: 50%;
+        }
+    }
+
+    .settings-menu {
+        flex-direction: row;
+
+        .setting-group {
+            width: 30%;
         }
     }
 
@@ -542,7 +573,7 @@ Media query for laptop/desktop
 
     .pokedex-entry {
         width: 128px;
-        border-radius: 12px;
+        border-radius: 16px;
 
         .pokedex-button {
             width: 128px;
@@ -563,7 +594,7 @@ Media query for laptop/desktop
         .pokemon-info-container {
             width: 128px;
             height: 80px;
-            background-color: var(--ui_dark);
+            background-color: var(--ui_dark_1);
             border-radius: 0px 0px 8px 8px;
             font-size: 1rem;
         }

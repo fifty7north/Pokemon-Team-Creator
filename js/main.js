@@ -331,7 +331,7 @@ function updateTeamWeakness() {
     const teamWeaknessResistNumbered = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     //resets colours in type weakness ui
-    document.querySelectorAll(".type-indicator").forEach(element => { element.style.backgroundColor = "#D9D9D9" });
+    document.querySelectorAll(".type-indicator").forEach(element => { element.style.backgroundColor = "var(--ui_dark_3)" });
 
     currentTeamArray.forEach(entry => {
         //for each team member, push their weakness data to an array with all the team member's weakness data
@@ -548,10 +548,10 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
 document.querySelectorAll(".team-member-entry").forEach(teamMember => {
     teamMember.addEventListener("mouseenter", function () {
         let id = teamMember.id;
-        document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "lightgrey";
+        document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "var(--pokemonRed)";
     });
     teamMember.addEventListener("mouseleave", function () {
         let id = teamMember.id;
-        document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "white";
+        document.getElementById(id).querySelector(".team-member-image").style.backgroundColor = "var(--ui_dark_1)";
     });
 });
