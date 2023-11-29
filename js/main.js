@@ -573,6 +573,7 @@ document.querySelector(".calculate-button").addEventListener("click", function (
     if (currentTeamArray.length > 0) {
         var currentSettings = [uniqueTypesOnly, onlyOneStarter];
         document.querySelector(".create-team-section").style.display = "none";
+        document.querySelector(".footer").style.display = "none";
         document.querySelector(".loading-screen").style.display = "block";
         worker.postMessage([currentTeamArray, gamePokemonData, currentSettings]);
     } else {

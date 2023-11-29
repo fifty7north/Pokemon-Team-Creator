@@ -475,7 +475,7 @@ footer {
 /*Loading Screen*/
 
 .loading-screen {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 55px);
     position: relative;
     display: none;
 
