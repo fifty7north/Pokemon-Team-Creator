@@ -261,6 +261,8 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
                 updateTeamArray();
                 //updates current team weakness data
                 updateTeamWeakness();
+                //updates current team coverage data
+                updateTeamCoverage();
             };
         });
     });
@@ -295,6 +297,8 @@ document.querySelectorAll(".team-member-button").forEach(teamMember => {
             updateTeamArray();
             //updates current team weakness data
             updateTeamWeakness();
+            //updates current team coverage data
+            updateTeamCoverage();
         };
     });
 });
@@ -329,57 +333,96 @@ function updateTeamWeakness() {
     currentTeamWeaknessArrays.length = 0;
     const teamWeaknessResistRaw = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     const teamWeaknessResistNumbered = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
     //resets colours in type weakness ui
-    document.querySelectorAll(".type-indicator").forEach(element => { element.style.backgroundColor = "var(--ui_dark_3)" });
-
+    document.querySelectorAll(".weakness-indicator").forEach(element => { element.style.backgroundColor = "var(--ui_dark_3)" });
+    //for each team member, push their weakness data to an array with all the team member's weakness data
     currentTeamArray.forEach(entry => {
-        //for each team member, push their weakness data to an array with all the team member's weakness data
         currentTeamWeaknessArrays.push(entry[1].weakness_array);
-    });
-
+    })
+    //
     for (let teamSize = 0; teamSize < currentTeamWeaknessArrays.length; teamSize++) {
         //for each type weakness, calculate the overall team's weakness to that by multiplying all team's weakness to that type together
         //store each of these values in an array with the whole team's average type weakness
         for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
             teamWeaknessResistRaw[type] = teamWeaknessResistRaw[type] * currentTeamWeaknessArrays[teamSize][type]
-        };
-
+        }
         //for each type, sets the corresponding value in the teamWeaknessResistNumbered array to 1 or -1 depending on if the team overall is weak to or resists that type respectively
         for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
             if (currentTeamWeaknessArrays[teamSize][type] > 1) {
                 teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] + 1;
             } else if (currentTeamWeaknessArrays[teamSize][type] < 1) {
                 teamWeaknessResistNumbered[type] = teamWeaknessResistNumbered[type] - 1;
-            };
-        };
-
+            }
+        }
         //for each type indicator, sets the value of each type indicator in the type weakness ui to green or red if a pokemon in the team resists or is weak to a type respectively
         for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
-            let typeIndicator = document.getElementById(type + "-type-indicator-" + (teamSize + 1));
+            let typeIndicator = document.getElementById(type + "-weakness-indicator-" + (teamSize + 1));
             if (currentTeamArray[teamSize][1].weakness_array[type] > 1) {
                 typeIndicator.style.backgroundColor = "var(--pokemonRed)";
             } else if (currentTeamArray[teamSize][1].weakness_array[type] < 1) {
                 typeIndicator.style.backgroundColor = "var(--grass)";
-            };
-        };
-    };
-
-    //for total team weakness, sets green/red icon around type icon in type weakness ui depending on if the team on average resists or is weak to that type respectively
+            }
+        }
+    }
+    //for total team weakness, sets green/red around type icon in type weakness ui depending on if the team on average resists or is weak to that type respectively
     for (let type = 0; type < teamWeaknessResistRaw.length; type++) {
-        let shadow = document.getElementById(type + "-icon-shadow");
+        let shadow = document.getElementById(type + "-icon-shadow-weakness");
         if (teamWeaknessResistNumbered[type] > 0) {
-            shadow.classList.add("type-icon-shadow-weak");
-            shadow.classList.remove("type-icon-shadow-resist");
+            shadow.classList.add("weakness-icon-shadow-weak");
+            //shadow.classList.remove("weakness-icon-shadow-resist");
         } else if (teamWeaknessResistNumbered[type] < 0) {
-            shadow.classList.remove("type-icon-shadow-weak");
-            shadow.classList.add("type-icon-shadow-resist");
+            shadow.classList.remove("weakness-icon-shadow-weak");
+            //shadow.classList.add("weakness-icon-shadow-resist");
         } else {
-            shadow.classList.remove("type-icon-shadow-weak");
-            shadow.classList.remove("type-icon-shadow-resist");
-        };
-    };
-};
+            shadow.classList.remove("weakness-icon-shadow-weak");
+            //shadow.classList.remove("weakness-icon-shadow-resist");
+        }
+    }
+}
+
+function updateTeamCoverage() {
+    //
+    const currentTeamCoverageArrays = [];
+    const totalTeamCoverageArrays = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    currentTeamCoverageArrays.length = 0;
+    //resets colours in type weakness ui
+    document.querySelectorAll(".coverage-indicator").forEach(element => { element.style.backgroundColor = "var(--ui_dark_3)" });
+    //for each team member, push their coverage data to an array with all the team member's weakness data
+    currentTeamArray.forEach(entry => {
+        currentTeamCoverageArrays.push(entry[1].coverage_array);
+    })
+    //for each type indicator, sets the value of each type indicator in the type weakness ui to green if a pokemon in the team has coverage against it
+    for (let i = 0; i < currentTeamCoverageArrays.length; i++) {
+        for (let type = 0; type < currentTeamCoverageArrays[i].length; type++) {
+            let typeIndicator = document.getElementById(type + "-coverage-indicator-" + (i + 1));
+            if (currentTeamCoverageArrays[i][type] == 1) {
+                typeIndicator.style.backgroundColor = "var(--grass)";
+            }
+        }
+    }
+    //calculates total team type coverage
+    for (let i = 0; i < currentTeamCoverageArrays.length; i++) {
+        for (let type = 0; type < currentTeamCoverageArrays[i].length; type++) {
+            totalTeamCoverageArrays[type] = totalTeamCoverageArrays[type] + currentTeamCoverageArrays[i][type];
+        }
+    }
+    //for total team coverage, sets red around type icon in type coverage ui if the team doesn't cover that type
+    if (currentTeamArray.length > 0) {
+        for (let type = 0; type < totalTeamCoverageArrays.length; type++) {
+            let shadow = document.getElementById(type + "-icon-shadow-coverage");
+            if (totalTeamCoverageArrays[type] == 0) {
+                shadow.classList.add("weakness-icon-shadow-weak");
+            } else if (totalTeamCoverageArrays[type] > 0) {
+                shadow.classList.remove("weakness-icon-shadow-weak");
+            }
+        }
+    } else {
+        for (let type = 0; type < totalTeamCoverageArrays.length; type++) {
+            let shadow = document.getElementById(type + "-icon-shadow-coverage");
+            shadow.classList.remove("weakness-icon-shadow-weak");
+        }
+    }
+}
 
 /**
  * 
@@ -388,12 +431,10 @@ function updateTeamWeakness() {
  */
 
 //default states
-var generationResults = true;
 var generation1 = true;
 var generation2 = true;
 var generation3 = true;
 var generation4 = true;
-var versionExclusiveResults = true;
 var nonExclusive = true;
 var diamondExclusive = true;
 var pearlExclusive = true;
@@ -508,7 +549,6 @@ document.querySelector(".calculate-button").addEventListener("click", function (
         var currentSettings = [uniqueTypesOnly, onlyOneStarter];
         document.querySelector(".create-team-section").style.display = "none";
         document.querySelector(".loading-screen").style.display = "block";
-        console.log(currentSettings);
         worker.postMessage([currentTeamArray, pokemonData, currentSettings]);
     } else {
         alert("Please add at least 1 pokémon to the team");

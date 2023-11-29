@@ -207,7 +207,7 @@ Main page elements
 /*Team Optimiser Button*/
 
 .team-optimiser-buttons-container {
-    margin: 16px;
+    margin: 64px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,7 +239,9 @@ Main page elements
     gap: 16px;
 }
 
-.team-type-info {
+.team-weakness-info,
+.team-coverage-info {
+    width: 50%;
     padding: 16px;
     margin: 0;
     display: flex;
@@ -258,7 +260,8 @@ Main page elements
         text-align: center;
     }
 
-    .type-indicator-container {
+    .weakness-indicator-container,
+    .coverage-indicator-container {
         width: 128px;
         height: 32px;
         display: flex;
@@ -266,18 +269,21 @@ Main page elements
         align-items: center;
         justify-content: center;
 
-        .type-indicator-icon {
+        .weakness-indicator-icon,
+        .coverage-indicator-icon {
             width: 50%;
             height: 100%;
         }
 
-        .type-indicator-marks {
+        .weakness-indicator-marks,
+        .coverage-indicator-marks {
             width: 50%;
             height: 100%;
             display: flex;
             justify-content: space-evenly;
 
-            .type-indicator {
+            .weakness-indicator,
+            .coverage-indicator {
                 width: 5px;
                 border-radius: 5px;
                 height: 100%;
@@ -285,7 +291,8 @@ Main page elements
             }
         }
 
-        .type-icon-shadow {
+        .weakness-icon-shadow,
+        .coverage-icon-shadow {
             width: 25%;
             height: 100%;
             position: absolute;
@@ -293,11 +300,11 @@ Main page elements
             border-radius: 50%;
         }
 
-        .type-icon-shadow-weak {
-            box-shadow: 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed);
+        .weakness-icon-shadow-weak {
+            box-shadow: 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed), 0 0 20px var(--pokemonRed);
         }
 
-        .type-icon-shadow-resist {
+        .weakness-icon-shadow-resist {
             box-shadow: 0 0 20px var(--grass), 0 0 20px var(--grass);
         }
     }
