@@ -1,6 +1,7 @@
 export default {
     "raichu": {
         "national_pokedex_id": 26,
+        "regional_pokedex_id": [26, "gsc", "rse", "frlg", 105, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Raichu",
         "pokemon_type": ["electric"],
@@ -15,6 +16,7 @@ export default {
     },
     "clefable": {
         "national_pokedex_id": 36,
+        "regional_pokedex_id": [36, "gsc", "rse", "frlg", 101, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Clefable",
         "pokemon_type": ["normal"],
@@ -29,6 +31,7 @@ export default {
     },
     "golduck": {
         "national_pokedex_id": 55,
+        "regional_pokedex_id": [55, "gsc", "rse", "frlg", 44, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Golduck",
         "pokemon_type": ["water"],
@@ -43,6 +46,7 @@ export default {
     },
     "alakazam": {
         "national_pokedex_id": 65,
+        "regional_pokedex_id": [65, "gsc", "rse", "frlg", 22, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Alakazam",
         "pokemon_type": ["psychic"],
@@ -57,6 +61,7 @@ export default {
     },
     "machamp": {
         "national_pokedex_id": 68,
+        "regional_pokedex_id": [68, "gsc", "rse", "frlg", 42, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Machamp",
         "pokemon_type": ["fighting"],
@@ -71,6 +76,7 @@ export default {
     },
     "tentacruel": {
         "national_pokedex_id": 73,
+        "regional_pokedex_id": [73, "gsc", "rse", "frlg", 137, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Tentacruel",
         "pokemon_type": ["water", "poison"],
@@ -85,6 +91,7 @@ export default {
     },
     "golem": {
         "national_pokedex_id": 76,
+        "regional_pokedex_id": [76, "gsc", "rse", "frlg", 33, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Golem",
         "pokemon_type": ["rock", "ground"],
@@ -99,6 +106,7 @@ export default {
     },
     "rapidash": {
         "national_pokedex_id": 78,
+        "regional_pokedex_id": [78, "gsc", "rse", "frlg", 91, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Rapidash",
         "pokemon_type": ["fire"],
@@ -113,6 +121,7 @@ export default {
     },
     "gengar": {
         "national_pokedex_id": 94,
+        "regional_pokedex_id": [94, "gsc", "rse", "frlg", 71, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Gengar",
         "pokemon_type": ["ghost", "poison"],
@@ -127,6 +136,7 @@ export default {
     },
     "seaking": {
         "national_pokedex_id": 119,
+        "regional_pokedex_id": [119, "gsc", "rse", "frlg", 79, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Seaking",
         "pokemon_type": ["water"],
@@ -141,6 +151,7 @@ export default {
     },
     "mr. mime": {
         "national_pokedex_id": 122,
+        "regional_pokedex_id": [122, "gsc", "rse", "frlg", 95, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Mr. Mime",
         "pokemon_type": ["psychic"],
@@ -155,6 +166,7 @@ export default {
     },
     "gyarados": {
         "national_pokedex_id": 130,
+        "regional_pokedex_id": [130, "gsc", "rse", "frlg", 24, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Gyarados",
         "pokemon_type": ["water", "flying"],
@@ -169,6 +181,7 @@ export default {
     },
     "vaporeon": {
         "national_pokedex_id": 134,
+        "regional_pokedex_id": [134, "gsc", "rse", "frlg", 164, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Vaporeon",
         "pokemon_type": ["water"],
@@ -183,6 +196,7 @@ export default {
     },
     "jolteon": {
         "national_pokedex_id": 135,
+        "regional_pokedex_id": [135, "gsc", "rse", "frlg", 165, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Jolteon",
         "pokemon_type": ["electric"],
@@ -197,6 +211,7 @@ export default {
     },
     "flareon": {
         "national_pokedex_id": 136,
+        "regional_pokedex_id": [136, "gsc", "rse", "frlg", 166, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Flareon",
         "pokemon_type": ["fire"],
@@ -211,6 +226,7 @@ export default {
     },
     "snorlax": {
         "national_pokedex_id": 143,
+        "regional_pokedex_id": [143, "gsc", "rse", "frlg", 113, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Snorlax",
         "pokemon_type": ["normal"],
@@ -225,6 +241,7 @@ export default {
     },
     "snorlax (thick fat)": {
         "national_pokedex_id": 143,
+        "regional_pokedex_id": [143, "gsc", "rse", "frlg", 113, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Snorlax (Thick Fat)",
         "pokemon_type": ["normal"],
@@ -239,6 +256,7 @@ export default {
     },
     "noctowl": {
         "national_pokedex_id": 164,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 107, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Noctowl",
         "pokemon_type": ["normal", "flying"],
@@ -253,6 +271,7 @@ export default {
     },
     "crobat": {
         "national_pokedex_id": 169,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 30, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Crobat",
         "pokemon_type": ["poison", "flying"],
@@ -267,6 +286,7 @@ export default {
     },
     "azumarill": {
         "national_pokedex_id": 184,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 126, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Azumarill",
         "pokemon_type": ["water"],
@@ -281,6 +301,7 @@ export default {
     },
     "sudowoodo": {
         "national_pokedex_id": 185,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 93, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Sudowoodo",
         "pokemon_type": ["rock"],
@@ -295,6 +316,7 @@ export default {
     },
     "quagsire": {
         "national_pokedex_id": 195,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 118, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Quagsire",
         "pokemon_type": ["water", "ground"],
@@ -309,6 +331,7 @@ export default {
     },
     "quagsire (water absorb)": {
         "national_pokedex_id": 195,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 118, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Quagsire",
         "pokemon_type": ["water", "ground"],
@@ -323,6 +346,7 @@ export default {
     },
     "espeon": {
         "national_pokedex_id": 196,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 167, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Espeon",
         "pokemon_type": ["psychic"],
@@ -337,6 +361,7 @@ export default {
     },
     "umbreon": {
         "national_pokedex_id": 197,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 168, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Umbreon",
         "pokemon_type": ["dark"],
@@ -351,6 +376,7 @@ export default {
     },
     "unown": {
         "national_pokedex_id": 201,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 114, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Unown",
         "pokemon_type": ["psychic"],
@@ -365,6 +391,7 @@ export default {
     },
     "girafarig": {
         "national_pokedex_id": 203,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 121, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Girafarig",
         "pokemon_type": ["normal", "psychic"],
@@ -378,7 +405,8 @@ export default {
         "hidden_settings": [false, false, false, false]
     },
     "steelix": {
-        "national_pokedex_id": 206,
+        "national_pokedex_id": 208,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 35, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Steelix",
         "pokemon_type": ["steel", "ground"],
@@ -393,6 +421,7 @@ export default {
     },
     "scizor": {
         "national_pokedex_id": 212,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 196, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Scizor",
         "pokemon_type": ["bug", "steel"],
@@ -407,6 +436,7 @@ export default {
     },
     "heracross": {
         "national_pokedex_id": 214,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 62, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Heracross",
         "pokemon_type": ["bug", "fighting"],
@@ -421,6 +451,7 @@ export default {
     },
     "octillery": {
         "national_pokedex_id": 224,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 133, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Octillery",
         "pokemon_type": ["water"],
@@ -435,6 +466,7 @@ export default {
     },
     "mantine": {
         "national_pokedex_id": 226,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 141, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Mantine",
         "pokemon_type": ["water", "flying"],
@@ -449,6 +481,7 @@ export default {
     },
     "houndoom": {
         "national_pokedex_id": 229,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 177, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Houndoom",
         "pokemon_type": ["dark", "fire"],
@@ -463,6 +496,7 @@ export default {
     },
     "blissey": {
         "national_pokedex_id": 242,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 98, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Blissey",
         "pokemon_type": ["normal"],
@@ -477,6 +511,7 @@ export default {
     },
     "beautifly": {
         "national_pokedex_id": 267,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 50, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Beautifly",
         "pokemon_type": ["bug", "flying"],
@@ -491,6 +526,7 @@ export default {
     },
     "dustox": {
         "national_pokedex_id": 269,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 52, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Dustox",
         "pokemon_type": ["bug", "poison"],
@@ -505,6 +541,7 @@ export default {
     },
     "pelipper": {
         "national_pokedex_id": 279,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 120, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Pelipper",
         "pokemon_type": ["water", "flying"],
@@ -519,6 +556,7 @@ export default {
     },
     "gardevoir": {
         "national_pokedex_id": 282,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 159, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Gardevoir",
         "pokemon_type": ["psychic"],
@@ -533,6 +571,7 @@ export default {
     },
     "medicham": {
         "national_pokedex_id": 308,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 87, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Medicham",
         "pokemon_type": ["fighting", "psychic"],
@@ -547,6 +586,7 @@ export default {
     },
     "altaria": {
         "national_pokedex_id": 334,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 172, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Altaria",
         "pokemon_type": ["dragon", "flying"],
@@ -561,6 +601,7 @@ export default {
     },
     "whiscash": {
         "national_pokedex_id": 340,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 81, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Whiscash",
         "pokemon_type": ["water", "ground"],
@@ -575,6 +616,7 @@ export default {
     },
     "milotic": {
         "national_pokedex_id": 350,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 139, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Milotic",
         "pokemon_type": ["water"],
@@ -589,6 +631,7 @@ export default {
     },
     "tropius": {
         "national_pokedex_id": 357,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 185, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Tropius",
         "pokemon_type": ["grass", "flying"],
@@ -603,6 +646,7 @@ export default {
     },
     "chimecho": {
         "national_pokedex_id": 358,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 83, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Chimecho",
         "pokemon_type": ["psychic"],
@@ -617,6 +661,7 @@ export default {
     },
     "absol": {
         "national_pokedex_id": 359,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 209, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Absol",
         "pokemon_type": ["dark"],
@@ -631,6 +676,7 @@ export default {
     },
     "glalie": {
         "national_pokedex_id": 362,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 207, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Glalie",
         "pokemon_type": ["ice"],
@@ -645,6 +691,7 @@ export default {
     },
     "torterra": {
         "national_pokedex_id": 389,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 3, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Torterra",
         "pokemon_type": ["grass", "ground"],
@@ -659,6 +706,7 @@ export default {
     },
     "infernape": {
         "national_pokedex_id": 392,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 6, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Infernape",
         "pokemon_type": ["fire", "fighting"],
@@ -673,6 +721,7 @@ export default {
     },
     "empoleon": {
         "national_pokedex_id": 395,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 9, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Empoleon",
         "pokemon_type": ["water", "steel"],
@@ -687,6 +736,7 @@ export default {
     },
     "staraptor": {
         "national_pokedex_id": 398,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 12, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Staraptor",
         "pokemon_type": ["normal", "flying"],
@@ -701,6 +751,7 @@ export default {
     },
     "bibarel": {
         "national_pokedex_id": 400,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 14, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Bibarel",
         "pokemon_type": ["normal", "water"],
@@ -715,6 +766,7 @@ export default {
     },
     "kricketune": {
         "national_pokedex_id": 402,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 16, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Kricketune",
         "pokemon_type": ["bug"],
@@ -729,6 +781,7 @@ export default {
     },
     "luxray": {
         "national_pokedex_id": 405,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 19, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Luxray",
         "pokemon_type": ["electric"],
@@ -743,6 +796,7 @@ export default {
     },
     "roserade": {
         "national_pokedex_id": 407,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 27, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Roserade",
         "pokemon_type": ["grass", "poison"],
@@ -757,6 +811,7 @@ export default {
     },
     "rampardos": {
         "national_pokedex_id": 409,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 37, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Rampardos",
         "pokemon_type": ["rock"],
@@ -771,6 +826,7 @@ export default {
     },
     "bastiodon": {
         "national_pokedex_id": 411,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 39, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Bastiodon",
         "pokemon_type": ["rock", "steel"],
@@ -785,6 +841,7 @@ export default {
     },
     "wormadam (plant cloak)": {
         "national_pokedex_id": 413,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 46, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Wormadam (Plant Cloak)",
         "pokemon_type": ["bug", "grass"],
@@ -799,6 +856,7 @@ export default {
     },
     "wormadam (sandy cloak)": {
         "national_pokedex_id": 413,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 46, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Wormadam (Sandy Cloak)",
         "pokemon_type": ["bug", "ground"],
@@ -813,6 +871,7 @@ export default {
     },
     "wormadam (trash cloak)": {
         "national_pokedex_id": 413,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 46, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 2,
         "name": "Wormadam (Trash Cloak)",
         "pokemon_type": ["bug", "steel"],
@@ -827,6 +886,7 @@ export default {
     },
     "mothim": {
         "national_pokedex_id": 414,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 47, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Mothim",
         "pokemon_type": ["bug", "flying"],
@@ -841,6 +901,7 @@ export default {
     },
     "vespiquen": {
         "national_pokedex_id": 416,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 54, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Vespiquen",
         "pokemon_type": ["bug", "flying"],
@@ -855,6 +916,7 @@ export default {
     },
     "pachirisu": {
         "national_pokedex_id": 417,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 55, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Pachirisu",
         "pokemon_type": ["electric"],
@@ -869,6 +931,7 @@ export default {
     },
     "floatzel": {
         "national_pokedex_id": 419,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 57, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Floatzel",
         "pokemon_type": ["water"],
@@ -883,6 +946,7 @@ export default {
     },
     "cherrim": {
         "national_pokedex_id": 421,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 59, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Cherrim",
         "pokemon_type": ["grass"],
@@ -897,6 +961,7 @@ export default {
     },
     "gastrodon": {
         "national_pokedex_id": 423,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 61, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Gastrodon",
         "pokemon_type": ["water", "ground"],
@@ -911,6 +976,7 @@ export default {
     },
     "ambipom": {
         "national_pokedex_id": 424,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 64, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Ambipom",
         "pokemon_type": ["normal"],
@@ -925,6 +991,7 @@ export default {
     },
     "drifblim": {
         "national_pokedex_id": 426,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 66, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Drifblim",
         "pokemon_type": ["ghost", "flying"],
@@ -939,6 +1006,7 @@ export default {
     },
     "lopunny": {
         "national_pokedex_id": 428,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 68, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Lopunny",
         "pokemon_type": ["normal"],
@@ -953,6 +1021,7 @@ export default {
     }, 
     "mismagius": {
         "national_pokedex_id": 429,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 73, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Mismagius",
         "pokemon_type": ["ghost"],
@@ -967,6 +1036,7 @@ export default {
     },
     "honchkrow": {
         "national_pokedex_id": 430,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 75, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Honchkrow",
         "pokemon_type": ["dark", "flying"],
@@ -981,6 +1051,7 @@ export default {
     },
     "purugly": {
         "national_pokedex_id": 432,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 77, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Purugly",
         "pokemon_type": ["normal"],
@@ -995,6 +1066,7 @@ export default {
     },
     "purugly (thick fat)": {
         "national_pokedex_id": 432,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 77, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Purugly",
         "pokemon_type": ["normal"],
@@ -1009,6 +1081,7 @@ export default {
     },
     "skuntank": {
         "national_pokedex_id": 435,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 85, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Skuntank",
         "pokemon_type": ["poison", "dark"],
@@ -1023,6 +1096,7 @@ export default {
     },
     "bronzong": {
         "national_pokedex_id": 437,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 89, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Bronzong",
         "pokemon_type": ["steel", "psychic"],
@@ -1037,6 +1111,7 @@ export default {
     },
     "bronzong (levitate)": {
         "national_pokedex_id": 437,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 89, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Bronzong",
         "pokemon_type": ["steel", "psychic"],
@@ -1051,6 +1126,7 @@ export default {
     },
     "bronzong (heatproof)": {
         "national_pokedex_id": 437,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 89, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 2,
         "name": "Bronzong",
         "pokemon_type": ["steel", "psychic"],
@@ -1065,6 +1141,7 @@ export default {
     },
     "chatot": {
         "national_pokedex_id": 441,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 102, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Chatot",
         "pokemon_type": ["normal", "flying"],
@@ -1079,6 +1156,7 @@ export default {
     },
     "spiritomb": {
         "national_pokedex_id": 442,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 108, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Spiritomb",
         "pokemon_type": ["ghost", "dark"],
@@ -1093,6 +1171,7 @@ export default {
     },
     "garchomp": {
         "national_pokedex_id": 445,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 111, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Garchomp",
         "pokemon_type": ["dragon", "ground"],
@@ -1107,6 +1186,7 @@ export default {
     },
     "lucario": {
         "national_pokedex_id": 448,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 116, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Lucario",
         "pokemon_type": ["fighting", "steel"],
@@ -1121,6 +1201,7 @@ export default {
     },
     "hippowdon": {
         "national_pokedex_id": 450,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 123, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Hippowdon",
         "pokemon_type": ["ground"],
@@ -1135,6 +1216,7 @@ export default {
     },
     "drapion": {
         "national_pokedex_id": 452,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 128, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Drapion",
         "pokemon_type": ["poison", "dark"],
@@ -1149,6 +1231,7 @@ export default {
     },
     "toxicroak": {
         "national_pokedex_id": 454,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 130, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Toxicroak",
         "pokemon_type": ["poison", "fighting"],
@@ -1163,6 +1246,7 @@ export default {
     },
     "toxicroak (dry skin)": {
         "national_pokedex_id": 454,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 130, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Toxicroak",
         "pokemon_type": ["poison", "fighting"],
@@ -1177,6 +1261,7 @@ export default {
     },
     "carnivine": {
         "national_pokedex_id": 455,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 131, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Carnivine",
         "pokemon_type": ["grass"],
@@ -1191,6 +1276,7 @@ export default {
     },
     "lumineon": {
         "national_pokedex_id": 457,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 135, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Lumineon",
         "pokemon_type": ["water"],
@@ -1205,6 +1291,7 @@ export default {
     },
     "abomasnow": {
         "national_pokedex_id": 460,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 143, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Abomasnow",
         "pokemon_type": ["grass", "ice"],
@@ -1219,6 +1306,7 @@ export default {
     },
     "weavile": {
         "national_pokedex_id": 461,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 145, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Weavile",
         "pokemon_type": ["dark", "ice"],
@@ -1233,6 +1321,7 @@ export default {
     },
     "magnezone": {
         "national_pokedex_id": 462,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 180, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Magnezone",
         "pokemon_type": ["electric", "steel"],
@@ -1247,6 +1336,7 @@ export default {
     },
     "lickilicky": {
         "national_pokedex_id": 463,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 162, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Lickilicky",
         "pokemon_type": ["normal"],
@@ -1261,6 +1351,7 @@ export default {
     },
     "rhyperior": {
         "national_pokedex_id": 464,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 188, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Rhyperior",
         "pokemon_type": ["ground", "rock"],
@@ -1275,6 +1366,7 @@ export default {
     },
     "tangrowth": {
         "national_pokedex_id": 465,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 182, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Tangrowth",
         "pokemon_type": ["grass"],
@@ -1290,6 +1382,7 @@ export default {
     
     "electivire": {
         "national_pokedex_id": 466,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 199, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Electivire",
         "pokemon_type": ["electric"],
@@ -1304,6 +1397,7 @@ export default {
     },
     "magmortar": {
         "national_pokedex_id": 467,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 202, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Magmortar",
         "pokemon_type": ["fire"],
@@ -1318,6 +1412,7 @@ export default {
     },
     "togekiss": {
         "national_pokedex_id": 468,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 175, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Togekiss",
         "pokemon_type": ["normal", "flying"],
@@ -1332,6 +1427,7 @@ export default {
     },
     "yanmega": {
         "national_pokedex_id": 469,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 184, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Yanmega",
         "pokemon_type": ["bug", "flying"],
@@ -1346,6 +1442,7 @@ export default {
     },
     "leafeon": {
         "national_pokedex_id": 470,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 169, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Leafeon",
         "pokemon_type": ["grass"],
@@ -1360,6 +1457,7 @@ export default {
     },
     "glaceon": {
         "national_pokedex_id": 471,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 170, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Glaceon",
         "pokemon_type": ["ice"],
@@ -1374,6 +1472,7 @@ export default {
     },
     "gliscor": {
         "national_pokedex_id": 472,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 154, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Gliscor",
         "pokemon_type": ["ground", "flying"],
@@ -1388,6 +1487,7 @@ export default {
     },
     "mamoswine": {
         "national_pokedex_id": 473,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 205, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Mamoswine",
         "pokemon_type": ["ice", "ground"],
@@ -1402,6 +1502,7 @@ export default {
     },
     "porygon-z": {
         "national_pokedex_id": 474,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 194, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Porygon-Z",
         "pokemon_type": ["normal"],
@@ -1416,6 +1517,7 @@ export default {
     },
     "gallade": {
         "national_pokedex_id": 475,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 160, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Gallade",
         "pokemon_type": ["psychic", "fighting"],
@@ -1430,6 +1532,7 @@ export default {
     },
     "probopass": {
         "national_pokedex_id": 476,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 156, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Probopass",
         "pokemon_type": ["rock", "steel"],
@@ -1444,6 +1547,7 @@ export default {
     },
     "dusknoir": {
         "national_pokedex_id": 477,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 191, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Dusknoir",
         "pokemon_type": ["ghost"],
@@ -1458,6 +1562,7 @@ export default {
     },
     "froslass": {
         "national_pokedex_id": 478,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 208, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Froslass",
         "pokemon_type": ["ice", "ghost"],
@@ -1472,6 +1577,7 @@ export default {
     },
     "rotom": {
         "national_pokedex_id": 479,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 152, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Rotom",
         "pokemon_type": ["electric", "ghost"],
@@ -1486,6 +1592,7 @@ export default {
     },
     "uxie": {
         "national_pokedex_id": 480,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 146, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Uxie",
         "pokemon_type": ["psychic"],
@@ -1500,6 +1607,7 @@ export default {
     },
     "mesprit": {
         "national_pokedex_id": 481,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 147, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Mesprit",
         "pokemon_type": ["psychic"],
@@ -1514,6 +1622,7 @@ export default {
     },
     "azelf": {
         "national_pokedex_id": 482,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 148, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Azelf",
         "pokemon_type": ["psychic"],
@@ -1528,6 +1637,7 @@ export default {
     },
     "dialga": {
         "national_pokedex_id": 483,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 149, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Dialga",
         "pokemon_type": ["steel", "dragon"],
@@ -1542,6 +1652,7 @@ export default {
     },
     "palkia": {
         "national_pokedex_id": 484,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 150, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Palkia",
         "pokemon_type": ["water", "dragon"],
@@ -1556,6 +1667,7 @@ export default {
     },
     "giratina": {
         "national_pokedex_id": 487,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 210, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Giratina",
         "pokemon_type": ["ghost", "dragon"],
@@ -1570,6 +1682,7 @@ export default {
     },
     "giratina (origin forme)": {
         "national_pokedex_id": 487,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 210, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 1,
         "name": "Giratina",
         "pokemon_type": ["ghost", "dragon"],
@@ -1584,6 +1697,7 @@ export default {
     },
     "manaphy": {
         "national_pokedex_id": 490,
+        "regional_pokedex_id": ["rby", "gsc", "rse", "frlg", 151, "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"],
         "variant_id": 0,
         "name": "Manaphy",
         "pokemon_type": ["water"],

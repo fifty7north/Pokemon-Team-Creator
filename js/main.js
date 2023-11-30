@@ -1,9 +1,30 @@
 import pokemonData from "./pokemon-data.js"
+import version from "./version.js"
 import typeDataObject from "./type-data.js"
 import coverageDataObject from "./coverage-data.js"
+const gameOrder = ["rby", "gsc", "rse", "frlg", "dppt", "hgss", "bw", "b2w2", "xy", "oras", "sm", "usum", "lgpe", "swsh", "bdsp", "lga", "sv"];
 
-const gamePokemonData = pokemonData["dppt"];
-const gameGeneration = 4;
+/**
+ * 
+ * 
+ * 
+ */
+
+var selectedSeries = "rby";
+var selectedSeriesIndex = gameOrder.indexOf(selectedSeries);
+var gameGeneration = version.game_generation[selectedSeries];
+var game_pokedex = version.game_pokedex[selectedSeries];
+
+var gamePokemonData = [];
+gamePokemonData.length = 0;
+Object.entries(pokemonData).forEach(pokemon => {
+    if (game_pokedex.includes(pokemon[1].national_pokedex_id)) {
+        gamePokemonData.push(pokemon);
+    }
+})
+gamePokemonData.sort((a, b) => {return a[1].regional_pokedex_id[selectedSeriesIndex] - b[1].regional_pokedex_id[selectedSeriesIndex]});
+
+console.log(gamePokemonData)
 
 const typeData = Object.entries(typeDataObject);
 const coverageData = Object.entries(coverageDataObject);
@@ -17,7 +38,7 @@ const coverageData = Object.entries(coverageDataObject);
 const pokemonWeakness = [];
 const pokemonCombinedWeakness = [];
 
-Object.entries(gamePokemonData).forEach(entry => {
+gamePokemonData.forEach(entry => {
     const [, pokemonDataEntries] = entry;
     //for each type the pokemon has, checks through list of all types to find matching types and adds their data to weakness array
     pokemonDataEntries.pokemon_type.forEach(type => {
@@ -94,7 +115,7 @@ function abilityWeaknessModifier(entry) {
 const pokemonCoverage = [];
 const pokemonCombinedCoverage = [];
 
-Object.entries(gamePokemonData).forEach(entry => {
+gamePokemonData.forEach(entry => {
     const [, pokemonDataEntries] = entry;
     //for each type the pokemon has, checks through list of all types to find matching types and adds their data to weakness array
     pokemonDataEntries.pokemon_type.forEach(type => {
@@ -131,18 +152,18 @@ Object.entries(gamePokemonData).forEach(entry => {
 
 /**
  * 
- * Removes types depending on generation
+ * Removes types in pokemon data and ui depending on generation
  * 
  */
 
 if (gameGeneration >= 2 && gameGeneration <= 5) {
-    Object.entries(gamePokemonData).forEach(pokemon => {
+    gamePokemonData.forEach(pokemon => {
         pokemon[1].weakness_array.length = 17;
         pokemon[1].coverage_array.length = 17;
     });
     document.querySelectorAll(".fairy").forEach(element => { element.style.display = "none"; });
 } else if (gameGeneration == 1) {
-    Object.entries(gamePokemonData).forEach(pokemon => {
+    gamePokemonData.forEach(pokemon => {
         pokemon[1].weakness_array.length = 15;
         pokemon[1].coverage_array.length = 15;
     });
@@ -150,8 +171,6 @@ if (gameGeneration >= 2 && gameGeneration <= 5) {
     document.querySelectorAll(".steel").forEach(element => { element.style.display = "none"; });
     document.querySelectorAll(".fairy").forEach(element => { element.style.display = "none"; });
 }
-
-console.log(gamePokemonData);
 
 /**
  * 
@@ -181,7 +200,7 @@ const typeColours = [
     ["fairy", "#D685AD"]
 ];
 
-Object.entries(gamePokemonData).forEach(entry => {
+gamePokemonData.forEach(entry => {
     //creates new list entry and populates it with attributes
     const newPokemonLi = document.createElement("li");
     newPokemonLi.classList.add("pokedex-entry");
@@ -273,7 +292,7 @@ document.querySelectorAll(".pokedex-button").forEach(pokedexButton => {
             //If current team has >= 6 pokemon, displays error message on screen
             alert("Team slots already filled");
         };
-        Object.entries(gamePokemonData).forEach(entry => {
+        gamePokemonData.forEach(entry => {
             if (entry[0] == id) {
                 //for every entry in pokemon data, checks if the id of the clicked pokedex entry matches an entry
                 //if there is a match, adds that data entry to the current team array
@@ -487,7 +506,7 @@ document.getElementById("setting-generation-2").addEventListener("click", () => 
 document.getElementById("setting-generation-3").addEventListener("click", () => { generationCheck(3, generation3) });
 document.getElementById("setting-generation-4").addEventListener("click", () => { generationCheck(4, generation4) });
 function generationCheck(generationFilter, settingToggleStatus) {
-    Object.entries(gamePokemonData).forEach(pokemon => {
+    gamePokemonData.forEach(pokemon => {
         var generation = pokemon[1]["debut_generation"];
         if (generation == generationFilter && settingToggleStatus == false) {
             pokemon[1].hidden_settings[0] = true;
@@ -506,7 +525,7 @@ document.getElementById("setting-diamond-exclusive").addEventListener("click", (
 document.getElementById("setting-pearl-exclusive").addEventListener("click", () => { versionCheck("pearl", pearlExclusive) });
 document.getElementById("setting-platinum-exclusive").addEventListener("click", () => { versionCheck("platinum", platinumExclusive) });
 function versionCheck(versionSetting, settingVariable) {
-    Object.entries(gamePokemonData).forEach(pokemon => {
+    gamePokemonData.forEach(pokemon => {
         let pokemonVersion = pokemon[1].version;
         pokemonVersion.forEach(version => {
             if (version == versionSetting) {
@@ -528,10 +547,10 @@ function versionCheck(versionSetting, settingVariable) {
         }
     });
 }
-//
+//show/hide legendary and mythic pokemon
 document.getElementById("setting-no-legendaries").addEventListener("click", () => { legendaryCheck(noLegendaries) });
 function legendaryCheck(settingToggleStatus) {
-    Object.entries(gamePokemonData).forEach(pokemon => {
+    gamePokemonData.forEach(pokemon => {
         var legendaryCheck = pokemon[1]["legendary/mythic"];
         if (legendaryCheck == true && settingToggleStatus == true) {
             pokemon[1].hidden_settings[2] = true;
@@ -544,10 +563,10 @@ function legendaryCheck(settingToggleStatus) {
         }
     });
 }
-//
+//show/hide trade evolution pokemon
 document.getElementById("setting-no-trade-evolve").addEventListener("click", () => { tradeEvolveCheck(noTradeEvolve) });
 function tradeEvolveCheck(settingToggleStatus) {
-    Object.entries(gamePokemonData).forEach(pokemon => {
+    gamePokemonData.forEach(pokemon => {
         var tradeEvolveCheck = pokemon[1]["trade_evolution"];
         if (tradeEvolveCheck == true && settingToggleStatus == true) {
             pokemon[1].hidden_settings[3] = true;
@@ -590,6 +609,9 @@ document.querySelector(".calculate-button").addEventListener("click", function (
 worker.onmessage = (calcResult) => {
     var result = calcResult.data;
     console.log(result);
+    document.querySelector(".create-team-section").style.display = "block";
+    document.querySelector(".footer").style.display = "block";
+    document.querySelector(".loading-screen").style.display = "none";
 }
 
 /**

@@ -27,7 +27,7 @@ onmessage = (input) => {
         inTeam.push(currentTeamArray[teamSize][0]);
     }
     //for each pokemon in pokemon data that isn't in the team, push their data to an array
-    Object.entries(pokemonData).forEach(pokemon => {
+    pokemonData.forEach(pokemon => {
         if (
             !pokemon[0].includes(inTeam[0]) &&
             !pokemon[0].includes(inTeam[1]) &&
@@ -39,6 +39,8 @@ onmessage = (input) => {
             settingsFilter.push(pokemon);
         };
     });
+
+    console.log(settingsFilter)
     //primary pokemon filter for generation, version, legendary/mythic status & trade evolution
     for (let i = 0; i < settingsFilter.length; i++) {
         let usePokemon = true;
@@ -199,7 +201,7 @@ onmessage = (input) => {
         finalCombos = starterFilterPostSort(finalCombos, currentTeamArray);
     }
     //post final results back to main js file
-    console.log(finalCombos);
+    postMessage(finalCombos);
 };
 
 /**
